@@ -8,6 +8,7 @@
 </title>
 
 <body>
+	   <link href="styles/glDatePicker.default.css" rel="stylesheet" type="text/css">
 	<font color="FA7147">
 		<h2 align=left>PickUp.
 			<span style="float:right;">				
@@ -35,7 +36,22 @@
 				</select>
 				<br></br>
 				<br><b>Location</b> <br><input type="text" name="Location"></br>
-				<br><b>Date</b> <br><input type="text" name="Date"></br>
+				<br><b>Date</b> <br> <input type="text" id="Location" gldp-id="mydate" />
+
+			    <div gldp-el="mydate"
+			         style="width:200px; height:200px; position:absolute; top:70px; left:100px;">
+			    </div>
+
+				<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+			    <script src="glDatePicker.min.js"></script>
+
+			    <script type="text/javascript">
+			        $(window).load(function()
+			        {
+			            $('#Location').glDatePicker();
+			        });
+			    </script>
+			    <br>
 				<br><b>Time</b></br>
 				<select name="time" id="time">
 					<option style="color:gray" value="null" selected="selected"> </option>
@@ -143,8 +159,6 @@
 				<input type="submit" value="submit" />
 				</form>	
 
-
-	
 
 
 
