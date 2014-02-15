@@ -20,23 +20,25 @@
 
 		<center>
 			<br></br>
-				<form action="">
+				<form action="insert.php" method="post">
 				<b>Sport</b><br>
 				<select name="sports">
+					<option  <option style="color:gray" value="null" selected="selected"> </option>
 					<option value="Baseball">Baseball</option>
 					<option value="Football">Football</option>
-					<option value="Soccer" selected>Soccer</option>
+					<option value="Soccer">Soccer</option>
 					<option value="Tennis">Tennis</option>
 					<option value="Ultimate_Frisbee">Ultimate Frisbee</option>
 					<option value="Rugby">Rugby</option>
 					<option value="Basketball">Basketball</option>
-					<option value="Hockey">Hockey</option>
+					<option value="Hockey">Hockey</option>					
 				</select>
 				<br></br>
 				<br><b>Location</b> <br><input type="text" name="Location"></br>
 				<br><b>Date</b> <br><input type="text" name="Date"></br>
 				<br><b>Time</b></br>
 				<select name="time" id="time">
+					<option style="color:gray" value="null" selected="selected"> </option>
 					<option value="5:00 AM">5:00 AM</option>
 					<option value="5:15 AM">5:15 AM</option>
 					<option value="5:30 AM">5:30 AM</option>
@@ -137,41 +139,12 @@
 				<input type="radio" name="private" value="public">Invited friends only (private)<br>
 				<input type="radio" name="private" value="private">Any random joe (public) <br>
 				<br>
-			
+				
+				<input type="submit" value="submit" />
 				</form>	
 
 
-		<?php //Print Database
- 
-			//Connect
-			$con=mysqli_connect("localhost:3306","root","","games");
-			// Check connection
-			if (mysqli_connect_errno())
-			  {
-			  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-			  }
-
-			//Select Data
-			$result = mysqli_query($con,"CALL testSearch()" );
-			//Check that it returns true
-			if($result==false){
-			  echo "An error occured during the insertion procedure.";
-			}
-
-			if(!(mysqli_fetch_array($result))){
-				echo "Error!";
-			}
-			//Print Data by row
-			while($row = mysqli_fetch_array($result))
-			  {
-			  	
-			  echo $row['match_type'] . " " . $row['match_location'];
-			  echo "<br>";
-			  }
-
-			mysqli_close($con);
-			?>
-				
+	
 
 
 
