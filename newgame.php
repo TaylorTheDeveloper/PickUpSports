@@ -155,11 +155,11 @@
 			$result = mysqli_query($con,"CALL testSearch()" );
 			//Check that it returns true
 			if($result==false){
-			  echo "Master Wayne, I've failed you";
+			  echo "An error occured during the insertion procedure.";
 			}
 
 			if(!(mysqli_fetch_array($result))){
-				echo "Sorry";
+				echo "Error!";
 			}
 			//Print Data by row
 			while($row = mysqli_fetch_array($result))
