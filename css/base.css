@@ -111,6 +111,10 @@ header {
 	float: left;
 	margin-right: 50px;
 }
+.existing_game{
+	float: right;
+	margin-left: 50px;
+}
 
 /* #Typography
 ================================================== */
