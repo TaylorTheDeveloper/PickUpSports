@@ -82,10 +82,11 @@ if($result==false){
 if(!(mysqli_fetch_array($result))){
 	echo "Sorry, we can't seem to find any games between " . $zip_top . " and " . $zip_bottom;
 }
+
 //Print Data by row
 while($row = mysqli_fetch_array($result))
   {
-  	
+
   echo $row['match_type'] . " " . $row['match_location'];
   echo "<br>";
   }
