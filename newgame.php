@@ -12,9 +12,9 @@
 	<font color="FA7147">
 		<h2 align=left>PickUp.
 			<span style="float:right;">				
-				<button type="Login">
-					<span style="color:green">Login </span>
-				</button>
+				<a href= "index.html">
+    			<button>Home</button>
+				</a>
 				 </span></p>
 		</h2>
 	
@@ -36,7 +36,7 @@
 				</select>
 				<br></br>
 				<br><b>Location</b> <br><input type="text" name="Location"></br>
-				<br><b>Date</b> <br> <input type="text" id="Location" gldp-id="mydate" />
+				<br><b>Date</b> <br> <input type="text" id="Date" gldp-id="mydate" />
 
 			    <div gldp-el="mydate"
 			         style="width:200px; height:200px; position:absolute; top:70px; left:100px;">
@@ -48,7 +48,7 @@
 			    <script type="text/javascript">
 			        $(window).load(function()
 			        {
-			            $('#Location').glDatePicker();
+			            $('#Date').glDatePicker();
 			        });
 			    </script>
 			    <br>
@@ -151,12 +151,16 @@
 					<option value="11:45 PM">11:45 PM</option>
 				</select><br></br>
 
+				<br><b>How many players do you have?</b> <br><input type="text" name="currPlayers"></br>
+				<br><b>Players needed for a full game?</b> <br><input type="text" name="needPlayers"></br>
+
 				<br><b>Who can join in on the fun?</b></br>
-				<input type="radio" name="private" value="public">Invited friends only (private)<br>
-				<input type="radio" name="private" value="private">Any random joe (public) <br>
+				<input class="radio" type="radio" name="pubpriv" value="private">Invited friends only (private)<br>
+				<input class="radio" type="radio" name="pubpriv" value="public">Any random joe (public) <br>
 				<br>
+
 				
-				<input type="submit" value="submit" />
+				<input type="submit" value="Lets Play!" />
 				</form>	
 
 

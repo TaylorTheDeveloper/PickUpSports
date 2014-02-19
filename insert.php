@@ -2,14 +2,22 @@
  			
  			$p_location = $_POST["Location"];
  			$p_sport = $_POST["sports"];
+ 			//$p_date= $_POST["Date"];
+ 			$p_date= "09/12/14";
  			$p_time= $_POST["time"];
+ 			$p_currPlayers = $_POST["currPlayers"];
+ 			$p_needPlayers = $_POST["needPlayers"];
+ 			if(isset($_POST['pubpriv']))
+		   {
+		    /*other variables*/
+		     $radio_value = $_POST["pubpriv"];
+		   }
+		   else
+		   {
+		   	echo "not set";
+		   }
 
- 			echo $p_location;
- 			echo "<br>";
- 			echo $p_sport;
- 			echo "<br>";
- 			echo $p_time;
- 			echo "<br>";
+ 			
 			//Connect
 			$con=mysqli_connect("localhost:3306","root","","games");
 			// Check connection
@@ -19,22 +27,10 @@
 			  }
 
 			//Select Data
-			$result = mysqli_query($con,"CALL testSearch()" );
-			//Check that it returns true
-			if($result==false){
-			  echo "An error occured during the insertion procedure.";
-			}
-
-			if(!(mysqli_fetch_array($result))){
-				echo "Error!";
-			}
-			//Print Data by row
-			while($row = mysqli_fetch_array($result))
-			  {
-			  	
-			  echo $row['match_type'] . " " . $row['match_location'];
-			  echo "<br>";
-			  }
+			 //The numbers in here at just random variables i put in to test the query.
+			mysqli_query($con,"CALL newMatch(5, 4, '$p_location', 32304, '2014 -02 -04', '23:50:26', '$p_needPlayers', '$p_currPlayers', 1 )" );
+			//Check that it returns true		
+			
 
 			mysqli_close($con);
 			?>
