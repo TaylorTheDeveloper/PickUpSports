@@ -1,18 +1,18 @@
 <!DOCTYPE html>	
 <html>	
 <head>
+	<title>
+		PickUp.
+	</title>
 	<link rel="icon" type="image/png" href="http://imgur.com/0K3ZhMb.png"/>
-
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-			    <script src="glDatePicker.min.js"></script>
+	<link href="css/glDatePicker.default.css" rel="stylesheet" type="text/css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="js/glDatePicker.min.js"></script>
 
 </head>
-<title>
-	PickUp.
-</title>
 
 <body>
-	   <link href="styles/glDatePicker.default.css" rel="stylesheet" type="text/css">
+	   
 	<font color="FA7147">
 		<h2 align=left>PickUp.
 			<span style="float:right;">				
@@ -38,22 +38,23 @@
 					<option value="Basketball">Basketball</option>
 					<option value="Hockey">Hockey</option>					
 				</select>
-				<br></br>
-				<br><b>Location</b> <br><input type="text" name="Location"></br>
+				<br>
+				<br><b>Location</b> <br><input type="text" name="location">
+				<br><b>Zip</b><br> <input type="number" name="zip">
 				<br><b>Date</b> <br> <input type="text" name="date" id="Date" gldp-id="mydate" />
 
-			    <div gldp-el="mydate"
-			         style="width:200px; height:200px; position:absolute; top:70px; left:100px;">
-			    </div>
+				    <div gldp-el="mydate"
+				         style="width:200px; height:200px; position:absolute; top:70px; left:100px;">
+				    </div>
 
-			    <script type="text/javascript">
-			        $(window).load(function()
-			        {
-			            $('#Date').glDatePicker();
-			        });
-			    </script>
+				    <script type="text/javascript">
+				        $(window).load(function()
+				        {
+				            $('#Date').glDatePicker();
+				        });
+				    </script>
 			    <br>
-				<br><b>Time</b></br>
+				<br><b>Time</b><br>
 				<select name="time" id="time">
 					<option style="color:gray" value="null" selected="selected"> </option>
 					<option value="5:00 AM">5:00 AM</option>
@@ -150,14 +151,14 @@
 					<option value="11:15 PM">11:15 PM</option>
 					<option value="11:30 PM">11:30 PM</option>
 					<option value="11:45 PM">11:45 PM</option>
-				</select><br></br>
+				</select><br>
+<!-- Only one player when game starts, this is the admin -->
+<!--				<br><b>How many players do you have?</b> <br><input type="text" name="currPlayers"></br> -->
+				<br><b>Players needed for a full game?</b> <br><input type="number" name="maxPlayers"></br>
 
-				<br><b>How many players do you have?</b> <br><input type="text" name="currPlayers"></br>
-				<br><b>Players needed for a full game?</b> <br><input type="text" name="needPlayers"></br>
-
-				<br><b>Who can join in on the fun?</b></br>
-				<input class="radio" type="radio" name="pubpriv" value="private">Invited friends only (private)<br>
-				<input class="radio" type="radio" name="pubpriv" value="public">Any random joe (public) <br>
+				<br><b>Who can join in on the fun?</b><br>
+				<input class="radio" type="radio" name="pubPriv" value="private">Invited friends only (private)<br>
+				<input class="radio" type="radio" name="pubPriv" value="public">Any random joe (public) <br>
 				<br>
 
 				
