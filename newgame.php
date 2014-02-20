@@ -1,14 +1,11 @@
-<!DOCTYPE html>	
-<html>	
+<?php include 'head.php'; ?> <!-- links and stuff, located in head.php. only base files should go in here -->
+
+<?php include 'header.php'; ?> <!-- Header stuff, located in head.php. only base files should go in here -->
+
 <head>
-	<title>
-		PickUp.
-	</title>
-	<link rel="icon" type="image/png" href="http://imgur.com/0K3ZhMb.png"/>
 	<link href="css/glDatePicker.default.css" rel="stylesheet" type="text/css">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="js/glDatePicker.min.js"></script>
-
 </head>
 
 <body>

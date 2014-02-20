@@ -4,13 +4,13 @@
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-
 	<!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
 	<title>PickUp</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
+	<link rel="icon" type="image/png" href="http://imgur.com/0K3ZhMb.png"/>
 
 	<!-- Mobile Specific Metas
   ================================================== -->
@@ -33,5 +33,4 @@
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-
 </head>
