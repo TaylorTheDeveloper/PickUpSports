@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 15, 2014 at 07:58 PM
+-- Generation Time: Feb 15, 2014 at 09:58 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -21,6 +21,17 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `games` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `games`;
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `testSearch`()
+BEGIN
+	SELECT * FROM matches WHERE match_zip = 32304;
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -47,6 +58,7 @@ CREATE TABLE IF NOT EXISTS `matches` (
 --
 
 INSERT INTO `matches` (`match_id`, `admin_user_id`, `match_type`, `match_location`, `match_zip`, `match_date`, `match_time`, `match_maxplayers`, `match_currentplayers`, `matchp_pubpriv`) VALUES
+(0, 0, 0, '0', '0', '2030-09-04', '0', 0, 0, 0),
 (1, 4, 1, '608 west lafayette', '32304', '2014-02-26', '1500', 16, 0, 0),
 (2, 4, 2, 'The Gym at FsU', '32304', '2014-02-24', '1730', 8, 2, 0),
 (3, 4, 3, 'Wescott Fountain', '32308', '2014-02-28', '1300', 10, 0, 0),
