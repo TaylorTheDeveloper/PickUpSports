@@ -55,4 +55,6 @@ mysqli_close($con);
 <!-- End Document
 ================================================== -->
 </body>
+<?php include 'footer.php'; ?> <!-- footer stuff, located in footer.php. only base files should go in here -->
+
 </html>

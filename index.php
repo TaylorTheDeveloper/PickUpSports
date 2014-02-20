@@ -4,11 +4,7 @@
 
 <body>
 
-
-
 <div class="container">
-		
-
 		<div class="intro title">
 			<p>
 				Coordinating a game of basketball with friends just got easier.
@@ -16,7 +12,6 @@
 		</div>
 
 		<div class="main">
-
 			<!-- New Game form -->
 		<div class="new_game">
 				<p>New Game</p>
@@ -35,10 +30,10 @@
 					</select><br>
 					<input type="submit" value="Let's Play">
 			</form>
+		</div>
 				
-</div class="existing_game">
+		<div class="existing_game">
 			<!-- Existing Game form -->
-		<div >
 				<p>Existing Game</p>
 				<form action="search.php" method="post">
 
@@ -46,18 +41,16 @@
 					Zip: <input type="number" name="zip_location">
 				</p>
 
-				<input type="submit" value="search">
-
-				
-			
-			</form>
-				
-</div>
-	
-
+				<input type="submit" value="search">			
+				</form>			
 		</div>
-
-
+</div>
+</div>
 
 </body>
+
+
+<?php include 'footer.php'; ?> <!-- footer stuff, located in footer.php. only base files should go in here -->
+
+
 </html>

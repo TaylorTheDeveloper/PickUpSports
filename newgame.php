@@ -9,16 +9,6 @@
 </head>
 
 <body>
-	   
-	<font color="FA7147">
-		<h2 align=left>PickUp.
-			<span style="float:right;">				
-				<a href= "index.html">
-    			<button>Home</button>
-				</a>
-				 </span></p>
-		</h2>
-	
 
 		<center>
 			<br></br>
@@ -162,11 +152,9 @@
 				<input type="submit" value="Lets Play!" />
 				</form>	
 
-
-
-
-			</font>
 		</center>
-	</font>	
 </body>
+
+<?php include 'footer.php'; ?> <!-- footer stuff, located in footer.php. only base files should go in here -->
+
 </html>
