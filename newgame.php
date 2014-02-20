@@ -38,7 +38,7 @@
 				<br>
 				<br><b>Location</b> <br><input type="text" name="location">
 				<br><b>Zip</b><br> <input type="number" name="zip">
-				<br><b>Date</b> <br> <input type="text" name="date" id="Date" gldp-id="mydate" />
+				<br><b>Date</b> <br> <input type="text" name="date" id="date" gldp-id="mydate" />
 
 				    <div gldp-el="mydate"
 				         style="width:200px; height:200px; position:absolute; top:70px; left:100px;">
@@ -47,7 +47,7 @@
 				    <script type="text/javascript">
 				        $(window).load(function()
 				        {
-				            $('#Date').glDatePicker();
+				            $('#date').glDatePicker();
 				        });
 				    </script>
 			    <br>

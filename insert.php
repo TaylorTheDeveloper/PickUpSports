@@ -1,4 +1,10 @@
 <?php 
+
+	$p_date = $_POST['date'];
+	$phpdate = strtotime( $p_date );
+	$mysqldate = date( 'Y-m-d H:i:s', $phpdate );
+	$p_date = substr($mysqldate,0,10);
+
 	$p_pubPriv = 0;
 	if($_POST["pubPriv"]=="public"){
 		$p_pubPriv =1;
@@ -19,7 +25,7 @@
 	 	`match_currentplayers`, `matchp_pubpriv`) 
 		VALUES ( 0, 0 , 
 			'$_POST[sports]', '$_POST[location]', 
-		 	'$_POST[zip]', '$_POST[date]', 
+		 	'$_POST[zip]', '$p_date', 
 		 	'$_POST[time]','$_POST[maxPlayers]', 
 		 	1, '$p_pubPriv')"; //Only one player, Match id is auto gen, user id can wait
 	// Test code : //$ssqqll="INSERT INTO `matches`(`match_id`, `admin_user_id`, `match_type`, `match_location`, `match_zip`, `match_date`, `match_time`, `match_maxplayers`, `match_currentplayers`, `matchp_pubpriv`) VALUES (0,0,0,0,0,0,0,0,0,0)";
@@ -28,7 +34,7 @@
 	  {
 	  die('Error: ' . mysqli_error($con));
 	  }
-	echo "1 record added"; //From here, we need to go to an edit page. 
+	echo "\n1 record added"; //From here, we need to go to an edit page. 
 
 	mysqli_close($con);
 ?>
