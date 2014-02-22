@@ -7,7 +7,7 @@
 	<!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
-	<title>PickUp</title>
+	<title>PickUp.</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link rel="icon" type="image/png" href="http://imgur.com/0K3ZhMb.png"/>
@@ -37,17 +37,20 @@
 
 <header>
 
-			<div id="brand" class="title">PickUp.</div>
-			<button type="submit" class="user_log_in">LOGIN</button>
+			<div id="brand" class="title"><font size="5">PickUp.</font></div>
+			<button type="submit" class="user_log_in">Home</button>
 
 			<div id="hero" class="title">
-				<p>
-					Your friendly neighboorhood pickup game. 
-				</p>
+				<font size="5">
+					<br>
+					<p>
+						Your friendly neighboorhood pickup game. 
+					</p>
 
-				<p>
-					Re-imagined.
-				</p>
+					<p>
+						Re-imagined.
+					</p>
+				</font>
 
 			</div>
 </header>
@@ -56,16 +59,18 @@
 	<link href="css/glDatePicker.default.css" rel="stylesheet" type="text/css">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="js/glDatePicker.min.js"></script>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="parsley.js"></script>
 </head>
-
-<body>
-
+	<body>
 		<center>
-			<br></br>
-				<form action="insert.php" method="post">
+
+			
+			<font color="FA7147">
+				<form parsley-validate action="insert.php" name="newMatch" method="post">
 				<b>Sport</b><br>
-				<select name="sports">
-					<option  <option style="color:gray" value="null" selected="selected"> </option>
+				<select parsley-required="true" name="sports">
+					<option  <option style="color:gray" value="" selected="selected" > </option>
 					<option value="Baseball">Baseball</option>
 					<option value="Football">Football</option>
 					<option value="Soccer">Soccer</option>
@@ -76,9 +81,9 @@
 					<option value="Hockey">Hockey</option>					
 				</select>
 				<br>
-				<br><b>Location</b> <br><input type="text" name="location">
-				<br><b>Zip</b><br> <input type="number" name="zip">
-				<br><b>Date</b> <br> <input type="text" name="date" id="date" gldp-id="mydate" />
+				<br><b>Location</b> <br><input type="text" name="location" autofocus parsley-notblank="false" required>
+				<br><b>Zip</b><br> <input name="zip" parsley-type="digits" parsley-minlength="5" parsley-maxlength="5" required>
+				<br><b>Date</b> <br> <input type="text" required name="date" id="date" gldp-id="mydate" / >
 
 				    <div gldp-el="mydate"
 				         style="width:200px; height:200px; position:absolute; top:70px; left:100px;">
@@ -92,8 +97,8 @@
 				    </script>
 			    <br>
 				<br><b>Time</b><br>
-				<select name="time" id="time">
-					<option style="color:gray" value="null" selected="selected"> </option>
+				<select name="time" id="time" parsley-required="true">
+					<option style="color:gray" value="" selected="selected" > </option>
 					<option value="5:00 AM">5:00 AM</option>
 					<option value="5:15 AM">5:15 AM</option>
 					<option value="5:30 AM">5:30 AM</option>
@@ -191,20 +196,28 @@
 				</select><br>
 <!-- Only one player when game starts, this is the admin -->
 <!--				<br><b>How many players do you have?</b> <br><input type="text" name="currPlayers"></br> -->
-				<br><b>Players needed for a full game?</b> <br><input type="number" name="maxPlayers"></br>
+				<br><b>Players needed for a full game?</b> <br><input parsley-type="digits" name="maxPlayers" required></br>
 
 				<br><b>Who can join in on the fun?</b><br>
-				<input class="radio" type="radio" name="pubPriv" value="private">Invited friends only (private)<br>
-				<input class="radio" type="radio" name="pubPriv" value="public">Any random joe (public) <br>
+				<input class="radio" type="radio" name="pubPriv" value="private" parsley-mincheck="1">Invited friends only (private)<br>
+				<input class="radio" type="radio" name="pubPriv" value="public"parsley-mincheck="1"">Any random joe (public) <br>
 				<br>
 
 				
 				<input type="submit" value="Lets Play!" />
+				<br>
 				</form>	
-
+			</font>
 		</center>
 </body>
 
-<?php include 'footer.php'; ?> <!-- footer stuff, located in footer.php. only base files should go in here -->
+<footer role="contentinfo">
+<div id="block_container">
+
+    <div id="bloc1" style="float:left"> <p><b>PickUp.</b> </p></div>  
+    <div id="bloc2" style="float:right"> <p><b>SegFault</b></p> </div>
+
+</div>
+</footer> 
 
 </html>
