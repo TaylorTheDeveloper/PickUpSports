@@ -63,6 +63,7 @@
 Here are the results near <?php echo $_POST["zip_location"]; ?> <br> <hr>
 	<h2>
 
+<!-- DONT TOUCH MY PHP JORDAN -->
 <?php //Print Database
  
 $range = 50; //Range to search zip
@@ -97,7 +98,7 @@ while($row = mysqli_fetch_array($result))
 
 mysqli_close($con);
 ?>
-
+<!-- OR ELSE (end PHP) -->
 
 	</div><!-- container -->
 
