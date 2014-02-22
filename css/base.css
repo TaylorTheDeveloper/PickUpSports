@@ -65,6 +65,10 @@ header {
 	margin-top:20px;
 }
 
+.login{
+	float: right;
+}
+
 
 #brand {
 	font-size: 41px;
