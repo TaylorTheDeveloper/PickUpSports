@@ -1,9 +1,9 @@
 <?php
 
 $host="localhost"; // Host name 
-$username=""; // Mysql username 
+$username="root"; // Mysql username 
 $password=""; // Mysql password 
-$db_name=""; // Database name 
+$db_name="games"; // Database name 
 $tbl_name="members"; // Table name 
 
 // Connect to server and select databse.
@@ -31,3 +31,4 @@ if($count==1){
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $username;
 }
+?>
