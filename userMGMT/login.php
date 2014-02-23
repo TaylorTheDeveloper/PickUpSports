@@ -19,8 +19,8 @@ $username = stripslashes($username);
 $password = stripslashes($password);
 $username = mysql_real_escape_string($username);
 $password = mysql_real_escape_string($password);
-$sql="SELECT * FROM $tbl_name WHERE username='$username' and password='$password'";
-$result=mysql_query($sql);
+$sql = "SELECT * FROM $tbl_name WHERE username='$username' and password='$password'";
+$result = mysql_query($sql);
 
 // Mysql_num_row is counting table row
 $count=mysql_num_rows($result);
@@ -30,5 +30,6 @@ if($count==1){
     session_start();
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $username;
+    echo "YOUR NOW LOGGED IN...";
 }
 ?>

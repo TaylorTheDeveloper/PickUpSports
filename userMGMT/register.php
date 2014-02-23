@@ -21,7 +21,7 @@ $query = "INSERT INTO users (username,password,zip,first_name,last_name,email) V
 $data = mysql_query ($query)or die(mysql_error());
 if($data)
 {
-echo "YOUR REGISTRATION IS COMPLETED...";
+echo "YOUR REGISTRATION IS COMPLETED..."; //Here we should jump to the users account or something!
 }
 else
 {
