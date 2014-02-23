@@ -39,7 +39,8 @@
 	<!-- Scripts -->
 <head>
 	<link href="css/glDatePicker.default.css" rel="stylesheet" type="text/css">
-	<script src="js/glDatePicker.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/glDatePicker.min.js"></script>
 	<script type="text/javascript" src="js/parsley.js"></script>
 </head>
 
@@ -85,7 +86,7 @@
 				<br>
 				<br><b>Location</b> <br><input type="text" name="location" autofocus parsley-notblank="false" required>
 				<br><b>Zip</b><br> <input name="zip" parsley-type="digits" parsley-minlength="5" parsley-maxlength="5" required>
-				<br><b>Date</b> <br> <input type="text" required name="date" id="date" gldp-id="mydate" / >
+				<br><b>Date</b> <br> <input type="text" required name="date" id="date" gldp-id="mydate" required>
 
 				    <div gldp-el="mydate"
 				         style="width:200px; height:200px; position:absolute; top:70px; left:100px;">

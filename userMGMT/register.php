@@ -12,7 +12,12 @@ $db=mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_
 
 $userName = $_POST['username'];
 $password =  $_POST['password'];
-$query = "INSERT INTO users (username,password) VALUES ('$userName','$password')";
+$zip = $_POST['zip'];
+$email = $_POST['email'];
+$fname = $_POST['f_name'];
+$lname = $_POST['l_name'];
+
+$query = "INSERT INTO users (username,password,zip,first_name,last_name,email) VALUES ('$userName','$password', '$zip', '$fname', '$lname', '$email')";
 $data = mysql_query ($query)or die(mysql_error());
 if($data)
 {
