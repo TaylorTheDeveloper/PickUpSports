@@ -6,6 +6,7 @@
 		<title>PickUp.</title>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="icon" type="image/png" href="http://imgur.com/0K3ZhMb.png"/>
+		<script type="text/javascript" src="js/parsley.js"></script>
 	</head>
 	<body>		
 
@@ -27,16 +28,61 @@
 
 
 	        <hr>
-	        <div class="row">				
-				<div class="span4" style="width:50%;">
-					<h4 class="muted text-center">New Game</h4>					
-					<a href="#" class="btn btn-success" ><i class="icon-star icon-white"></i> Lets Play!</a>
+	        <div class="row">
+			    <div class="offset3 span3">
+			        <form class="form-vertical">
+			            <fieldset>
+			              <h4 class="muted text-center">New Game</h4>
+			                <div class="control-group">
+			                    <label class="control-label" for="focusedInput"></label>
+			                    <div class="controls">
+			                       <label for="Sports">Sport</label> <select name="sports">
+										<option style="color:gray" value="Choose a sport" selected="selected" > </option>
+										<option value="Baseball">Baseball</option>
+										<option value="Football">Football</option>
+										<option value="Soccer">Soccer</option>
+										<option value="Tennis">Tennis</option>
+										<option value="Ultimate_Frisbee">Ultimate Frisbee</option>
+										<option value="Rugby">Rugby</option>
+										<option value="Basketball">Basketball</option>
+										<option value="Hockey">Hockey</option>					
+									</select>
+			                        <br><br><br><br>
+			                        	<a href="#" class="btn btn-success" ><i class="icon-star icon-white"></i> Lets Play!</a>
+
+			                    </div>
+			                </div>
+
+
+
+			</form>					
 				</div>
-				<div class="span4">
-					<h4 class="muted text-center">Find A Match</h4>					
-					<a href="#" class="btn btn-success" ><i class="icon-star icon-white"></i> Search</a>
+				<div class="offset3 span3">
+					<form role="form-vertical">
+						<h4 class="muted text-center">Find A Match</h4>
+					<div class="form-group">
+						   <label for="searchSport">Sport</label><select name="searchSport">
+										<option style="color:gray" value="Choose a sport" selected="selected" > </option>
+										<option value="Baseball">Baseball</option>
+										<option value="Football">Football</option>
+										<option value="Soccer">Soccer</option>
+										<option value="Tennis">Tennis</option>
+										<option value="Ultimate_Frisbee">Ultimate Frisbee</option>
+										<option value="Rugby">Rugby</option>
+										<option value="Basketball">Basketball</option>
+										<option value="Hockey">Hockey</option>					
+									</select>
+						  <label for="zip">Zip</label><input type="text" class="form-control" id="exampleInputPassword1" /><br>
+					</div>
+					<a href="#" class="btn btn-success " ><i class="icon-star icon-white "></i> Search</a>
+				</form>					
+					
 				</div>
 			</div>
+
+
+
+
 
 			<!-- Copyright Area -->
 			<hr>
