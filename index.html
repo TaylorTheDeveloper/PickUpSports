@@ -1,131 +1,52 @@
+
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-<head>
-	<!-- Basic Page Needs
-  ================================================== -->
-	<meta charset="utf-8">
-	<title>PickUp</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<link rel="icon" type="image/png" href="http://imgur.com/0K3ZhMb.png"/>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>PickUp.</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="icon" type="image/png" href="http://imgur.com/0K3ZhMb.png"/>
+	</head>
+	<body>		
 
-	<!-- Mobile Specific Metas
-  ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<div class="pull-right">
+            <a href="#" class="btn btn-medium btn-success">Login</a>
+        </div>
 
-	<!-- CSS
-  ================================================== -->
-	<link rel="stylesheet" href="css/base.css">
-	<link rel="stylesheet" href="css/skeleton.css">
-	<link rel="stylesheet" href="css/layout.css">
-	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <font color="FA7147">
+        	<h2>PickUp.</a></h2>
+        </font>
 
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+	        <div class="hero-units">	      
+				<div class="jumbotron">
+					<h2 align="center">Your friendly neighborhood</h2>
+				    <h2 align="center">pickup game.</h2>
+				    <h2 align="center">Re-Imagined</h2> 	
+				 </div>      
+			</div>     
 
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="images/favicon.ico">
-	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-</head>
 
-<header>
-
-			<div id="brand" class="title">PickUp.</div>
-	<div class="login">
-      <h1>Login</h1>
-      	  <!-- Login -->
-	      <form method="post" action="userMGMT/login.php">
-	        <p><input type="text" name="username" value="" placeholder="Username"></p>
-	        <p><input type="password" name="password" value="" placeholder="Password"></p>
-
-	        <p class="submit"><input type="submit" name="commit" value="Login"></p>
-	      </form>
-	      <!-- Register -->
-	      <form method="post" action="register.html">
-	        <p class="submit"><input type="submit" name="commit" value="Register"></p>
-	      </form>
-    </div>
-
-			<div id="hero" class="title">
-				<p>
-					Your friendly neighboorhood pickup game. 
-				</p>
-
-				<p>
-					Re-imagined.
-				</p>
-
+	        <hr>
+	        <div class="row">				
+				<div class="span4" style="width:50%;">
+					<h4 class="muted text-center">New Game</h4>					
+					<a href="#" class="btn btn-success" ><i class="icon-star icon-white"></i> Lets Play!</a>
+				</div>
+				<div class="span4">
+					<h4 class="muted text-center">Find A Match</h4>					
+					<a href="#" class="btn btn-success" ><i class="icon-star icon-white"></i> Search</a>
+				</div>
 			</div>
-</header>
-<body>
 
-<div class="container">
-		<div class="intro title">
-			<p>
-				Coordinating a game of basketball with friends just got easier.
-			</p>
-		</div>
-
-		<div class="main">
-			<!-- New Game form -->
-		<div class="new_game">
-				<p>New Game</p>
-				<form action="newgame.html" method="post">
-				<p>Sport:
-					<select name="sports">
-						<option value="Baseball">Baseball</option>
-						<option value="Football">Football</option>
-						<option value="Soccer" selected>Soccer</option>
-						<option value="Basketball">Basketball</option>
-						<option value="Tennis">Tennis</option>
-						<option value="Ultimate Frisbee">Ultimate Frisbee</option>
-						<option value="Rugby">Rugby</option>
-
-					</select>
-				</p>
-<br>
-					<input type="submit" value="Let's Play">
-			</form>
-		</div>
+			<!-- Copyright Area -->
+			<hr>
+			<div class="footer">
 				
-		<div class="existing_game">
-			<!-- Existing Game form -->
-				<p>Existing Game</p>
-				<form action="search.php" method="post">
-
-				<p>
-					Zip: <input type="number" name="zip_location">
-				</p>
-				<p>Sport:
-					<select name="sports">
-						<option value="Baseball">Baseball</option>
-						<option value="Football">Football</option>
-						<option value="Soccer" selected>Soccer</option>
-						<option value="Basketball">Basketball</option>
-						<option value="Tennis">Tennis</option>
-						<option value="Ultimate Frisbee">Ultimate Frisbee</option>
-						<option value="Rugby">Rugby</option>
-						
-					</select>
-				</p>
-
-				<input type="submit" value="search">			
-				</form>			
+				<p align="right">&copy; SegFault 2014</p>
+			</div>
 		</div>
-</div>
-</div>
 
-</body>
-
-
-<?php include 'footer.php'; ?> <!-- footer stuff, located in footer.php. only base files should go in here -->
-
-
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script scr="js/bootstrap.js"></script>
+	</body>
 </html>
