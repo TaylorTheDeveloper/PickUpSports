@@ -1,27 +1,13 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>PickUp.</title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-		<link rel="icon" type="image/png" href="http://imgur.com/0K3ZhMb.png"/>
-		<script type="text/javascript" src="js/parsley.js"></script>
-		<script src="http://code.jquery.com/jquery-1.10.1.min.js"/>
-		<script scr="js/bootstrap.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>  
 
-	</head>
+<!-- Doc Header -->
+<?php include 'head.html' ?>
+<!-- Doc Navigation --> 
+<?php include 'navbar.html' ?>
+
 	<body>		
-
-		<div class="pull-right">
-             <button type="button" class="btn btn-medium btn-success" data-toggle="modal" data-target="#myModal">Login</button>
-        </div>
-
-        <font color="FA7147">
-        	<h2>PickUp.</a></h2>
-        </font>
 
 	        <div class="hero-units">	      
 				<div class="jumbotron">
@@ -64,6 +50,8 @@
 				 <td style="padding: 50px; min-width:50%">
 			    <div class="container">
 					<div class="row">
+
+	        	<!-- Insert --> 
 						<div class="float-left offset4">          
 						<form class="form-signin mg-btm">
 				    	<h3 class="heading-desc pull-center">Create A Game</h3>
@@ -96,10 +84,11 @@
 				</div>
 				</td>
 
+				<!-- Search --> 
 				<td style="padding: 0px; min-width:50%;">
 				 <div class="container">
 					<div class="row">
-						<form class="form-signin mg-btm">
+						<form class="form-signin mg-btm" method="post" action="search.php">
 				    	<h3 class="heading-desc pull-center">Find A Match</h3>
 						<div class="main">	        
 						 <label for="Sports">Sport</label> <select name="sports">
@@ -113,13 +102,14 @@
 														<option value="Basketball">Basketball</option>
 														<option value="Hockey">Hockey</option>					
 													</select>
-						<label for="zip">Zip</label><input type="text" class="form-control" id="exampleInputPassword1" /><br>
+						<label for="zip">Zip</label><input type="text" class="form-control" id="zip_location" name="zip_location" /><br>
 						<span class="clearfix"></span>	
 				        </div>
 						<div class="login-footer">
 						<div class="row">
 				                        <div class="col-xs-6 col-md-6 pull-center">
-				                            <a href="#" class="btn btn-success " ><i class="icon-star icon-white "></i> Search</a>
+				                        <input type="submit" value="search"> 
+				                          <!--   <a href="search.php" class="btn btn-success " ><i class="icon-star icon-white "></i> Search</a> -->
 				                        </div>
 				                    </div>
 						
@@ -178,11 +168,8 @@
 
 
 			<hr>
-			<div class="footer">
-				
-				<p align="right">&copy; SegFault 2014</p>
-			</div>
-		</div>
+
+<?php include 'footer.html' ?>
 
 	</body>
 </html>
