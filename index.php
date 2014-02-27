@@ -53,7 +53,7 @@
 
 	        	<!-- Insert --> 
 						<div class="float-left offset4">          
-						<form class="form-signin mg-btm">
+						<form class="form-signin mg-btm" method="post" action="newgame.php">
 				    	<h3 class="heading-desc pull-center">Create A Game</h3>
 						<div class="main">	        
 						 <label for="Sports">Sport</label> <select name="sports">
@@ -73,7 +73,8 @@
 						<div class="login-footer">
 						<div class="row">
 				                        <div class="col-xs-6 col-md-6 pull-center">
-				                            <a href="newgame.html" class="btn btn-success " ><i class="icon-star icon-white "></i> Lets Play!</a>
+				                        <input class="btn btn-success" type="submit" value="Let's Play!"> 
+				                           <!--  <a href="newgame.html" class="btn btn-success " ><i class="icon-star icon-white "></i> Lets Play!</a> -->
 				                        </div>
 				                    </div>
 						
@@ -108,8 +109,8 @@
 						<div class="login-footer">
 						<div class="row">
 				                        <div class="col-xs-6 col-md-6 pull-center">
-				                        <input type="submit" value="search"> 
-				                          <!--   <a href="search.php" class="btn btn-success " ><i class="icon-star icon-white "></i> Search</a> -->
+				                        <input class="btn btn-success" type="submit" value="Search"> 
+				                            <!-- <a href="search.php" class="btn btn-success" ><i class="icon-star icon-white "></i> Search</a> -->
 				                        </div>
 				                    </div>
 						
@@ -124,7 +125,7 @@
 
 	       
 			
-			       
+<!-- MODAL -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -138,7 +139,7 @@
 							<div class="col-md-4 col-md-offset-4 span3">
 					    		<div class="panel panel-default">
 								  	<div class="panel-body">
-								    	<form accept-charset="UTF-8" role="form">					                    
+								    	<form accept-charset="UTF-8" role="form" method="post" action="userMGMT/login.php">					                    
 								    	  	<div class="form-group">
 								    		    <input class="form-control" placeholder="E-mail" name="email" type="text">
 								    		</div>
@@ -164,7 +165,7 @@
             </div>
         </div>
     </div>
-
+<!-- END MODAL -->
 
 
 			<hr>
