@@ -2,16 +2,13 @@
 <html>
 <!-- Doc Header -->
 <?php include 'head.html' ?>
-<!-- Doc Navigation --> 
-<?php include 'navbar.html' ?>
 
 <body>
-	<!-- Primary Page Layout
-	================================================== -->
-
-	<!-- Delete everything in this .container and get started on your own site! -->
 
 	<div class="container">
+		<!-- Doc Navigation --> 
+	<?php include 'navbar.html' ?>
+
 	<h1>	
 Here are the results near <?php echo $_POST["zip_location"]; ?> <br> <hr>
 	<h2>
@@ -51,14 +48,11 @@ while($row = mysqli_fetch_array($result))
 
 mysqli_close($con);
 ?>
-<!-- OR ELSE (end PHP) -->
+<!-- end PHP -->
+<?php include 'footer.html'; ?> <!-- footer stuff, located in footer.php. only base files should go in here -->
 
 	</div><!-- container -->
 
-
-<!-- End Document
-================================================== -->
 </body>
-<?php include 'footer.html'; ?> <!-- footer stuff, located in footer.php. only base files should go in here -->
 
 </html>

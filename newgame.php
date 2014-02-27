@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <!-- Doc Header -->
 <?php include 'head.html' ?>
-<!-- Doc Navigation --> 
-<?php include 'navbar.html' ?>
-
 	<!-- Scripts -->
 <head>
 	<link href="css/glDatePicker.default.css" rel="stylesheet" type="text/css">
@@ -14,11 +10,12 @@
 	<script type="text/javascript" src="js/parsley.js"></script>
 </head>
 
+<body>
+	<div class="container"> <!-- body containter -->
+	<!-- Doc Navigation --> 
+	<?php include 'navbar.html' ?>
 
-	<body>
-		<center>
-
-			
+		<center>			
 			<font color="FA7147">
 				<form parsley-validate action="insert.php" name="newMatch" method="post">
 				<b>Sport</b><br>
@@ -160,9 +157,12 @@
 				</form>	
 			</font>
 		</center>
+
+		<?php include 'footer.html' ?>
+
+	</div> <!-- End body container --> 
 </body>
 
 
-<?php include 'footer.html' ?>
 
 </html>
