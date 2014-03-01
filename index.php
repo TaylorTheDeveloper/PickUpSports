@@ -39,7 +39,7 @@
                 <div class="login-footer">
                 <div class="row">
                                 <div class="col-xs-6 col-md-6 pull-center">
-                                <input class="btn btn-success" type="submit" value="Let's Play!"> 
+                                <input class="btn btn-info" type="submit" value="Let's Play!"> 
                                    <!--  <a href="newgame.html" class="btn btn-success " ><i class="icon-star icon-white "></i> Lets Play!</a> -->
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                     <div class="login-footer">
                     <div class="row">
                                     <div class="col-xs-6 col-md-6 pull-center">
-                                    <input class="btn btn-success" type="submit" value="Search"> 
+                                    <input class="btn btn-info" type="submit" value="Search"> 
                                         <!-- <a href="search.php" class="btn btn-success" ><i class="icon-star icon-white "></i> Search</a> -->
                                     </div>
                                 </div>

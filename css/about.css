@@ -1,0 +1,66 @@
+body {
+	margin-top: 50px; /* 50px is the height of the navbar - change this if the navbarn height changes */
+
+}
+
+.full-width-image-1 {
+	background: url(http://lorempixel.com/1920/500/sports/8) no-repeat center center;
+	background-size: cover;
+	text-align: center;
+	padding: 100px 0;
+}
+
+.full-width-image-2 {
+	background: url(http://lorempixel.com/1920/450/sports/2) no-repeat center center;
+	background-size: cover;
+	text-align: center;
+	height: 450px;
+}
+
+.full-width-image-3 {
+	background: url(http://lorempixel.com/1920/450/sports/10) no-repeat center center;
+	background-size: cover;
+	text-align: center;
+	height: 450px;
+}
+
+.logo-wrapper {
+	display: inline-block;
+}
+
+.section {
+	padding-top: 35px;
+	padding-bottom: 65px;
+	color: #fa7147;
+}
+
+.section-heading {
+	font-size: 4em;
+	margin: 30px 0;
+	color: #fa7147;
+}
+
+.section-lead {
+	margin: 30px 0;
+}
+
+.section-paragraph {
+	margin: 30px 0;
+}
+
+footer {
+	margin: 50px 0;
+}
+
+@media (max-width: 768px) {
+
+.section-heading {
+	font-size: 2em;
+}
+
+.section {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+}
