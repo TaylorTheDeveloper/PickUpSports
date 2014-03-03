@@ -7,7 +7,7 @@
 <body>
 
 <!-- Doc Header -->
-<?php include 'nav.html' ?>
+<?php include 'nav.php' ?>
 
 <br><br><br><!-- change out for margin -->
 

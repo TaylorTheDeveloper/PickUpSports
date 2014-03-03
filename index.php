@@ -7,7 +7,7 @@
 <body>
 
 <!-- Doc Header -->
-<?php include 'nav.html' ?>
+<?php include 'nav.php' ?>
 
 <!-- Doc Slider -->
 <?php include 'slider.html' ?>

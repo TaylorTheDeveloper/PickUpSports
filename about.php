@@ -10,7 +10,7 @@
 <body>
 
 <!-- Doc Header -->
-<?php include 'nav.html' ?>
+<?php include 'nav.php' ?>
 
 <div class="full-width-image-1">
         <div class="logo-wrapper">
