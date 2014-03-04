@@ -14,7 +14,7 @@
 
 <div class="full-width-image-1">
         <div class="logo-wrapper">
-            <img class="img-responsive" src="http://placehold.it/200x100/fa7147/ffffff&text=PickUp." />
+            <img class="img-responsive" src="http://placehold.it/200x100/f97041/ffffff&text=PickUp." />
         </div>
 
     </div>
