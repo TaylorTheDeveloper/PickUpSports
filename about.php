@@ -4,7 +4,7 @@
 <!-- Doc Header -->
 <?php include 'head.html' ?>
 <head>
-<!-- Page Custum -->
+<!-- Page Custom -->
 <link href="css/about.css" rel="stylesheet">
 </head>
 <body>
@@ -39,24 +39,32 @@
             <div class="col-lg-12 section">
                 <h1 class="section-heading">Meet the team</h1>
                <div class="col-sm-3">
-                <img class="img-circle img-responsive text-center" src="http://placehold.it/300x300">
+                <img class="img-circle img-responsive text-center" src="img/about_rob.jpg">
+                <center>
                 <h2>Rob</h2>
-                <p><h3>Favorite Sport: xxx</h3> Personal Summary </p>
+                <p><h3>Favorite Sport: Hockey</h3> <h4> Developer </h4> Personal Summary </p>
+                </center>
             </div>
             <div class="col-sm-3">
-                <img class="img-circle img-responsive" src="http://placehold.it/300x300">
+                <img class="img-circle img-responsive" src="img/about_taylor.jpg">
+                <center>
                 <h2>Taylor</h2>                
-                <p><h3>Favorite Sport: xxx</h3> Personal Summary </p>
+                <p><h3>Favorite Sport: Soccer</h3> <h4> Lead Developer </h4>I like playing sports when I'm not working on this site. </p>
+                </center>
             </div>
             <div class="col-sm-3">
-                <img class="img-circle img-responsive" src="http://placehold.it/300x300">
+                <img class="img-circle img-responsive" src="img/about_anna.jpg">
+                <center>
                 <h2>Anna</h2>                
-                <p><h3>Favorite Sport: xxx</h3> Personal Summary </p>
+                <p><h3>Favorite Sport: Tennis</h3> <h4> Databases/Documentation </h4> Personal Summary </p>
+                </center>
             </div>
             <div class="col-sm-3">
-                <img class="img-circle img-responsive" src="http://placehold.it/300x300">
+                <img class="img-circle img-responsive" src="img/about_jordan.jpg">
+                <center>
                 <h2>Jordan</h2>
-                <p><h3>Favorite Sport: xxx</h3> Personal Summary </p>
+                <p><h3>Favorite Sport: Football</h3> <h4> Designer </h4> Personal Summary </p>
+                </center>
             </div>
             </div>
         </div>
