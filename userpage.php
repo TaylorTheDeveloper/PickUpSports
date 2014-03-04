@@ -7,9 +7,12 @@
 <body>
 
 <!-- Doc Header -->
-<?php include 'nav.html' ?>
+<?php include 'nav.php' ?>
 
 <br><br><br><!-- change out for margin -->
+<?php
+//session_destroy();
+?>
 
 <div class="container">
 <br><br><br>
@@ -23,7 +26,7 @@
 		    echo "Please log in first to see this page.";
 		}
 		?>
-			<img alt="140x140" src="http://lorempixel.com/140/140/sports" />
+			<img alt="140x140" src="http://placehold.it/140x140&text=ProfilePic" />
 		</div>
 		<div class="col-md-10 column">
 		<h3> Recent matches! </h3>

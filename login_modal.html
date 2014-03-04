@@ -1,14 +1,70 @@
 <!-- MODAL -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header clearfix">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="purchaseLabel">Login</h4>
+                    <h4 class="modal-title pull-left" id="logLabel">Login</h4>
+                    <h4 class="modal-title pull-right" id="regLabel">Register</h4>
                 </div>
                 <div class="modal-body">
                 
-					    <form accept-charset="UTF-8" role="form" method="post" action="userMGMT/login.php">					                    
+     <div class="row clearfix">
+
+     <!-- Login Form -->
+        <div class="col-md-6 column">
+            <form accept-charset="UTF-8" role="form" method="post" action="userMGMT/login.php">   
+                <div class="form-group">
+                    <label for="user">Username</label><input class="form-control" placeholder="Username" name="username" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="pass">Password</label><input class="form-control" placeholder="Password" name="password" type="password" value="">
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input name="remember" type="checkbox" value="Remember Me"> Remember Me
+                    </label>
+                </div>  <br>
+                <center>
+                <input class="btn btn-info" type="submit" value="Login"> 
+                </center>                                   
+            </form>
+        </div>
+
+        <!-- Register Form -->
+        <div class="col-md-6 column">
+            <form accept-charset="UTF-8" role="form" method="post" action="userMGMT/register.php">
+                 <div class="form-group">
+                    <label for="user">Username *</label><input class="form-control" placeholder="Username" name="username" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email * </label>
+                    <input type="email" placeholder="email" class="form-control" name="email" data-parsley-trigger="change" required />
+                </div>
+                <div class="form-group">
+                    <label for="pass">Password *</label><input class="form-control" placeholder="Password" name="password" type="password" value="">
+                </div>
+                <div class="form-group">
+                    <label for="conpass">Confirm Password *</label><input class="form-control" placeholder="Re-type Password" name="confirm_password" type="password" value="">
+                </div>
+                 <div class="form-group">
+                    <label for="zipcode">Zip Code *</label><input class="form-control" placeholder="Zip/Area Code" name="zip" parsley-type="digits" parsley-minlength="5" parsley-maxlength="5" required>
+                </div>
+               <!-- <div class="form-group">
+                    <label for="firstname">First Name * :</label>
+                    <input class="form-control" placeholder="First Name" type="text" name="firstname" required />
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name * :</label>
+                    <input class="form-control" placeholder="Last Name" type="text" name="lastname" required />
+                </div> -->
+                <center>
+                <input class="btn btn-info" type="submit" value="Register"> 
+                </center>
+            </form>
+        </div>
+    </div>
+					    <!-- <form accept-charset="UTF-8" role="form" method="post" action="userMGMT/login.php">					                    
 								    	  	<div class="form-group">
 								    		    <input class="form-control" placeholder="Username" name="username" type="text">
 								    		</div>
@@ -21,7 +77,7 @@
 								    	    	</label>
 								    	    </div>	
 								    	    <input class="btn btn-info" type="submit" value="Login"> 							    	
-								      	</form>
+								      	</form> -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

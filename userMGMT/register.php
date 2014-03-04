@@ -14,17 +14,23 @@ $userName = $_POST['username'];
 $password =  $_POST['password'];
 $zip = $_POST['zip'];
 $email = $_POST['email'];
-$fname = $_POST['f_name'];
-$lname = $_POST['l_name'];
+//$fname = $_POST['firstname'];
+//$lname = $_POST['lastname'];
 
-$query = "INSERT INTO users (username,password,zip,first_name,last_name,email) VALUES ('$userName','$password', '$zip', '$fname', '$lname', '$email')";
+//$query = "INSERT INTO users (username,password,zip,first_name,last_name,email) VALUES ('$userName','$password', '$zip', '$fname', '$lname', '$email')";
+$query = "INSERT INTO users (username,password,zip,email) VALUES ('$userName','$password', '$zip', '$email')";
 $data = mysql_query ($query)or die(mysql_error());
 if($data)
 {
-echo "YOUR REGISTRATION IS COMPLETED..."; //Here we should jump to the users account or something!
+/* Redirect to a different page in the current directory that was requested */
+$host  = $_SERVER['HTTP_HOST'];
+$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+$extra = 'userpage.php';
+header("Location: ../userpage.php");
+exit;
 }
 else
 {
-echo "Unknown Error!";
+echo "Unknown Error, Account could not be generated!";
 }
 ?>
