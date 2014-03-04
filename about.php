@@ -37,7 +37,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 section">
-                <h1 class="section-heading">Meet the team</h1>
+                <h1 class="section-heading">Meet the PickUp team</h1>
                <div class="col-sm-3">
                 <img class="img-circle img-responsive text-center" src="img/about_rob.jpg">
                 <center>
@@ -49,7 +49,7 @@
                 <img class="img-circle img-responsive" src="img/about_taylor.jpg">
                 <center>
                 <h2>Taylor</h2>                
-                <p><h3>Favorite Sport: Soccer</h3> <h4> Lead Developer </h4>I like playing sports when I'm not working on this site. </p>
+                <p><h3>Favorite Sport: Soccer</h3> <h4> Lead Developer/Framework </h4>I like playing sports when I'm not working on PickUp! </p>
                 </center>
             </div>
             <div class="col-sm-3">
@@ -63,7 +63,7 @@
                 <img class="img-circle img-responsive" src="img/about_jordan.jpg">
                 <center>
                 <h2>Jordan</h2>
-                <p><h3>Favorite Sport: Football</h3> <h4> Designer </h4> Personal Summary </p>
+                <p><h3>Favorite Sport: Football</h3> <h4> title </h4> Personal Summary </p>
                 </center>
             </div>
             </div>

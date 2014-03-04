@@ -12,7 +12,7 @@
 <!-- Doc Slider -->
 <?php include 'slider.html' ?>
 
-<br><br><br>
+<br>
 <div class="container" >
 
 <?php include 'game_forms.html' ?>

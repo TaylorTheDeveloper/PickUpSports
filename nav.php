@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php"><span class="orange" >PickUp.</span></a>
+            <a class="navbar-brand" href="index.php"><img class="img-responsive" id="brand" src="img/brand_2.png" ></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
