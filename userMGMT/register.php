@@ -23,10 +23,7 @@ $data = mysql_query ($query)or die(mysql_error());
 if($data)
 {
 /* Redirect to a different page in the current directory that was requested */
-$host  = $_SERVER['HTTP_HOST'];
-$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-$extra = 'userpage.php';
-header("Location: ../userpage.php");
+header("Location: ../login_page.php");
 exit;
 }
 else

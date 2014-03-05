@@ -18,6 +18,17 @@ html, body {
 .section {
 	margin: 50px 0;
 }
+.login-img{
+	text-align: center;
+}
+.login-section{
+	margin: 5% 20%;
+	padding: 5% 20%;
+	border:solid 5px #5bc0de;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+}
 footer {
 	margin: 50px 0;
 }
