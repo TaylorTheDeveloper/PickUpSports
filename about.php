@@ -56,7 +56,7 @@
                 <img class="img-circle img-responsive" src="img/about_anna.jpg">
                 <center>
                 <h2>Anna</h2>                
-                <p><h3>Favorite Sport: Tennis</h3> <h4> Databases/Documentation </h4> Personal Summary </p>
+                <p><h3>Favorite Sport: Tennis</h3> <h4> Databases/Documentation </h4> "The depressing thing about tennis is that no matter how good I get, I'll never be as good as a wall." - Mitch Hedberg </p>
                 </center>
             </div>
             <div class="col-sm-3">
