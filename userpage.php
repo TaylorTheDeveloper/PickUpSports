@@ -45,8 +45,7 @@
 			</div>
 		</div>
 	</div>
-
-	<br><hr><br>
+	<hr>
 <?php include 'game_forms.html' ?>
 
 
