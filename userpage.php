@@ -10,25 +10,39 @@
 <?php include 'nav.php' ?>
 
 <br><br><br><!-- change out for margin -->
-<?php
-//session_destroy();
-?>
 
 <div class="container">
-<br><br><br>
-	<div class="row clearfix">
-		<div class="col-md-2 column">
-		<?php 
-		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-		    echo "Welcome to the member's area, " . $_SESSION['username'] . "!";
-		} else {
-		    echo "Please log in first to see this page.";
-		}
-		?>
-			<img alt="140x140" src="http://placehold.it/140x140&text=ProfilePic" />
-		</div>
-		<div class="col-md-10 column">
-		<h3> Recent matches! </h3>
+<h1>Your Profile</h1>
+	<div class="row clearfix media well">
+		<div class="col-md-12 column">
+			<div class="row clearfix">
+				<div class="col-md-2 column text-center">
+					<img alt="140x140" src="http://placehold.it/140x140&text=profilepic" class="img-circle" />
+					<h2><?php echo $_SESSION['username']; ?></h2>
+				</div>
+				<div class="col-md-2 column">
+					<h2> Stats: </h2><hr>
+					 <address> <strong>Games Played: 12 </strong><br /> Favorite Sport: Baseball<br /> Florida<br /> <abbr title="Phone">P:</abbr> (123) 456-7890</address>
+				</div>
+				<div class="col-md-8 column">
+					<div class="media well">
+						 <a href="#" class="pull-left"><img src="http://lorempixel.com/64/64/sports/" class="media-object" alt='' /></a>
+						<div class="media-body">
+							<h4 class="media-heading">
+								Potential Multimedia
+							</h4> Maybe Below? Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+							<div class="media">
+								 <a href="#" class="pull-left"><img src="http://lorempixel.com/64/64/sports/" class="media-object" alt='' /></a>
+								<div class="media-body">
+									<h4 class="media-heading">
+										Maybe Instead a Histogram of player history?
+									</h4> Maybe Below? Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
