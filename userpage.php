@@ -22,7 +22,7 @@
 				</div>
 				<div class="col-md-2 column">
 					<h2> Stats: </h2><hr>
-					 <address> <strong>Games Played: 12 </strong><br /> Favorite Sport: Baseball<br /> Florida<br /> <abbr title="Phone">P:</abbr> (123) 456-7890</address>
+					 <address> <strong>Games Played: 12 </strong><br /> Favorite Sport: Baseball<br /> Florida<br /> <abbr title="zip">zip:</abbr> 32304 </address>
 				</div>
 				<div class="col-md-8 column">
 					<div class="media well">

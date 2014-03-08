@@ -66,18 +66,18 @@ while($row = mysqli_fetch_array($result))
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
          echo "<h2>Players</h2>";
-         echo "<p> Curr" . $row['match_maxplayers'] . "</p>";
-         echo "<p> Max" . $row['match_currentplayers'] . "</p>";
+         echo "<p> Max " . $row['match_maxplayers'] . "</p>";
+         echo "<p> Curr " . $row['match_currentplayers'] . "</p>";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
          echo "<h2>Details</h2>";
          echo "<p>" . $row['match_type'] . "</p>";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
-             echo "<a id=\"modal-627836\" href=\"#modal-container-627836\" role=\"button\" class=\"btn\" data-toggle=\"modal\"><button type=\"button\" class=\"btn btn-medium btn-info\" data-toggle=\"regmodal\" data-target=\"#regModal\">Join Game</button></a>";
+             echo "<a id=\"modal-627836\" href=\"#modal-container-" . $num . "\" role=\"button\" class=\"btn\" data-toggle=\"modal\"><button type=\"button\" class=\"btn btn-medium btn-info\" data-toggle=\"regmodal\" data-target=\"#regModal\">Join Game</button></a>";
          
          //Start Modal
-        echo "<div class=\"modal fade\" id=\"modal-container-627836\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">";
+        echo "<div class=\"modal fade\" id=\"modal-container-" . $num . "\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">";
         echo "<div class=\"modal-dialog\">";
         echo "<div class=\"modal-content\">";
         echo "<div class=\"modal-header\">";
@@ -85,13 +85,14 @@ while($row = mysqli_fetch_array($result))
         echo "<h4 class=\"modal-title\" id=\"myModalLabel\"> Modal title </h4>";
         echo " </div>";
         echo "<div class=\"modal-body\">";
-        echo "...";
+        echo "Body details " . $row['playerlist'];
         echo "</div>";
         echo "<div class=\"modal-footer\">";
         echo "<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button> <button type=\"button\" class=\"btn btn-primary\">Save changes</button>";
         echo "</div></div></div></div>";
         //END MODAL
         echo "</div></div></div></div></div>";
+        $num++;
   }
 
 mysqli_close($con);
