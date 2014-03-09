@@ -98,9 +98,9 @@ while($row = mysqli_fetch_array($result))
 		echo "</div>";//End Column 2
 		echo "</div>";//End body row clearfix
         echo "</div>";
-        echo "<div class=\"modal-footer\">";
-        echo "<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>";
-        echo "<button type=\"button\" class=\"btn btn-primary\">Join Game!</button>";
+        echo "<div class=\"modal-footer row clearfix\">";
+        echo "<button type=\"button\" class=\"btn btn-default pull-right\" style=\"margin-right:1%;\" data-dismiss=\"modal\">Close</button>";
+        echo "<form accept-charset=\"UTF-8\" role=\"form\" method=\"post\" action=\"userMGMT/handleUser.php\"><input class=\"btn btn-info pull-right\" style=\"margin-right:1%;\" type=\"submit\" value=\"Join Game!\"> </form>";
         echo "</div></div></div></div>";
         //END MODAL
         echo "</div></div></div></div></div>";
