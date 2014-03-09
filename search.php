@@ -82,13 +82,24 @@ while($row = mysqli_fetch_array($result))
         echo "<div class=\"modal-content\">";
         echo "<div class=\"modal-header\">";
         echo "<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>";
-        echo "<h4 class=\"modal-title\" id=\"myModalLabel\"> Modal title </h4>";
+        echo "<h4 class=\"modal-title\" id=\"myModalLabel\"> Match Details </h4>";
         echo " </div>";
         echo "<div class=\"modal-body\">";
-        echo "Body details " . $row['playerlist'];
+        echo "<div class=\"row clearfix\">";//start body row clearfix
+		echo "<div class=\"col-md-6 column\">";//Column 1 (players)
+        $playerlist = $row['playerlist'];        
+		$list = explode(";", $playerlist);
+		foreach ($list as $k=>$n){ 
+		    echo "$n<br>";
+		}	
+		echo "</div>";//End Column 1
+		echo "<div class=\"col-md-6 column\">";//Column 2 (details)
+		echo "<img alt=\"140x140\" src=\"http://lorempixel.com/140/140/\" class=\"img-circle  pull-right\" style=\"margin-right:10%;\" />";
+		echo "</div>";//End Column 2
+		echo "</div>";//End body row clearfix
         echo "</div>";
         echo "<div class=\"modal-footer\">";
-        echo "<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button> <button type=\"button\" class=\"btn btn-primary\">Save changes</button>";
+        echo "<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button> <button type=\"button\" class=\"btn btn-primary\">Join Game!</button>";
         echo "</div></div></div></div>";
         //END MODAL
         echo "</div></div></div></div></div>";
