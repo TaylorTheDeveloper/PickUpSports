@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 06, 2014 at 04:24 AM
+-- Generation Time: Mar 09, 2014 at 11:47 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -75,6 +75,7 @@ CREATE TABLE IF NOT EXISTS `matches` (
   `match_maxplayers` int(5) NOT NULL,
   `match_currentplayers` int(5) NOT NULL,
   `matchp_pubpriv` tinyint(1) NOT NULL COMMENT 'zero for public, 1 for private',
+  `playerlist` varchar(1000) NOT NULL COMMENT 'List of players. usernames separated by ;',
   PRIMARY KEY (`match_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='matches_prototype' AUTO_INCREMENT=8 ;
 
@@ -82,14 +83,14 @@ CREATE TABLE IF NOT EXISTS `matches` (
 -- Dumping data for table `matches`
 --
 
-INSERT INTO `matches` (`match_id`, `admin_user_id`, `match_type`, `match_location`, `match_zip`, `match_date`, `match_time`, `match_maxplayers`, `match_currentplayers`, `matchp_pubpriv`) VALUES
-(1, 4, 'Tennis', '608 west lafayette', 32304, '2014-02-26', '00:15:00', 16, 0, 0),
-(2, 4, 'Soccer', 'The Gym at FsU', 32304, '2014-02-24', '00:17:30', 8, 2, 0),
-(3, 4, 'Basketball', 'Wescott Fountain', 32308, '2014-02-28', '00:13:00', 10, 0, 0),
-(4, 4, 'Hockey', 'FAMU Courts', 32301, '2014-02-23', '00:17:30', 4, 2, 1),
-(5, 5, 'Baseball', 'bobs', 32304, '0000-00-00', '23:50:26', 4, 6, 1),
-(6, 0, 'Baseball', 'Tallahassee', 32304, '2014-02-28', '05:30:00', 4, 1, 1),
-(7, 0, 'Football', 'aaa', 32304, '2014-02-06', '08:15:00', 4, 1, 0);
+INSERT INTO `matches` (`match_id`, `admin_user_id`, `match_type`, `match_location`, `match_zip`, `match_date`, `match_time`, `match_maxplayers`, `match_currentplayers`, `matchp_pubpriv`, `playerlist`) VALUES
+(1, 4, 'Tennis', '608 west lafayette', 32304, '2014-02-26', '00:15:00', 16, 0, 0, ''),
+(2, 4, 'Soccer', 'The Gym at FsU', 32304, '2014-02-24', '00:17:30', 8, 2, 0, 'Joe; Karl; Tyler'),
+(3, 4, 'Basketball', 'Wescott Fountain', 32308, '2014-02-28', '00:13:00', 10, 0, 0, 'Lawl; LAMO; KoOl; Eddie'),
+(4, 4, 'Hockey', 'FAMU Courts', 32301, '2014-02-23', '00:17:30', 4, 2, 1, 'Front; back; left; right'),
+(5, 5, 'Baseball', 'bobs', 32304, '0000-00-00', '23:50:26', 4, 6, 1, 'Jimmy; Joel; Frank'),
+(6, 0, 'Baseball', 'Tallahassee', 32304, '2014-02-28', '05:30:00', 4, 1, 1, 'This; Never; Ends'),
+(7, 0, 'Football', 'aaa', 32304, '2014-02-06', '08:15:00', 4, 1, 0, '');
 
 -- --------------------------------------------------------
 
@@ -106,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `zip` int(11) NOT NULL COMMENT 'zip',
   `password` varchar(32) NOT NULL COMMENT 'max length is 32',
   PRIMARY KEY (`user_idnum`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `users`
@@ -115,7 +116,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`user_idnum`, `first_name`, `last_name`, `email`, `username`, `zip`, `password`) VALUES
 (1, 'Taylor', 'Brockhoeft', 'taylor@pickupsports.com', 'taylor', 32304, 'cookie'),
 (2, 'Rob', 'Shnayder', 'rob@pickupsports.com', 'rob', 32303, 'cookie2'),
-(3, '', '', '', '444', 0, '333');
+(3, '', '', '', '444', 0, '333'),
+(4, '', '', 'kooler@cool.com', 'James', 32548, 'fart');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
