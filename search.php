@@ -99,7 +99,8 @@ while($row = mysqli_fetch_array($result))
 		echo "</div>";//End body row clearfix
         echo "</div>";
         echo "<div class=\"modal-footer\">";
-        echo "<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button> <button type=\"button\" class=\"btn btn-primary\">Join Game!</button>";
+        echo "<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>";
+        echo "<button type=\"button\" class=\"btn btn-primary\">Join Game!</button>";
         echo "</div></div></div></div>";
         //END MODAL
         echo "</div></div></div></div></div>";
