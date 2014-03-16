@@ -1,3 +1,5 @@
+
+
 <div class="row clearfix">
             <div class="col-md-3 column">
             </div>
@@ -11,7 +13,7 @@
                 <div class="main">          
                  <label for="Sports">Sport</label>
                  <br>
-                 <select class="form-control" name="sports">
+                 <select class="form-control" name="sportsValue">
                     <option style="color:gray" value="Choose a sport" selected="selected" > </option>
                     <option value="Baseball">Baseball</option>
                     <option value="Football">Football</option>
@@ -28,7 +30,17 @@
                 <br>
                 <div class="login-footer">
                 <div class="row">
-                    <input class="btn btn-info" type="submit" value="Let's Play!"> 
+
+                <?php 
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                    echo "<li><a href=\"newgame.php\"><button type=\"submit\" class=\"btn btn-info\" >Lets Play</button></a></li>";
+                } else {
+                    echo "<li><a href=\"#\"><button type=\"button\" class=\"btn btn-medium btn-info\" data-toggle=\"modal\" data-target=\"#loginModal\">Lets Play!</button></a></li>";
+                }
+                ?>
+
+
+                    <!--<input class="btn btn-info" type="submit" value="Let's Play!"> -->
                        <!--  <a href="newgame.html" class="btn btn-success " ><i class="icon-star icon-white "></i> Lets Play!</a> -->
                     </div>
                 </div>
@@ -58,7 +70,7 @@
                                                     <option value="Hockey">Hockey</option>                  
                                                 </select>
                                                 <br> -->
-                    <label for="zip">Zip</label><input type="text" class="form-control" id="zip_location" name="zip_location" /><br>
+                    <label for="zip">Zip</label><input type="text" class="form-control" id="zip_location"  name="zip_location" required /><br>
                     <span class="clearfix"></span>  
                     </div>
                     <div class="login-footer">

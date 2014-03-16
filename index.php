@@ -14,6 +14,13 @@
 
 <br>
 <div class="container" >
+<?php include 'login_modal.html' ?>
+
+<?php 
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+        header('Location: userpage.php');
+} 
+?>
 
 <?php include 'game_forms.html' ?>
 
