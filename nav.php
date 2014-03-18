@@ -20,7 +20,7 @@
                 echo "<li><a href=\"userpage.php\"><button type=\"button\" class=\"btn btn-medium btn-info\" >" . $_SESSION['username'] . "</button></a></li>";
                 echo "<li><a href=\"userMGMT/logout.php\"><button type=\"button\" class=\"btn btn-medium btn-info\" >Log out</button></a></li>";
             } else {
-                echo "<li><a href=\"#\"><button type=\"button\" class=\"btn btn-medium btn-info\" data-toggle=\"modal\" data-target=\"#loginModal\">Login / Register</button></a></li>";
+                echo "<li><a href=\"#\"><button type=\"button\" class=\"btn btn-medium btn-info\" data-toggle=\"modal\" data-target=\"#loginModal\">Sign In</button></a></li>";
             }
             ?>
                       

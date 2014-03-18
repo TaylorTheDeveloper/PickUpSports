@@ -9,10 +9,10 @@
 <!-- Doc Header -->
 <?php include 'nav.php' ?>
 
-<br><br><br><!-- change out for margin -->
 
+<br><br><br><!-- change out for margin -->
 <div class="container">
-<h1>Your Profile</h1>
+	<br><br>
 	<div class="row clearfix media well">
 		<div class="col-md-12 column">
 			<div class="row clearfix">

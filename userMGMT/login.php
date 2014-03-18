@@ -32,5 +32,10 @@ if($count==1){
     $_SESSION['username'] = $username;
     header( 'Location: ../userpage.php');
 }
+else
+{
+
+	echo "invalid";
+}
 
 ?>

@@ -10,20 +10,26 @@ $db=mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_
 
 
 
-$userName = $_POST['username'];
+$username = $_POST['username'];
 $password =  $_POST['password'];
-$zip = $_POST['zip'];
 $email = $_POST['email'];
-//$fname = $_POST['firstname'];
-//$lname = $_POST['lastname'];
+$zip = $_POST['zip'];
+$favSport = $_POST['sportsValue'];
+$first = $_POST['firstname'];
+$last = $_POST['lastname'];
+$gamesPlayedNum = 0;
+
 
 //$query = "INSERT INTO users (username,password,zip,first_name,last_name,email) VALUES ('$userName','$password', '$zip', '$fname', '$lname', '$email')";
-$query = "INSERT INTO users (username,password,zip,email) VALUES ('$userName','$password', '$zip', '$email')";
+$query = "INSERT INTO users (first_name, last_name, email, username, zip, password, favSport, gamesPlayed) VALUES ('$first','$last', '$email', '$username', 
+	'$zip', '$password', '$favSport', '$gamesPlayedNum')";
 $data = mysql_query ($query)or die(mysql_error());
 if($data)
 {
-/* Redirect to a different page in the current directory that was requested */
-header("Location: ../login_page.php");
+	session_start();
+    $_SESSION['loggedin'] = true;
+    $_SESSION['username'] = $username;
+    header( 'Location: ../userpage.php');
 exit;
 }
 else
