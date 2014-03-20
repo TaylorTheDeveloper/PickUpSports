@@ -28,9 +28,10 @@ if($data)
 	session_start();
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $username;
+    echo $username;
 
     // //$this_match_id = $row['match_id'];
-    $players = mysqli_query($con,"SELECT * FROM users WHERE username = '$username'" );
+    $players = mysqi_query($con,"SELECT * FROM users WHERE 1" );
     while($row = mysqli_fetch_array($players))  {
         echo $row['username'] . "<br>";
     }
@@ -39,12 +40,12 @@ if($data)
 
     // $queryGameHist = "INSERT INTO `gamehistory`(`gamesPlayed`, `user_idnum`, `baseball`, `soccer`, `football`, `tennis`, `frisbee`, `rugby`, `basketball`, `hockey`) VALUES (0,50,0,0,0,0,0,0,0,0)";
     // $data2 = mysql_query ($queryGameHist)or die(mysql_error());
-    if($_SESSION['newgame'] == true){
-   	header( 'Location: ../newgame.php');
-    }
-    else{
-    header( 'Location: ../userpage.php');
-	}
+    // if($_SESSION['newgame'] == true){
+   	// header( 'Location: ../newgame.php');
+    // }
+ //    else{
+ //    header( 'Location: ../userpage.php');
+	// }
 exit;
 }
 else
