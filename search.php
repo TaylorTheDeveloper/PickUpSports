@@ -4,7 +4,6 @@
 <!-- Doc Header -->
 <?php include 'head.html' ?>
 
-
 <body>
 
 <!-- Doc Header -->
@@ -35,12 +34,13 @@ Here are the results near <?php echo $_POST["zip_location"]; ?> <br> <hr>
         break;
     default:
         return "img/search_icons/fsu.png";
-}
-              }
+        }
+    }
 
+$_SESSION['sessionZip'] = $_POST["zip_location"];
 $range = 50; //Range to search zip
-$zip_top = intval($_POST["zip_location"]) + $range;
-$zip_bottom = intval($_POST["zip_location"]) - $range;
+$zip_top = intval($_SESSION['sessionZip']) + $range;
+$zip_bottom = intval($_SESSION['sessionZip']) - $range;
 //Connect
 $con=mysqli_connect("localhost:3306","root","","games");
 // Check connection
@@ -70,10 +70,10 @@ while($row = mysqli_fetch_array($result))
          echo "<div class=\"col-md-2 column\">";
            echo "<img alt=\"120x120\" class=\"img\"  src=\"" . handleImg( $row['match_type']) . "\" />";
          echo "</div>";
-         echo "<div class=\"col-md-2 column\"><div class=\"well well-sm\">";
+         echo "<div class=\"col-md-2 column\">";
          echo "<h2>Where</h2>";
          echo "<p>" . $row['match_location'] . "</p>";
-         echo "</div></div>";
+         echo "</div>";
          echo "<div class=\"col-md-2 column\">";
          echo "<h2>When</h2>";
          echo "<p>" . $row['match_date'] . "</p>";
@@ -89,7 +89,7 @@ while($row = mysqli_fetch_array($result))
          echo "<p>" . $row['match_type'] . "</p>";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
-             echo "<a id=\"modal-627836\" href=\"#modal-container-" . $num . "\" role=\"button\" class=\"btn\" data-toggle=\"modal\"><button type=\"button\" class=\"btn btn-medium btn-info\" data-toggle=\"regmodal\" data-target=\"#regModal\">Join Game</button></a>";
+        echo "<a id=\"modal-627836\" href=\"#modal-container-" . $num . "\" role=\"button\" class=\"btn\" data-toggle=\"modal\"><button type=\"button\" class=\"btn btn-medium btn-info\" data-toggle=\"regmodal\" data-target=\"#regModal\">Join Game</button></a>";
          
          //Start Modal
         echo "<div class=\"modal fade\" id=\"modal-container-" . $num . "\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">";
