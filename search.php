@@ -22,7 +22,22 @@ Here are the results near <?php echo $_POST["zip_location"]; ?> <br> <hr>
 
 
 <?php //Query Database
- 
+   function handleImg($name){
+              switch ($name) {
+    case "Baseball":
+        return "img/search_icons/football.png";
+        break;
+    case "Basketball":
+        return "img/search_icons/basketball.png";
+        break;
+    case "Soccer":
+        return "img/search_icons/football.png";
+        break;
+    default:
+        return "img/search_icons/fsu.png";
+}
+              }
+
 $range = 50; //Range to search zip
 $zip_top = intval($_POST["zip_location"]) + $range;
 $zip_bottom = intval($_POST["zip_location"]) - $range;
@@ -53,12 +68,12 @@ while($row = mysqli_fetch_array($result))
      echo "<div class=\"col-md-12 column\">";
        echo "<div class=\"row clearfix media well\">";
          echo "<div class=\"col-md-2 column\">";
-           echo "<img alt=\"140x140\" class=\"img-circle\"  src=\"img/fsu.jpeg\" />";
+           echo "<img alt=\"120x120\" class=\"img\"  src=\"" . handleImg( $row['match_type']) . "\" />";
          echo "</div>";
-         echo "<div class=\"col-md-2 column\">";
+         echo "<div class=\"col-md-2 column\"><div class=\"well well-sm\">";
          echo "<h2>Where</h2>";
          echo "<p>" . $row['match_location'] . "</p>";
-         echo "</div>";
+         echo "</div></div>";
          echo "<div class=\"col-md-2 column\">";
          echo "<h2>When</h2>";
          echo "<p>" . $row['match_date'] . "</p>";
@@ -100,7 +115,10 @@ while($row = mysqli_fetch_array($result))
         echo "</div>";
         echo "<div class=\"modal-footer row clearfix\">";
         echo "<button type=\"button\" class=\"btn btn-default pull-right\" style=\"margin-right:1%;\" data-dismiss=\"modal\">Close</button>";
-        echo "<form accept-charset=\"UTF-8\" role=\"form\" method=\"post\" action=\"userMGMT/handleUser.php\"><input class=\"btn btn-info pull-right\" style=\"margin-right:1%;\" type=\"submit\" value=\"Join Game!\"> </form>";
+        echo "<form accept-charset=\"UTF-8\" role=\"form\" method=\"post\" action=\"userMGMT/handleUser.php\">";
+        echo "<input type=\"hidden\" name=\"gameType\" value=\" ". $row['match_type'] . "\">";
+        echo "<input type=\"hidden\" name=\"gameID\" value=\" ". $row['match_id'] . "\">";
+        echo "<input class=\"btn btn-info pull-right\" style=\"margin-right:1%;\" type=\"submit\" value=\"Join Game!\"> </form>";
         echo "</div></div></div></div>";
         //END MODAL
         echo "</div></div></div></div></div>";

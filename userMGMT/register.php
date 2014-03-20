@@ -22,6 +22,7 @@ $last = $_POST['lastname'];
 //$query = "INSERT INTO users (username,password,zip,first_name,last_name,email) VALUES ('$userName','$password', '$zip', '$fname', '$lname', '$email')";
 $query = "INSERT INTO users (first_name, last_name, email, username, zip, favSport, password) VALUES ('$first','$last', '$email', '$username', 
 	'$zip', '$favSport' '$password')";
+//$query = "INSERT INTO users (`user_idnum`, `first_name`, `last_name`, `email`, `username`, `zip`, `password`, `favSport`) VALUES (0,'$first','$last', '$email', '$username','$zip', '$favSport' '$password') ";
 $data = mysql_query ($query)or die(mysql_error());
 if($data)
 {
