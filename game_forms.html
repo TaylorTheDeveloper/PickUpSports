@@ -31,9 +31,11 @@
 
                 <?php 
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-                    echo "<li><a href=\"newgame.php\"><button type=\"submit\" class=\"btn btn-info\" >Lets Play</button></a></li>";
+                    echo "<a href=\"newgame.php\"><button type=\"submit\" class=\"btn btn-info\" >Lets Play</button></a>";
                 } else {
-                    echo "<li><a href=\"#\"><button type=\"button\" class=\"btn btn-medium btn-info\" data-toggle=\"modal\" data-target=\"#loginModal\">Lets Play!</button></a></li>";
+                    $_SESSION['newgame'] = true;
+                    echo "<a href=\"#\"><button type=\"button\" class=\"btn btn-medium btn-info\" data-toggle=\"modal\" data-target=\"#loginModal\">Lets Play!</button></a>";
+
                 }
                 ?>
 

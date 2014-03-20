@@ -1,5 +1,7 @@
 
-<?php $name1 = $_POST['sportsValue']; ?>
+<?php
+    $name1 = $_POST['sportsValue']; 
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +34,14 @@
 				</select>
 				<br>
 				<br><b>Location</b> <br><input type="text" name="location" autofocus parsley-notblank="false" required>
-				<br><b>Zip</b><br> <input name="zip" parsley-type="digits" parsley-minlength="5" parsley-maxlength="5" required>
+				<br>
+				<div class="form-group">
+                    <label for="zip" class="col-md-3 control-label">Zip Code</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="zip" required parsley-type="digits" parsley-minlength="5" parsley-maxlength="5" placeholder="Zip Code">
+                    </div>
+                </div>
+                            
 				<br><b>Date</b> <br> <input type="text" required name="date" id="date" gldp-id="mydate" required>
 
 				    <div gldp-el="mydate"

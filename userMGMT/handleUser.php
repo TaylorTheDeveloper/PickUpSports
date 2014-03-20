@@ -2,10 +2,11 @@
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
-$gameType=$_POST['gameType']; 
-echo $gameType;
+$gameType= ">" . $_POST['gameType'] . "'"; 
+$gameType =strtolower(trim($gameType, " "));
+echo "SPORT: " . $gameType . "<br>";
 $gameID=$_POST['gameID']; 
-echo $gameID;
+echo "ID: " . $gameID . "<br>";
 
  //Print Whole Database
 //Connect
@@ -26,8 +27,15 @@ if($result==false){
 //Print Data by row
 while($row = mysqli_fetch_array($result))
   {
-
+      $baseball = $row['baseball'];
+      $basketball = $row['basketball'];
+      $football = $row['football'];
+      $soccer = $row['soccer'];
+      $hockey = $row['hockey'];
+      $tennis = $row['tennis'];
+      $frisbee = $row['frisbee'];  
   }
+  echo $baseball;
 
 mysqli_close($con);
   
@@ -39,3 +47,7 @@ mysqli_close($con);
     header( 'Location: ../login_page.php');
 }
 ?>
+
+
+
+
