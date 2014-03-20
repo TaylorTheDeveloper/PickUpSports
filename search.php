@@ -73,21 +73,21 @@ while($row = mysqli_fetch_array($result))
            echo "<img class=\"img\"  src=\"" . handleImg( $row['match_type']) . "\" />";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
-         echo "<h2>Where</h2>";
+         echo "<h3>Where</h3>";
          echo "<p>" . $row['match_location'] . "</p>";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
-         echo "<h2>When</h2>";
+         echo "<h3>When</h3>";
          echo "<p>" . $row['match_date'] . "</p>";
          echo "<p>" . $row['match_time'] . "</p>";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
-         echo "<h2>Players</h2>";
+         echo "<h3>Players</h3>";
          echo "<p> Max " . $row['match_maxplayers'] . "</p>";
          echo "<p> Curr " . $row['match_currentplayers'] . "</p>";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
-         echo "<h2>Details</h2>";
+         echo "<h3>Details</h3>";
          echo "<p>" . $row['match_type'] . "</p>";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
@@ -127,7 +127,15 @@ while($row = mysqli_fetch_array($result))
         echo "<form accept-charset=\"UTF-8\" role=\"form\" method=\"post\" action=\"userMGMT/handleUser.php\">";
         echo "<input type=\"hidden\" name=\"gameType\" value=\" ". $row['match_type'] . "\">";
         echo "<input type=\"hidden\" name=\"gameID\" value=\" ". $row['match_id'] . "\">";
-        echo "<input class=\"btn btn-info pull-right\" style=\"margin-right:1%;\" type=\"submit\" value=\"Join Game!\"> </form>";
+
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+            echo "<input class=\"btn btn-info pull-right\" style=\"margin-right:1%;\" type=\"submit\" value=\"Join Game!\"> </form>";
+        } else {
+            $_SESION['searchMatchID'] = $row['match_id'];
+            echo "<a href=\"#\" onClick=\"$('#modal-container-" . $num . "').hide(); $('#loginbox').show()\"><button type=\"button\" class=\"btn btn-medium btn-info\" style=\"margin-right: 1%;\" data-toggle=\"modal\" data-target=\"#loginModal\">Sign In</button></a>";
+        }
+       
+      
         echo "</div></div></div></div>";
         //END MODAL
         echo "</div></div></div></div></div>";
