@@ -51,6 +51,7 @@ if (mysqli_connect_errno())
 
 //Select Data
 $result = mysqli_query($con,"SELECT * FROM matches WHERE match_zip >  '$zip_bottom' AND match_zip < '$zip_top'" );
+
 //Check that it returns true
 if($result==false){
   echo "Master Wayne, I've failed you";
@@ -59,6 +60,7 @@ if($result==false){
 if(!(mysqli_fetch_array($result))){
     echo "Sorry, we can't seem to find any games between " . $zip_top . " and " . $zip_bottom;
 }
+
 $num = 1;
 //Print Data by row
 while($row = mysqli_fetch_array($result))
@@ -102,11 +104,18 @@ while($row = mysqli_fetch_array($result))
         echo "<div class=\"modal-body\">";
         echo "<div class=\"row clearfix\">";//start body row clearfix
 		echo "<div class=\"col-md-6 column\">";//Column 1 (players)
-        $playerlist = $row['playerlist'];        
-		$list = explode(";", $playerlist);
-		foreach ($list as $k=>$n){ 
-		    echo "$n<br>";
-		}	
+
+/*PLAYERLIST*/
+ $this_match_id = $row['match_id'];
+ $players = mysqli_query($con,"SELECT * FROM matchPlayers JOIN users ON users.user_idnum=matchplayers.user_idnum WHERE match_id = '$this_match_id'" );
+
+    while($row = mysqli_fetch_array($players))  {
+        echo $row['username'] . "<br>";
+    }
+
+
+  //END PLAYERLISTING
+
 		echo "</div>";//End Column 1
 		echo "<div class=\"col-md-6 column\">";//Column 2 (details)
 		echo "<img alt=\"140x140\" src=\"http://lorempixel.com/140/140/\" class=\"img-circle  pull-right\" style=\"margin-right:10%;\" />";
