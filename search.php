@@ -70,7 +70,7 @@ while($row = mysqli_fetch_array($result))
      echo "<div class=\"col-md-12 column\">";
        echo "<div class=\"row clearfix media well\">";
          echo "<div class=\"col-md-2 column\">";
-           echo "<img alt=\"120x120\" class=\"img\"  src=\"" . handleImg( $row['match_type']) . "\" />";
+           echo "<img class=\"img\"  src=\"" . handleImg( $row['match_type']) . "\" />";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
          echo "<h2>Where</h2>";
