@@ -7,6 +7,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
+
 <!-- Doc Header -->
 <?php include 'head.html' ?>
 
@@ -26,10 +29,11 @@
 			<br><br><br>
 			<img src="img/search_icons/tennisball.png" />
 		</div>
-		<div class="col-md-4 column well">
-			<form role="form">
 
-				<div class="form-group">
+		<div class="col-md-4 column well">
+			<form role="form" class="form-horizontal" >
+
+				<div class="form-group" >
 					 <label for="sportInput" class="col-md-3 control-label">
 					 	<font color="FA7147">
 					 		Sport
@@ -44,8 +48,7 @@
 							<option value="Ultimate_Frisbee"<?php if($name1 == "Ultimate_Frisbee"){ echo ' selected="selected"'; }?>> Ultimate Frisbee</option>
 							<option value="Rugby"<?php if($name1 == "Rugby"){ echo ' selected="selected"'; }?>> Rugby</option>
 							<option value="Basketball"<?php if($name1 == "Basketball"){ echo ' selected="selected"'; }?>> Basketball</option>
-							<option value="Hockey"<?php if($name1 == "Hockey"){ echo ' selected="selected"'; }?>> Hockey</option> 
-                            <br>        
+							<option value="Hockey"<?php if($name1 == "Hockey"){ echo ' selected="selected"'; }?>> Hockey</option>   
                         </select>	  
                     </div>
 				</div>
@@ -55,47 +58,50 @@
 					 	<font color="FA7147">
 					 		Location
 					 	</font>
-					 <div class="col-md-9">		 	
-					 	</label><input type="text" class="form-control" id="exampleInputPassword1" placeholder="Location" />
-					 	<br>
-					</div>
-
+					 	</label>
+					  <div class="col-md-9">
+					  	<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Location" />
+					  </div>
 				</div>
 
 				<div class="form-group">
 				    <label for="zipInput" class="col-md-3 control-label">
 						<font color="FA7147">
-					 		Zip Code
+					 		Zip
 					 	</font>
 				    </label>  
-				  <div class="col-md-9">        
+				 	<div class="col-md-9">
 	                   <input type="text" class="form-control" name="zip" required parsley-type="digits" parsley-minlength="5" parsley-maxlength="5" placeholder="Zip Code">
-                </div>
-                 </div>
+					</div>
+				</div>
 
- 				<div class="form-group">
+				<div class = "form-group">
 				    <script>
 						  $(function() {
 						    $( "#datepicker" ).datepicker();
 						  });
 					</script>
 
-					<label for="datepicker">
+					<label for="datepicker" class="col-md-3 control-label">
 						<font color="FA7147">
 					 		Date
 					 	</font>
-					</label><input type="text" class="form-control" id="datepicker" placeholder="Date" />
+					</label>
+					 <div class="col-md-9">
+						<input type="text" class="form-control" id="datepicker" placeholder="Date" />
+					  </div>
 
                 </div>
 
 
 
  				<div class="form-group">
-					<label for="zipInput">
+					<label for="zipInput" class="col-md-3 control-label">
 						<font color="FA7147">
 					 		Time
 					 	</font>
-					</label>                  
+					</label>              
+				  <div class="col-md-9">    
 					<select class="form-control" name="time">
 					<option style="color:gray" value="" selected="selected" > </option>
 					<option value="5:00 AM">5:00 AM</option>
@@ -193,14 +199,16 @@
 					<option value="11:30 PM">11:30 PM</option>
 					<option value="11:45 PM">11:45 PM</option>
 				</select><br>                 
+				</div>
 			</div>
-
+			<center>
 			<div class="form-group">
-				<label for="locationInput">
+				<label for="locationInput" >
 						<font color="FA7147">
 					 		Who Can Join In On The Fun?
 					 	</font>
 				</label>
+				<div >
 				<div class="radio">
 				  <label>
 				    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
@@ -212,15 +220,17 @@
 				    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
 				    Invited Friends Only (Private)
 				  </label>
+
+
  				<div style="margin-top:10%" class="form-group">
-				  <div class="col-sm-12 controls"> 
-				  	<center>                                                             
-                         <input class="btn btn-success" type="submit" value="Lets Play!">  
-                    </center>                              
+				  <div class="col-sm-12 controls">                                       
+                         <input class="btn btn-success" type="submit" value="Lets Play!"> 
                   </div>
 				</div>
 			</div>
+			</div>
             </div>
+            </center>
 				
 			</form>
 		</div>
