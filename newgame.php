@@ -1,6 +1,7 @@
 
 <?php
     $name1 = $_POST['sportsValue']; 
+    $_SESSION['newgame'] = false;
  ?>
 
 <!DOCTYPE html>
@@ -16,47 +17,86 @@
 
 <br><br><br><!-- swap for margin later -->
 
+
+
+
 <div class="container">
-		<center>			
-			<font color="FA7147">
-				<form parsley-validate action="insert.php" name="newMatch" method="post">
-				<br><br><br><br>
-				<b>Sport</b><br>
-				<select name="sports">
-					<option value="Baseball"<?php if($name1 == "Baseball"){ echo ' selected="selected"'; }?>> Baseball</option>
-					<option value="Football" <?php if($name1 == "Football"){ echo ' selected="selected"'; }?>> Football</option>
-					<option value="Soccer"<?php if($name1 == "Soccer"){ echo ' selected="selected"'; }?>> Soccer</option>
-					<option value="Tennis" <?php if($name1 == "Tennis"){ echo ' selected="selected"'; }?>> Tennis</option>
-					<option value="Ultimate_Frisbee"<?php if($name1 == "Ultimate_Frisbee"){ echo ' selected="selected"'; }?>> Ultimate Frisbee</option>
-					<option value="Rugby"<?php if($name1 == "Rugby"){ echo ' selected="selected"'; }?>> Rugby</option>
-					<option value="Basketball"<?php if($name1 == "Basketball"){ echo ' selected="selected"'; }?>> Basketball</option>
-					<option value="Hockey"<?php if($name1 == "Hockey"){ echo ' selected="selected"'; }?>> Hockey</option>					
-				</select>
-				<br>
-				<br><b>Location</b> <br><input type="text" name="location" autofocus parsley-notblank="false" required>
-				<br>
+	<div class="row clearfix">
+		<div class="col-md-4 column">
+			<br><br><br>
+			<img src="img/search_icons/tennisball.png" />
+		</div>
+		<div class="col-md-4 column well">
+			<form role="form">
+
 				<div class="form-group">
-                    <label for="zip" class="col-md-3 control-label">Zip Code</label>
-                    <div class="col-md-9">
-                        <input type="text" class="form-control" name="zip" required parsley-type="digits" parsley-minlength="5" parsley-maxlength="5" placeholder="Zip Code">
+					 <label for="sportInput" class="col-md-3 control-label">
+					 	<font color="FA7147">
+					 		Sport
+					 	</font>
+					 </label>
+					  <div class="col-md-9">
+                       <select class="form-control" name="sports">
+                            <option value="Baseball"<?php if($name1 == "Baseball"){ echo ' selected="selected"'; }?>> Baseball</option>
+							<option value="Football" <?php if($name1 == "Football"){ echo ' selected="selected"'; }?>> Football</option>
+							<option value="Soccer"<?php if($name1 == "Soccer"){ echo ' selected="selected"'; }?>> Soccer</option>
+							<option value="Tennis" <?php if($name1 == "Tennis"){ echo ' selected="selected"'; }?>> Tennis</option>
+							<option value="Ultimate_Frisbee"<?php if($name1 == "Ultimate_Frisbee"){ echo ' selected="selected"'; }?>> Ultimate Frisbee</option>
+							<option value="Rugby"<?php if($name1 == "Rugby"){ echo ' selected="selected"'; }?>> Rugby</option>
+							<option value="Basketball"<?php if($name1 == "Basketball"){ echo ' selected="selected"'; }?>> Basketball</option>
+							<option value="Hockey"<?php if($name1 == "Hockey"){ echo ' selected="selected"'; }?>> Hockey</option> 
+                            <br>        
+                        </select>	  
                     </div>
+				</div>
+
+				<div class="form-group">
+					 <label for="locationInput" class="col-md-3 control-label">
+					 	<font color="FA7147">
+					 		Location
+					 	</font>
+					 <div class="col-md-9">		 	
+					 	</label><input type="text" class="form-control" id="exampleInputPassword1" placeholder="Location" />
+					 	<br>
+					</div>
+
+				</div>
+
+				<div class="form-group">
+				    <label for="zipInput" class="col-md-3 control-label">
+						<font color="FA7147">
+					 		Zip Code
+					 	</font>
+				    </label>  
+				  <div class="col-md-9">        
+	                   <input type="text" class="form-control" name="zip" required parsley-type="digits" parsley-minlength="5" parsley-maxlength="5" placeholder="Zip Code">
                 </div>
-                            
-				<br><b>Date</b> <br> <input type="text" required name="date" id="date" gldp-id="mydate" required>
+                 </div>
 
-				    <div gldp-el="mydate"
-				         style="width:200px; height:200px; position:absolute; top:70px; left:100px;">
-				    </div>
+ 				<div class="form-group">
+				    <script>
+						  $(function() {
+						    $( "#datepicker" ).datepicker();
+						  });
+					</script>
 
-				    <script type="text/javascript">
-				        $(window).load(function()
-				        {
-				            $('#date').glDatePicker();
-				        });
-				    </script>
-			    <br>
-				<br><b>Time</b><br>
-				<select name="time" id="time" parsley-required="true">
+					<label for="datepicker">
+						<font color="FA7147">
+					 		Date
+					 	</font>
+					</label><input type="text" class="form-control" id="datepicker" placeholder="Date" />
+
+                </div>
+
+
+
+ 				<div class="form-group">
+					<label for="zipInput">
+						<font color="FA7147">
+					 		Time
+					 	</font>
+					</label>                  
+					<select class="form-control" name="time">
 					<option style="color:gray" value="" selected="selected" > </option>
 					<option value="5:00 AM">5:00 AM</option>
 					<option value="5:15 AM">5:15 AM</option>
@@ -152,20 +192,47 @@
 					<option value="11:15 PM">11:15 PM</option>
 					<option value="11:30 PM">11:30 PM</option>
 					<option value="11:45 PM">11:45 PM</option>
-				</select><br>
-<!-- Only one player when game starts, this is the admin -->
-<!--				<br><b>How many players do you have?</b> <br><input type="text" name="currPlayers"></br> -->
-				<br><b>Players needed for a full game?</b> <br><input parsley-type="digits" name="maxPlayers" required></br>
+				</select><br>                 
+			</div>
 
-				<br><b>Who can join in on the fun?</b><br>
-				<input class="radio" type="radio" name="pubPriv" value="private" parsley-mincheck="1">Invited friends only (private)<br>
-				<input class="radio" type="radio" name="pubPriv" value="public" parsley-mincheck="1">Any random joe (public) <br>
-				<br>
-				<input type="submit" value="Lets Play!" />
-				<br>
-				</form>	
-			</font>
-		</center>
+			<div class="form-group">
+				<label for="locationInput">
+						<font color="FA7147">
+					 		Who Can Join In On The Fun?
+					 	</font>
+				</label>
+				<div class="radio">
+				  <label>
+				    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+				    Any Random Joe (Public)
+				  </label>
+				</div>
+				<div class="radio">
+				  <label>
+				    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				    Invited Friends Only (Private)
+				  </label>
+ 				<div style="margin-top:10%" class="form-group">
+				  <div class="col-sm-12 controls"> 
+				  	<center>                                                             
+                         <input class="btn btn-success" type="submit" value="Lets Play!">  
+                    </center>                              
+                  </div>
+				</div>
+			</div>
+            </div>
+				
+			</form>
+		</div>
+		<div class="col-md-4 column">
+			<br><br>
+			<img src="img/search_icons/racket.png" />
+		</div>
+
+	</div>
+</div>
+
+
 
 <?php include 'footer.html' ?>
 </div><!-- /.container -->
