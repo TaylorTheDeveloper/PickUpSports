@@ -52,8 +52,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
     mysqli_close($con);
       
-
-    header( 'Location: ../join_confirmation.php');
+echo $_SESION['searchMatchID'];
+    //header( 'Location: ../matches.php?=' . $_SESION['searchMatchID']);
 } 
 else {
     header( 'Location: ../login_page.php');

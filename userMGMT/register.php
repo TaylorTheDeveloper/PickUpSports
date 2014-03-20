@@ -22,14 +22,23 @@ $last = $_POST['lastname'];
 //$query = "INSERT INTO users (username,password,zip,first_name,last_name,email) VALUES ('$userName','$password', '$zip', '$fname', '$lname', '$email')";
 $query = "INSERT INTO users ( first_name, last_name, email, username, zip, favSport, password) VALUES ('$first','$last', '$email', '$username', 
 	'$zip', '$favSport' , '$password')";
-//$query = "INSERT INTO `gamehistory`(`username`, `user_idnum`, `gamesPlayed`, `baseball`, `soccer`, `football`, `tennis`, `frisbee`, `rugby`, `basketball`, `hockey`) VALUES ($username,111,0,0,0,0,0,0,0,0,0)";
-//$query = "INSERT INTO users (`user_idnum`, `first_name`, `last_name`, `email`, `username`, `zip`, `password`, `favSport`) VALUES (0,'$first','$last', '$email', '$username','$zip', '$favSport' '$password') ";
 $data = mysql_query ($query)or die(mysql_error());
 if($data)
 {
 	session_start();
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $username;
+
+    // //$this_match_id = $row['match_id'];
+    $players = mysqli_query($con,"SELECT * FROM users WHERE username = '$username'" );
+    while($row = mysqli_fetch_array($players))  {
+        echo $row['username'] . "<br>";
+    }
+
+
+
+    // $queryGameHist = "INSERT INTO `gamehistory`(`gamesPlayed`, `user_idnum`, `baseball`, `soccer`, `football`, `tennis`, `frisbee`, `rugby`, `basketball`, `hockey`) VALUES (0,50,0,0,0,0,0,0,0,0)";
+    // $data2 = mysql_query ($queryGameHist)or die(mysql_error());
     if($_SESSION['newgame'] == true){
    	header( 'Location: ../newgame.php');
     }
