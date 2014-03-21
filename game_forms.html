@@ -2,7 +2,7 @@
             <div class="col-md-3 column">
             </div>
             <div class="col-md-3 column">
-            <form class="form-signin mg-btm" method="post" action="newgame.php">
+            <form class="form-signin mg-btm" method="post" action="newgame.php" parsley-validate>
             <center>
             <img class="img img-responsive text-center" src="img/newGame.png">
                 <br>
@@ -11,8 +11,8 @@
                 <div class="main">          
                  <label for="Sports">Sport</label>
                  <br>
-                 <select class="form-control" name="sportsValue">
-                    <option style="color:gray" value="Choose a sport" selected="selected" > </option>
+                 <select class="form-control" name="sportsValue" parsley-required="true">
+                    <option style="color:gray" value="" selected="selected" ></option>
                     <option value="Baseball">Baseball</option>
                     <option value="Football">Football</option>
                     <option value="Soccer">Soccer</option>
@@ -20,7 +20,7 @@
                     <option value="Ultimate_Frisbee">Ultimate Frisbee</option>
                     <option value="Rugby">Rugby</option>
                     <option value="Basketball">Basketball</option>
-                    <option value="Hockey">Hockey</option>          
+                    <option value="Hockey">Hockey</option>
                     <br>        
                 </select>
                 <span class="clearfix"></span>  
@@ -49,7 +49,7 @@
             </div>
             <div class="col-md-3 column">
             <!-- Existing Game -->
-                <form class="form-signin mg-btm" method="post" action="search.php">
+                <form parsley-validate class="form-signin mg-btm" method="post" action="search.php">
                 <center>
                 <img class="img img-responsive text-center" src="img/searchGame.png">
                     <br>
@@ -70,7 +70,7 @@
                                                     <option value="Hockey">Hockey</option>                  
                                                 </select>
                                                 <br> -->
-                    <label for="zip">Zip</label><input type="text" class="form-control" id="zip_location"  name="zip_location" required /><br>
+                    <label for="zip">Zip</label><input parsley-type="digits" class="form-control" id="zip_location" parsley-minlength="5" parsley-maxlength="5" name="zip_location" parsley-required="true" /><br>
                     <span class="clearfix"></span>  
                     </div>
                     <div class="login-footer">

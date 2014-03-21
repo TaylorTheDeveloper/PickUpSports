@@ -24,14 +24,17 @@
 
 
 <div class="container">
-	<div class="row clearfix">
+	<div class="row clearfix" >
+		  <div class="panel-heading">
+                    <br><br>
+                </div>     
 		<div class="col-md-4 column">
 			<br><br><br>
 			<img src="img/search_icons/tennisball.png" />
 		</div>
 
 		<div class="col-md-4 column well">
-			<form role="form" class="form-horizontal" >
+			<form role="form" class="form-horizontal" method="post" action="insert.php" parsley-validate >
 
 				<div class="form-group" >
 					 <label for="sportInput" class="col-md-3 control-label">
@@ -60,7 +63,7 @@
 					 	</font>
 					 	</label>
 					  <div class="col-md-9">
-					  	<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Location" />
+					  	<input type="text" class="form-control" parsley-required="true" id="exampleInputPassword1" placeholder="Location" />
 					  </div>
 				</div>
 
@@ -71,7 +74,7 @@
 					 	</font>
 				    </label>  
 				 	<div class="col-md-9">
-	                   <input type="text" class="form-control" name="zip" required parsley-type="digits" parsley-minlength="5" parsley-maxlength="5" placeholder="Zip Code">
+	                   <input type="digits" class="form-control" name="zip" parsley-required="true" parsley-minlength="5" parsley-maxlength="5" placeholder="Zip Code">
 					</div>
 				</div>
 
@@ -88,7 +91,7 @@
 					 	</font>
 					</label>
 					 <div class="col-md-9">
-						<input type="text" class="form-control" id="datepicker" placeholder="Date" />
+						<input type="text" class="form-control" id="datepicker" placeholder="Date" parsley-required="true" >
 					  </div>
 
                 </div>
@@ -102,7 +105,7 @@
 					 	</font>
 					</label>              
 				  <div class="col-md-9">    
-					<select class="form-control" name="time">
+					<select class="form-control" name="time" parsley-required="true">
 					<option style="color:gray" value="" selected="selected" > </option>
 					<option value="5:00 AM">5:00 AM</option>
 					<option value="5:15 AM">5:15 AM</option>
@@ -209,13 +212,13 @@
 					 	</font>
 				</label>
 				<div >
-				<div class="radio">
+				<div class="form-group">
 				  <label>
 				    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
 				    Any Random Joe (Public)
 				  </label>
 				</div>
-				<div class="radio">
+				<div class="form-group">
 				  <label>
 				    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
 				    Invited Friends Only (Private)
