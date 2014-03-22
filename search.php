@@ -92,7 +92,7 @@ while($row = mysqli_fetch_array($result))
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
         echo "<a id=\"modal-627836\" href=\"#modal-container-" . $num . "\" role=\"button\" class=\"btn\" data-toggle=\"modal\"><button type=\"button\" class=\"btn btn-medium btn-info\" data-toggle=\"regmodal\" data-target=\"#regModal\">Join Game</button></a>";
-         
+         $mid =  $row['match_id'];
          //Start Modal
         echo "<div class=\"modal fade\" id=\"modal-container-" . $num . "\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">";
         echo "<div class=\"modal-dialog\">";
@@ -127,11 +127,11 @@ while($row = mysqli_fetch_array($result))
         echo "<form accept-charset=\"UTF-8\" role=\"form\" method=\"post\" action=\"userMGMT/handleUser.php\">";
         echo "<input type=\"hidden\" name=\"gameType\" value=\" ". $row['match_type'] . "\">";
         echo "<input type=\"hidden\" name=\"gameID\" value=\" ". $row['match_id'] . "\">";
-
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+            $_SESSION['searchMatchID'] = $mid;
             echo "<input class=\"btn btn-info pull-right\" style=\"margin-right:1%;\" type=\"submit\" value=\"Join Game!\"> </form>";
         } else {
-            $_SESION['searchMatchID'] = $row['match_id'];
+            $_SESSION['searchMatchID'] = $mid;
             echo "<a href=\"#\" onClick=\"$('#modal-container-" . $num . "').hide(); $('#loginbox').show()\"><button type=\"button\" class=\"btn btn-medium btn-info\" style=\"margin-right: 1%;\" data-toggle=\"modal\" data-target=\"#loginModal\">Sign In</button></a>";
         }
        

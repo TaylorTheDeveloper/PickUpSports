@@ -8,8 +8,6 @@ define('DB_PASSWORD','');
 $con=mysql_connect(DB_HOST,DB_USER,DB_PASSWORD) or die("Failed to connect to MySQL: " .     mysql_error());
 $db=mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_error());
 
-
-
 $username = $_POST['username'];
 $password =  $_POST['password'];
 $email = $_POST['email'];
@@ -29,22 +27,10 @@ if($data)
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $username;
 
-    // //$this_match_id = $row['match_id'];
-    $players = mysqli_query($con,"SELECT * FROM users WHERE username = '$username'" );
-    while($row = mysqli_fetch_array($players))  {
-        echo $row['username'] . "<br>";
-    }
+    mysql_close($con);
 
+    header( 'Location: uid.php');
 
-
-    // $queryGameHist = "INSERT INTO `gamehistory`(`gamesPlayed`, `user_idnum`, `baseball`, `soccer`, `football`, `tennis`, `frisbee`, `rugby`, `basketball`, `hockey`) VALUES (0,50,0,0,0,0,0,0,0,0)";
-    // $data2 = mysql_query ($queryGameHist)or die(mysql_error());
-    if($_SESSION['newgame'] == true){
-   	header( 'Location: ../newgame.php');
-    }
-    else{
-    header( 'Location: ../userpage.php');
-	}
 exit;
 }
 else

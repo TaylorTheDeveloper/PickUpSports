@@ -22,6 +22,8 @@
      }
 
 session_start();
+$uname=$_SESSION['username'];
+
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     //Connect
     $con=mysqli_connect("localhost:3306","root","","games");
@@ -30,9 +32,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
       {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
       }
-    $uid = $_SESSION['username'];
     //Select Data
-    $result = mysqli_query($con,"SELECT * FROM gameHistory WHERE username = '$uid' ");
+    $result = mysqli_query($con,"SELECT * FROM gameHistory WHERE username = '$uname' ");
     //Check that it returns true
     if($result==false){
       header( 'Location: ../404.php');
@@ -40,19 +41,24 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     //Print Data by row
     while($row = mysqli_fetch_array($result))
       {
-          $gameToUpdate = $row[nameConvert($_POST['gameType'])];  
+        if($_POST){
+          $name = $_POST['gameType'];
+        }
+        else{
+          $name = " Baseball";
+        }
+          $gameToUpdate = $row[nameConvert($name)];  
           $totalGames = $row['gamesPlayed'];  
 
       }
 
       ++$gameToUpdate;//Update Game
       ++$totalGames;//Ipdate total
-
-    mysqli_query($con,"UPDATE gameHistory SET " . nameConvert($_POST['gameType']) . "=" . $gameToUpdate . ", gamesPlayed=" . $totalGames .  " WHERE username='$uid'");
+    mysqli_query($con,"UPDATE gameHistory SET " . nameConvert($_POST['gameType']) . "=" . $gameToUpdate . ", gamesPlayed=" . $totalGames .  " WHERE username='$uname'");
 
     mysqli_close($con);
       
-echo $_SESION['searchMatchID'];
+echo $_SESSION['searchMatchID'];
     //header( 'Location: ../matches.php?=' . $_SESION['searchMatchID']);
 } 
 else {

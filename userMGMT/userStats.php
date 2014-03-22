@@ -9,6 +9,8 @@
                 /* return random_color_part() . random_color_part() . random_color_part()*/
             }
              function handleSports($Sval,$name,$max){
+              
+
               $percent = ($Sval/$max) * 100;
               if($Sval > 0){
                 echo "<div style=\"margin: 1%; width: 99%; border: 1px solid #07ad79;\">
@@ -17,7 +19,7 @@
                 }
               }
 
-              $uid = $_SESSION['username'];
+              $uid = $_SESSION['user_idnum'];
               //Connect
               $con=mysqli_connect("localhost:3306","root","","games");
               // Check connection
@@ -27,7 +29,7 @@
               }
 
               //Select Data
-              $result = mysqli_query($con,"SELECT * FROM gameHistory WHERE username = '$uid'" );
+              $result = mysqli_query($con,"SELECT * FROM gameHistory WHERE user_idnum = '$uid'" );
               //Check that it returns true
               if($result==false){
                 echo "Master Wayne, I've failed you";
@@ -48,6 +50,9 @@
                   $frisbee = $row['frisbee'];              
                 }
                 $highVal = max($baseball, $basketball, $football, $soccer, $hockey, $tennis, $frisbee);
+                if($highVal == 0){
+                  $highVal=1;
+                }
 
                 handleSports($baseball, "Baseball", $highVal);
                 handleSports($basketball,"Basketball", $highVal);

@@ -1,6 +1,13 @@
 
 <?php
-    $name1 = $_POST['sportsValue']; 
+//Handles $name1 value from game_forms.html -T
+if($_POST){
+	$name1 = $_POST['sportsValue'];
+}
+else{
+	$name1 = "Baseball";
+}
+
     $_SESSION['newgame'] = false;
  ?>
 
@@ -57,13 +64,24 @@
 				</div>
 
 				<div class="form-group">
+				    <label for="zipInput" class="col-md-3 control-label">
+						<font color="FA7147">
+					 		Max Players
+					 	</font>
+				    </label>  
+				 	<div class="col-md-9">
+	                   <input type="digits" class="form-control" name="maxPlayers" parsley-required="true" parsley-minlength="1" parsley-maxlength="2" placeholder="Maximum Players">
+					</div>
+				</div>
+
+				<div class="form-group">
 					 <label for="locationInput" class="col-md-3 control-label">
 					 	<font color="FA7147">
 					 		Location
 					 	</font>
 					 	</label>
 					  <div class="col-md-9">
-					  	<input type="text" class="form-control" parsley-required="true" id="exampleInputPassword1" placeholder="Location" />
+					  	<input type="text" class="form-control" name="location" parsley-required="true" id="exampleInputPassword1" placeholder="Location" />
 					  </div>
 				</div>
 
@@ -91,7 +109,7 @@
 					 	</font>
 					</label>
 					 <div class="col-md-9">
-						<input type="text" class="form-control" id="datepicker" placeholder="Date" parsley-required="true" >
+						<input type="text" class="form-control" id="datepicker" name="date" placeholder="Date" parsley-required="true" >
 					  </div>
 
                 </div>
@@ -214,13 +232,13 @@
 				<div >
 				<div class="form-group">
 				  <label>
-				    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+				    <input type="radio" name="pubPriv" id="optionsRadios1" value="false" checked>
 				    Any Random Joe (Public)
 				  </label>
 				</div>
 				<div class="form-group">
 				  <label>
-				    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				    <input type="radio" name="pubPriv" id="optionsRadios2" value="true">
 				    Invited Friends Only (Private)
 				  </label>
 
