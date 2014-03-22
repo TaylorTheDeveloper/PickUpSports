@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 09, 2014 at 11:47 PM
+-- Generation Time: Mar 22, 2014 at 05:38 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -61,6 +61,28 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gamehistory`
+--
+
+CREATE TABLE IF NOT EXISTS `gamehistory` (
+  `gamesPlayed` int(8) NOT NULL DEFAULT '0',
+  `user_idnum` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(35) NOT NULL,
+  `baseball` int(6) NOT NULL DEFAULT '0',
+  `soccer` int(6) NOT NULL DEFAULT '0',
+  `football` int(6) NOT NULL DEFAULT '0',
+  `tennis` int(6) NOT NULL DEFAULT '0',
+  `frisbee` int(6) NOT NULL DEFAULT '0',
+  `rugby` int(6) NOT NULL DEFAULT '0',
+  `basketball` int(6) NOT NULL DEFAULT '0',
+  `hockey` int(6) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`user_idnum`),
+  UNIQUE KEY `user_idnum` (`user_idnum`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=62 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `matches`
 --
 
@@ -75,22 +97,21 @@ CREATE TABLE IF NOT EXISTS `matches` (
   `match_maxplayers` int(5) NOT NULL,
   `match_currentplayers` int(5) NOT NULL,
   `matchp_pubpriv` tinyint(1) NOT NULL COMMENT 'zero for public, 1 for private',
-  `playerlist` varchar(1000) NOT NULL COMMENT 'List of players. usernames separated by ;',
   PRIMARY KEY (`match_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='matches_prototype' AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='matches_prototype' AUTO_INCREMENT=14 ;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `matches`
+-- Table structure for table `matchplayers`
 --
 
-INSERT INTO `matches` (`match_id`, `admin_user_id`, `match_type`, `match_location`, `match_zip`, `match_date`, `match_time`, `match_maxplayers`, `match_currentplayers`, `matchp_pubpriv`, `playerlist`) VALUES
-(1, 4, 'Tennis', '608 west lafayette', 32304, '2014-02-26', '00:15:00', 16, 0, 0, ''),
-(2, 4, 'Soccer', 'The Gym at FsU', 32304, '2014-02-24', '00:17:30', 8, 2, 0, 'Joe; Karl; Tyler'),
-(3, 4, 'Basketball', 'Wescott Fountain', 32308, '2014-02-28', '00:13:00', 10, 0, 0, 'Lawl; LAMO; KoOl; Eddie'),
-(4, 4, 'Hockey', 'FAMU Courts', 32301, '2014-02-23', '00:17:30', 4, 2, 1, 'Front; back; left; right'),
-(5, 5, 'Baseball', 'bobs', 32304, '0000-00-00', '23:50:26', 4, 6, 1, 'Jimmy; Joel; Frank'),
-(6, 0, 'Baseball', 'Tallahassee', 32304, '2014-02-28', '05:30:00', 4, 1, 1, 'This; Never; Ends'),
-(7, 0, 'Football', 'aaa', 32304, '2014-02-06', '08:15:00', 4, 1, 0, '');
+CREATE TABLE IF NOT EXISTS `matchplayers` (
+  `match_id` int(5) NOT NULL DEFAULT '0',
+  `user_idnum` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`match_id`,`user_idnum`),
+  KEY `user_idnum` (`user_idnum`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -100,24 +121,32 @@ INSERT INTO `matches` (`match_id`, `admin_user_id`, `match_type`, `match_locatio
 
 CREATE TABLE IF NOT EXISTS `users` (
   `user_idnum` int(11) NOT NULL AUTO_INCREMENT COMMENT 'user_id',
-  `first_name` varchar(256) NOT NULL COMMENT 'f_name',
-  `last_name` varchar(256) NOT NULL COMMENT 'l_name',
-  `email` varchar(256) NOT NULL COMMENT 'email',
+  `first_name` varchar(30) NOT NULL COMMENT 'f_name',
+  `last_name` varchar(40) NOT NULL COMMENT 'l_name',
+  `email` varchar(60) NOT NULL COMMENT 'email',
   `username` varchar(32) NOT NULL COMMENT 'username',
   `zip` int(11) NOT NULL COMMENT 'zip',
   `password` varchar(32) NOT NULL COMMENT 'max length is 32',
+  `favSport` varchar(20) NOT NULL,
   PRIMARY KEY (`user_idnum`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=62 ;
 
 --
--- Dumping data for table `users`
+-- Constraints for dumped tables
 --
 
-INSERT INTO `users` (`user_idnum`, `first_name`, `last_name`, `email`, `username`, `zip`, `password`) VALUES
-(1, 'Taylor', 'Brockhoeft', 'taylor@pickupsports.com', 'taylor', 32304, 'cookie'),
-(2, 'Rob', 'Shnayder', 'rob@pickupsports.com', 'rob', 32303, 'cookie2'),
-(3, '', '', '', '444', 0, '333'),
-(4, '', '', 'kooler@cool.com', 'James', 32548, 'fart');
+--
+-- Constraints for table `gamehistory`
+--
+ALTER TABLE `gamehistory`
+  ADD CONSTRAINT `gamehistory_ibfk_1` FOREIGN KEY (`user_idnum`) REFERENCES `users` (`user_idnum`);
+
+--
+-- Constraints for table `matchplayers`
+--
+ALTER TABLE `matchplayers`
+  ADD CONSTRAINT `matchplayers_ibfk_2` FOREIGN KEY (`user_idnum`) REFERENCES `users` (`user_idnum`),
+  ADD CONSTRAINT `matchplayers_ibfk_1` FOREIGN KEY (`match_id`) REFERENCES `matches` (`match_id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

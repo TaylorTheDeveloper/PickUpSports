@@ -34,8 +34,7 @@ if($count==1){
 }
 else
 {
-
-	echo "404.php";
+	header( 'Location: ../404.php?info=The System Couldnt Log You On');
 }
 
 ?>

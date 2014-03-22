@@ -1,20 +1,19 @@
 <?php 
-
  function nameConvert($val) {
     switch ($val) {
-  case ' Soccer': return "soccer";
+  case 'Soccer': return "soccer";
     break;
-  case ' Football': return "football";
+  case 'Football': return "football";
     break;
-  case ' Baseball': return "baseball";
+  case 'Baseball': return "baseball";
     break;
-  case ' Basketball': return "basketball";
+  case 'Basketball': return "basketball";
     break;
-  case ' Hockey': return "hockey";
+  case 'Hockey': return "hockey";
     break;
-    case ' Tennis': return "tennis";
+    case 'Tennis': return "tennis";
     break;
-  case ' Frisbee': return "frisbee";
+  case 'Frisbee': return "frisbee";
     break;
   default: return "frisbee";
     break;
@@ -43,30 +42,46 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
       {
         if($_POST){
           $name = $_POST['gameType'];
+          $id = $_POST['gameID'];
         }
         else{
-          $name = " Baseball";
+          $name = "Baseball";
+          $id = 1;
         }
-        echo $name;
           $gameToUpdate = $row[nameConvert($name)];  
           $totalGames = $row['gamesPlayed'];  
 
       }
 
       ++$gameToUpdate;//Update Game
-      ++$totalGames;//Ipdate total
-    mysqli_query($con,"UPDATE gameHistory SET " . nameConvert($_POST['gameType']) . "=" . $gameToUpdate . ", gamesPlayed=" . $totalGames .  " WHERE username='$uname'");
+      ++$totalGames;//Ipdate tota
 
     mysqli_close($con);
       
-echo $_SESSION['searchMatchID'];
+//echo $_SESSION['searchMatchID'];
     //header( 'Location: ../matches.php?=' . $_SESION['searchMatchID']);
 } 
 else {
     header( 'Location: ../login_page.php');
 }
 ?>
+<?php
+$con=mysqli_connect("localhost:3306","root","","games");
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+$sql = "UPDATE gameHistory SET " . nameConvert($_POST['gameType']) . "=" . $gameToUpdate . ", gamesPlayed=" . $totalGames .  " WHERE username='$uname'";
 
+if (!mysqli_query($con,$sql))
+    {
+    die('Error: ' . mysqli_error($con));
+    }
+mysqli_close($con);
+
+header( 'Location: ../matches.php?id='. $id);//Goto match page
+?>
 
 
 

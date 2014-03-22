@@ -65,12 +65,14 @@ $num = 1;
 //Print Data by row
 while($row = mysqli_fetch_array($result))
   {
+    $matchType = $row['match_type'];
+    $matchID = $row['match_id'];
      echo "<div class=\"container\" >";
   echo "<div class=\"row clearfix\">";
      echo "<div class=\"col-md-12 column\">";
        echo "<div class=\"row clearfix media well\">";
          echo "<div class=\"col-md-2 column\">";
-           echo "<img class=\"img\"  src=\"" . handleImg( $row['match_type']) . "\" />";
+           echo "<img class=\"img\"  src=\"" . handleImg( $matchType) . "\" />";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
          echo "<h3>Where</h3>";
@@ -86,7 +88,7 @@ while($row = mysqli_fetch_array($result))
          echo "<p> Max " . $row['match_maxplayers'] . "</p>";
          echo "<p> Curr " . $row['match_currentplayers'] . "</p>";
          echo "</div>";
-         echo "<div class=\"col-md-2 column\">";
+         echo "<div class=\"col-md-2 column\">";               
          echo "<h3>Details</h3>";
          echo "<p>" . $row['match_type'] . "</p>";
          echo "</div>";
@@ -125,8 +127,8 @@ while($row = mysqli_fetch_array($result))
         echo "<div class=\"modal-footer row clearfix\">";
         echo "<button type=\"button\" class=\"btn btn-default pull-right\" style=\"margin-right:1%;\" data-dismiss=\"modal\">Close</button>";
         echo "<form accept-charset=\"UTF-8\" role=\"form\" method=\"post\" action=\"userMGMT/handleUser.php\">";
-        echo "<input type=\"hidden\" name=\"gameType\" value=\" ". $row['match_type'] . "\">";
-        echo "<input type=\"hidden\" name=\"gameID\" value=\" ". $row['match_id'] . "\">";
+        echo "<input type=\"hidden\" name=\"gameType\" value=\"". $matchType . "\">";
+        echo "<input type=\"hidden\" name=\"gameID\" value=\"" . $matchID . "\">";
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             $_SESSION['searchMatchID'] = $mid;
             echo "<input class=\"btn btn-info pull-right\" style=\"margin-right:1%;\" type=\"submit\" value=\"Join Game!\"> </form>";
