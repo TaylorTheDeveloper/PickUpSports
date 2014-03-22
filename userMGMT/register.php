@@ -31,6 +31,15 @@ if($data)
 
     header( 'Location: uid.php');
 
+
+    // $queryGameHist = "INSERT INTO `gamehistory`(`gamesPlayed`, `user_idnum`, `baseball`, `soccer`, `football`, `tennis`, `frisbee`, `rugby`, `basketball`, `hockey`) VALUES (0,50,0,0,0,0,0,0,0,0)";
+    // $data2 = mysql_query ($queryGameHist)or die(mysql_error());
+    //if($_SESSION['newgame'] == true){
+   	//header( 'Location: ../newgame.php');
+   //}
+    //else{
+   // header( 'Location: ../userpage.php');
+	//}
 exit;
 }
 else

@@ -47,6 +47,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         else{
           $name = " Baseball";
         }
+        echo $name;
           $gameToUpdate = $row[nameConvert($name)];  
           $totalGames = $row['gamesPlayed'];  
 
