@@ -14,7 +14,7 @@
               $percent = ($Sval/$max) * 100;
               if($Sval > 0){
                 echo "<div style=\"margin: 1%; width: 99%; border: 1px solid #07ad79;\">
-                <div style=\"color: #ffffff; padding: 5px; width:" . $percent . "%; background: #" . random_color() . ";\">" . $name . " " . $Sval . "</div>
+                <div style=\"color: #ffffff; padding: 5px; width:" . $percent . "%; background: #" . random_color() . ";\">" . $name . ": " . $Sval . "</div>
                 </div>";
                 }
               }
