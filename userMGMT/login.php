@@ -30,12 +30,7 @@ if($count==1){
     session_start();
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $username;
-    if($_SESSION['newgame'] == true){
-   	header( 'Location: ../newgame.php');
-    }
-    else{
-    header( 'Location: ../userpage.php');
-	}
+    header( 'Location: uid.php');
 }
 else
 {

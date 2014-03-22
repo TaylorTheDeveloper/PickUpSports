@@ -29,7 +29,7 @@ if($data)
 
     mysql_close($con);
 
-    header( 'Location: uid.php');
+    header( 'Location: uid_insertGameHist.php');
 
 
     // $queryGameHist = "INSERT INTO `gamehistory`(`gamesPlayed`, `user_idnum`, `baseball`, `soccer`, `football`, `tennis`, `frisbee`, `rugby`, `basketball`, `hockey`) VALUES (0,50,0,0,0,0,0,0,0,0)";

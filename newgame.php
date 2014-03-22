@@ -33,7 +33,7 @@ else{
 <div class="container">
 	<div class="row clearfix" >
 		  <div class="panel-heading">
-                    <br><br>
+                    <br><h1><center>Create a new game</center></h1><br>
                 </div>     
 		<div class="col-md-4 column">
 			<br><br><br>
@@ -41,6 +41,7 @@ else{
 		</div>
 
 		<div class="col-md-4 column well">
+
 			<form role="form" class="form-horizontal" method="post" action="insert.php" parsley-validate >
 
 				<div class="form-group" >
