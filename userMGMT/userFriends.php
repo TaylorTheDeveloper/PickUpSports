@@ -1,22 +1,16 @@
- <?php //Query Database
+  <?php //Query Database
              //Handle Sports Value
-             function random_color_part() {
-                return str_pad( dechex( mt_rand( 150, 255 ) ), 3, '0', STR_PAD_LEFT);
-            }
 
-            function random_color() {
-                return random_color_part();
-                /* return random_color_part() . random_color_part() . random_color_part()*/
-            }
              function handleSports($val,$name,$max){
               
 
               $percent = ($val/$max) * 100;
               if($val > 0){
                 echo "<tr> <td>" . $name . "</td>";
-                echo "<td><div style=\"margin: 1%; width: 99%; border: 1px solid #07ad79;border-radius: .3rem\">
-                <div style=\"color: #ffffff; padding: 5px; width:" . $percent . "%; background: #" . random_color() . ";\">" . $val . "%</div>
+                echo "<td><div style=\"margin: 1%; width: 99%; border: 1px solid #07ad79;\">
+                <div style=\"color: #ffffff; padding: 5px; width:" . $percent . "%; background: #" . random_color() . ";\">" . $name . ":" . $val . "%</div>
                 </div></td>";
+                 echo "<td>" . $val . "</td></tr>";
                 }
               }
 
@@ -30,11 +24,15 @@
               }
 
               //Select Data
-              $result = mysqli_query($con,"SELECT * FROM gameHistory WHERE user_idnum = '$uid'" );
+              $result = mysqli_query($con,"SELECT * FROM users WHERE user_idnum = '$uid'" );
               //Check that it returns true
               if($result==false){
                 echo "Master Wayne, I've failed you";
               }
+
+              // if(!(mysqli_fetch_array($result))){
+              //     echo "Error Opening user Stats!";
+              // }
               
               while($row = mysqli_fetch_array($result))
                 {
@@ -50,7 +48,7 @@
                 if($highVal == 0){
                   $highVal=1;
                 }
-                echo "<tr><td><b>Games Played:</b></td><td></td></tr>";
+
                 handleSports($baseball, "Baseball", $highVal);
                 handleSports($basketball,"Basketball", $highVal);
                 handleSports($football,"Football", $highVal);
