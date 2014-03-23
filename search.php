@@ -57,10 +57,6 @@ if($result==false){
   echo "Master Wayne, I've failed you";
 }
 
-if(!(mysqli_fetch_array($result))){
-    echo "Sorry, we can't seem to find any games between " . $zip_top . " and " . $zip_bottom;
-}
-
 $num = 1;
 //Print Data by row
 while($row = mysqli_fetch_array($result))
