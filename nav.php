@@ -21,7 +21,6 @@
             {
                 echo "<li>";
                 echo "<div  class=\"btn-group padded\">";
-                //echo "<a href=\"userpage.php\"><button class=\"btn btn-info\" type=\"button\" >" . $_SESSION['username'] . "</button></a>";
                 echo "<button class=\"btn btn-info dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\"> " . $_SESSION['username'] . " <span class=\"caret\"</span></button>";
                 echo "<ul class=\"dropdown-menu\">";         
                 echo "<li><a href=\"userpage.php\"><i class=\"glyphicon glyphicon-cog\"></i> Account </a></li>";

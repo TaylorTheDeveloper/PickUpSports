@@ -2,24 +2,24 @@
              //Handle Sports Value
               $uid = $_SESSION['user_idnum'];
               //Connect
-              $con=mysqli_connect("localhost:3306","root","","games");
-              // Check connection
-              if (mysqli_connect_errno())
-              {
-                echo "Failed to connect to MySQL: " . mysqli_connect_error();
-              }
-
               //Select Data
+              echo "<tbody><tbody>";
               $this_match_id = $matchID;
- $players = mysqli_query($con,"SELECT * FROM matches WHERE match_id = '$this_match_id'" );
+              $link = "localhost/PickupSports/matches.php?id=" . $this_match_id;
+
               
-              while($row = mysqli_fetch_array($players))
-                {
-                 echo "<tr><td>When</td><td>" . $row['match_date'] . "</td></tr>"; 
-                 //echo "<tr><td>Name</td><td>" . $row['first_name'] ." ". $row['last_name'] .  "</td></tr>"; 
-                 //echo "<tr><td>Email</td><td>" . $row['email'] . "</td></tr>"; 
-                 //echo "<tr><td>Zip</td><td>" . $row['zip'] . "</td></tr>"; 
-                 //echo "<tr><td>Favorite Sport</td><td>" . $row['favSport'] . "</td></tr>"; 
-                }
-    mysqli_close($con);
+			//echo "<a href=\" ". $link ."\">" . $link . "</a>";
+
+			echo "<form accept-charset=\"UTF-8\" id=\"linkform\" class=\"form-horizontal\" role=\"form\" method=\"post\" action=\"#\" parsley-validate ><tbody><tr><td>";
+			echo "<div style=\"padding: 2% 20%;\" class=\"input-group\">";
+			echo "<span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-share\"></i></span>";
+			echo "<input type=\"url\"  readonly=\"readonly\" id=\"matchlink\" parsley-required=\"false\"  autofocus type=\"text\" class=\"form-control\" name=\"matchlink\" value=\"". $link ."\" placeholder=\"". $link ."\">";
+			echo "<tr><td><center><button class=\"btn btn-info\" onClick=\"ShowClipBoardContent();\" >Copy link to clipboard!</button></center></td></tr>";                               
+			echo "</div></td></tr>";
+			echo "</tbody></form> ";
+              //echo "<tr><td>share link</td><td>";
+              //echo "<input type=\"text\" name=\"fullname\" value=\"" . $link . "\" required /></td></tr>"; 
+
+            
 ?>
+

@@ -52,6 +52,19 @@ else{
 	<link href="css/matchespage.css" rel="stylesheet">
 </head>
 
+    <script type="text/javascript">
+        function CopyToClipboard () {
+            var input = document.getElementById ("matchlink");
+            window.clipboardData.setData ("Text", input.value);
+        }
+        function ShowClipboardContent () {
+            alert (window.clipboardData.getData ("Text"));
+        }
+        function ClearClipboard () {
+            window.clipboardData.clearData ("Text");
+        }
+    </script>
+
 
 <!-- Login Modal -->
 <?php include 'login_modal.html' ?>
@@ -113,10 +126,9 @@ else{
     <div class='pais italia'>
 <table>
    <caption><label class="entypo-share"><b>Share Match</b></label></caption>
-   <tbody>
+
        <?php include 'matches/matchesShare.php' ?>
 
-   </tbody>
 </table>      
     </div>
 
