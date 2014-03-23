@@ -36,7 +36,7 @@ Here are the results near <?php echo $_POST["zip_location"]; ?> <br> <hr>
         return "img/search_icons/fsu.png";
         }
     }
-
+$username = $_SESSION['username'];
 $_SESSION['sessionZip'] = $_POST["zip_location"];
 $range = 50; //Range to search zip
 $zip_top = intval($_SESSION['sessionZip']) + $range;
@@ -106,9 +106,12 @@ while($row = mysqli_fetch_array($result))
 /*PLAYERLIST*/
  $this_match_id = $row['match_id'];
  $players = mysqli_query($con,"SELECT * FROM matchPlayers JOIN users ON users.user_idnum=matchplayers.user_idnum WHERE match_id = '$this_match_id'" );
-
+$alreadyJoinedGame=false;
     while($row = mysqli_fetch_array($players))  {
         echo $row['username'] . "<br>";
+        if($row['username']==$_SESSION['username']){
+            $alreadyJoinedGame=true;
+        }
     }
 
 
@@ -126,8 +129,13 @@ while($row = mysqli_fetch_array($result))
         echo "<input type=\"hidden\" name=\"gameType\" value=\"". $matchType . "\">";
         echo "<input type=\"hidden\" name=\"gameID\" value=\"" . $matchID . "\">";
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+            if($alreadyJoinedGame==true){
+            echo "</form><input class=\"btn btn-info pull-right\" style=\"margin-right:1%;\" type=\"submit\" value=\"Already In this Game\"> ";
+            $alreadyJoinedGame=false;
+            }else {
             $_SESSION['searchMatchID'] = $mid;
             echo "<input class=\"btn btn-info pull-right\" style=\"margin-right:1%;\" type=\"submit\" value=\"Join Game!\"> </form>";
+            }
         } else {
             $_SESSION['searchMatchID'] = $mid;
             echo "<a href=\"#\" onClick=\"$('#modal-container-" . $num . "').hide(); $('#loginbox').show()\"><button type=\"button\" class=\"btn btn-medium btn-info\" style=\"margin-right: 1%;\" data-toggle=\"modal\" data-target=\"#loginModal\">Sign In</button></a>";
