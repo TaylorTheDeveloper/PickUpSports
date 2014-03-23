@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Get Match Info -->
 <?php 
 $con=mysqli_connect("localhost:3306","root","","games");
 		// Check connection
@@ -17,7 +18,7 @@ while($row = mysqli_fetch_array($matchExist))  {
    $matchType = $row['match_type'];
    $matchID = $row['match_id'];
    $adminID = $row['admin_user_id'];
-   $matchLocation = $row['match_type'];
+   $matchLocation = $row['match_location'];
    $matchZip = $row['match_zip'];
    $matchDate = $row['match_date'];
    $matchTime = $row['match_time'];
@@ -41,9 +42,19 @@ else{
 //mysqli_close($con);
 ?>
 
+
 <!-- Doc Header -->
 <?php include 'head.html' ?>
+<head>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet"> <!-- THIS IS A BUG FIX HACK - DONT CHANGE - TALK TO TAYLOR -->
 
+	<link href="css/matchespage.css" rel="stylesheet">
+</head>
+
+
+<!-- Login Modal -->
+<?php include 'login_modal.html' ?>
 <body>
 
 <!-- Doc Header -->
@@ -51,32 +62,85 @@ else{
 
 <br><br><br><!-- change out for margin -->
 
-<div class="container">
-
-<div class="container">
+<div class="container well">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-		<h1><?php echo $matchType; ?></h1>
+<h1><?php echo "<span class=\"entypo-bookmark\" style=\"background-color: #f97041; padding: 1%;\">" . $matchLocation . ": " . $matchType . " on " . $matchDate . ", " . $matchTime . "</span>"; ?></h1>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+<!-- Countries -->
+<input type="radio" id="europa" name="continente" checked='checked' />
+
+<!-- Europa -->
+<input type="radio" id="espana" name="pais" checked='checked' />
+<input type="radio" id="italia" name="pais" />
+<input type="radio" id="grecia" name="pais" />
+<input type="radio" id="alemania" name="pais" />
+
+<section>
+
+    <nav class='paises eu'>    
+	 <label for="grecia" class="entypo-trophy">Players</label>
+     <label for="espana" class="entypo-location">Info</label>
+     <label for="italia" class="entypo-share">Share</label>
+	<!--  <label for="alemania" class="entypo-clipboard">Friends</label> -->
+    </nav>
+
+ <div>  
+
+
+  <article class='europa'>
+     <div class='pais grecia'>
+		<table>
+		   <caption><label class="entypo-users"><b>Match Players</b></label></caption>
+		 <tbody>
+		    <?php include 'matches/matchesPlayers.php' ?>
+		   </tbody> 
+		</table>      
+    </div>
+
+    <div class='pais espana'>
+		<table>
+		   <caption> <label class="entypo-info"><b>Match Info</b></label></caption>
+		   <tbody>
+		    <?php include 'matches/matchesLocation.php' ?>
+		   </tbody>
+		</table>      
+    </div>
+    
+    <div class='pais italia'>
+<table>
+   <caption><label class="entypo-share"><b>Share Match</b></label></caption>
+   <tbody>
+       <?php include 'matches/matchesShare.php' ?>
+
+   </tbody>
+</table>      
+    </div>
+
+        <div class='pais alemania'>
+<table>
+   <caption>Your Friends:</caption>
+   <tbody>
+       <?php include 'userMGMT/userFriends.php' ?>
+   </tbody>
+</table>      
+    </div>
+    
+ 
+  </article>
+     
+ </div> 
+</section>
+
+
+				
 		</div>
 	</div>
 
-	<div class="row clearfix">
-		<div class="col-md-12 column">
-		<?php 
- $this_match_id = $matchID;
- $players = mysqli_query($con,"SELECT * FROM matchPlayers JOIN users ON users.user_idnum=matchplayers.user_idnum WHERE match_id = '$this_match_id'" );
-
-    while($row = mysqli_fetch_array($players))  {
-        echo $row['username'] . "<br>";
-    }
-		?>
-		</div>
-	</div>
-</div>
-<?php mysqli_close($con);?>
-
-
-<?php include 'footer.html' ?>
+<?php //include 'footer.html' ?>
 </div><!-- /.container -->
 
 </body>
