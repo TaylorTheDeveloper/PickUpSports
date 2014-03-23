@@ -80,7 +80,24 @@ if (!mysqli_query($con,$sql))
     }
 mysqli_close($con);
 
-header( 'Location: ../matches.php?id='. $id);//Goto match page
+//header( 'Location: ../matches.php?id='. $id);//Goto match page
+?>
+<?php //Set Values in matchplayertable :)
+$uid = $_SESSION['user_idnum'];
+$con=mysqli_connect("localhost:3306","root","","games");
+    // Check connection
+    if (mysqli_connect_errno())
+      {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+      }
+//Insert Admin player onto match playerlist
+$sql = "INSERT INTO matchplayers ( `match_id`, `user_idnum`) VALUES ('$id','$uid')";
+  if (!mysqli_query($con,$sql))
+    {
+    die('Error: ' . mysqli_error($con));
+    }
+  mysqli_close($con);
+  header( 'Location: ../matches.php?id=' . $id);
 ?>
 
 
