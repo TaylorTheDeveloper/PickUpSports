@@ -21,12 +21,10 @@
             {
                 echo "<li>";
                 echo "<div  class=\"btn-group padded\">";
-                echo "<button class=\"btn btn-info\" type=\"button\" ><a href=\"userpage.php\">" . $_SESSION['username'] . "</a></button>";
-                echo "<button class=\"btn btn-info dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\">";
-                echo "<span class=\"caret\"</span>";
-                echo "</button>";
+                //echo "<a href=\"userpage.php\"><button class=\"btn btn-info\" type=\"button\" >" . $_SESSION['username'] . "</button></a>";
+                echo "<button class=\"btn btn-info dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\"> " . $_SESSION['username'] . " <span class=\"caret\"</span></button>";
                 echo "<ul class=\"dropdown-menu\">";         
-                echo "<li><a href=\"404.php\"><i class=\"glyphicon glyphicon-cog\"></i> Account Settings</a></li>";
+                echo "<li><a href=\"userpage.php\"><i class=\"glyphicon glyphicon-cog\"></i> Account </a></li>";
                 echo "<li class=\"divider\">";
                 echo "<li><a href=\"userMGMT/logout.php\"><i class=\"glyphicon glyphicon-off\"></i> Log out</a></li>";
                 echo "</ul>";
