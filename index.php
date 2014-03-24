@@ -3,7 +3,6 @@
 
 <!-- Doc Header -->
 <?php include 'head.html' ?>
-
 <body>
 
 <!-- Doc Header -->

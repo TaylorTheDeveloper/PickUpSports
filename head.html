@@ -1,4 +1,16 @@
+
+<?php 
+$qs="<a target=\"_parent\"";
+$stf="'> ";
+$qe="</a>";
+$response = file_get_contents('http://iheartquotes.com/api/v1/random?format=html');
+$start = strpos($response,$qs);
+$end = strpos($response,$qe);
+$quote = substr($response,$start+67, ($end-$start));
+echo "<!-- QUOTE OF THE DAY: ". $quote ."-->"; ?>
+
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
