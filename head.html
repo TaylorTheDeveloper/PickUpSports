@@ -1,13 +1,5 @@
 
-<?php 
-$qs="<a target=\"_parent\"";
-$qe="</a>";
-$cata = "sports";
-$response = file_get_contents('http://iheartquotes.com/api/v1/random?source=' . $cata . '&format=html');
-$start = strpos($response,$qs);
-$end = strpos($response,$qe);
-$quote = substr($response,$start+67, ($end-$start));
-echo "<!-- QUOTE OF THE DAY: ". $quote ."-->"; ?>
+
 
 <head>
 
