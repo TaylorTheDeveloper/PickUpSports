@@ -36,7 +36,6 @@ Here are the results near <?php echo $_POST["zip_location"]; ?> <br> <hr>
         return "img/search_icons/fsu.png";
         }
     }
-$username = $_SESSION['username'];
 $_SESSION['sessionZip'] = $_POST["zip_location"];
 $range = 50; //Range to search zip
 $zip_top = intval($_SESSION['sessionZip']) + $range;
