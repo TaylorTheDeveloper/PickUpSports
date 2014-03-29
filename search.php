@@ -49,8 +49,8 @@ if (mysqli_connect_errno())
   }
 
 //Select Data
-$result = mysqli_query($con,"SELECT * FROM matches WHERE match_zip >  '$zip_bottom' AND match_zip < '$zip_top'" );
-
+$result = mysqli_query($con,"SELECT * FROM matches WHERE match_zip >  '$zip_bottom' AND match_zip < '$zip_top' AND matchp_pubpriv = 0" );
+//Only get public matches
 //Check that it returns true
 if($result==false){
   echo "Master Wayne, I've failed you";

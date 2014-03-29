@@ -125,7 +125,7 @@ else{
     
     <div class='pais italia'>
 <table>
-   <caption><label class="entypo-share"><b>Share Match</b></label></caption>
+   <caption><label class="entypo-share"><b>Invite Friends</b></label></caption>
 
        <?php include 'matches/matchesShare.php' ?>
 

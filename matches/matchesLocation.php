@@ -31,7 +31,7 @@ while($row = mysqli_fetch_array($players))
       echo "public. Anyone can join and play.";
     } 
     echo "</td></tr>";
- 
+
   }
     mysqli_close($con);
 ?>
