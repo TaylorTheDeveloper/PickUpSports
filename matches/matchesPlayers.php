@@ -1,5 +1,4 @@
 <?php //Query Database
-$uid = $_SESSION['user_idnum'];
 //Connect
 $con=mysqli_connect("localhost:3306","root","","games");
 // Check connection

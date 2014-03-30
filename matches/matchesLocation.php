@@ -1,5 +1,5 @@
 <?php //Query Database
-$uid = $_SESSION['user_idnum'];
+
 //Connect
 $con=mysqli_connect("localhost:3306","root","","games");
 // Check connection
@@ -22,13 +22,13 @@ while($row = mysqli_fetch_array($players))
    echo "<tr><td><b>When:</b></td></tr>"; 
    echo "<tr><td>" . $monthName . " " . $dateInfo['day'] . ", " . $dateInfo['year'] . " at "  . $dateInfo['hour'] . ":"  . $dateInfo['minute'] .  "</td></tr>";
    echo "<tr><td><b>Where:</b></td></tr>"; 
-   echo "<tr><td>" . $row['match_location'] . ", Zip:" . $row['match_zip'] .  "</td></tr>";                 
+   echo "<tr><td>" . $row['match_location'] . ",   Zip: " . $row['match_zip'] .  "</td></tr>";                 
    echo "<tr><td><b>Privacy:</b></td></tr>"; 
    echo "<tr><td>"; 
     if($row['matchp_pubpriv']==true){
-      echo "private. Users must have the game link to Join";
+      echo "<em>Private.</em> Users must be invited to the game by the user who made the match";
     }else{
-      echo "public. Anyone can join and play.";
+      echo "<em>Public.</em> Anyone can join and play.";
     } 
     echo "</td></tr>";
 
