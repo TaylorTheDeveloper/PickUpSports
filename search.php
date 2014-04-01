@@ -32,6 +32,12 @@ Here are the results near <?php echo $_POST["zip_location"]; ?> <br> <hr>
     case "Soccer":
         return "img/search_icons/football.png";
         break;
+    case "Tennis":
+        return "img/search_icons/tennis.png";
+        break;
+    case "Hockey":
+        return "img/search_icons/hockey.png";
+        break;
     default:
         return "img/search_icons/fsu.png";
         }
@@ -107,6 +113,7 @@ while($row = mysqli_fetch_array($result))
  $players = mysqli_query($con,"SELECT * FROM matchPlayers JOIN users ON users.user_idnum=matchplayers.user_idnum WHERE match_id = '$this_match_id'" );
 $alreadyJoinedGame=false;
     while($row = mysqli_fetch_array($players))  {
+
         echo $row['username'] . "<br>";
         if($row['username']==$_SESSION['username']){
             $alreadyJoinedGame=true;
