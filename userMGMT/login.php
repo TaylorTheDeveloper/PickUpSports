@@ -28,7 +28,8 @@ $count=mysql_num_rows($result);
 // If result matched $username and $password, table row must be 1 row
 if($count==1){
     session_start();
-    $_SESSION['loggedin'] = true;
+    $_SESSION['loggedin'] = true;    
+$username = strtolower($username);
     $_SESSION['username'] = $username;
     header( 'Location: uid.php');
 }

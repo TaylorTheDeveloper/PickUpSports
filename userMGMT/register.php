@@ -9,6 +9,7 @@ $con=mysql_connect(DB_HOST,DB_USER,DB_PASSWORD) or die("Failed to connect to MyS
 $db=mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_error());
 
 $username = $_POST['username'];
+$username = strtolower($username);
 $password =  $_POST['password'];
 $email = $_POST['email'];
 $zip = $_POST['zip'];
