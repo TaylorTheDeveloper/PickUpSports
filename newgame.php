@@ -57,7 +57,7 @@ else{
 							<option value="Soccer"<?php if($name1 == "Soccer"){ echo ' selected="selected"'; }?>> Soccer</option>
 							<option value="Tennis" <?php if($name1 == "Tennis"){ echo ' selected="selected"'; }?>> Tennis</option>
 							<option value="Ultimate_Frisbee"<?php if($name1 == "Ultimate_Frisbee"){ echo ' selected="selected"'; }?>> Ultimate Frisbee</option>
-							<option value="Rugby"<?php if($name1 == "Rugby"){ echo ' selected="selected"'; }?>> Rugby</option>
+							<!-- <option value="Rugby"<?php //if($name1 == "Rugby"){ echo ' selected="selected"'; }?>> Rugby</option> -->
 							<option value="Basketball"<?php if($name1 == "Basketball"){ echo ' selected="selected"'; }?>> Basketball</option>
 							<option value="Hockey"<?php if($name1 == "Hockey"){ echo ' selected="selected"'; }?>> Hockey</option>   
                         </select>	  
