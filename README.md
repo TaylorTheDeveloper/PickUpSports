@@ -1,6 +1,8 @@
 PickUp.
 
-BUG! - Register not working -T
+Beta Version
+
+Please Report all bugs!
 
 Taylor Brockhoeft
 Rob Shnayder
