@@ -71,7 +71,7 @@ else{
 					 	</font>
 				    </label>  
 				 	<div class="col-md-9">
-	                   <input type="digits" class="form-control" name="maxPlayers" parsley-required="true" parsley-minlength="1" parsley-maxlength="2" placeholder="Maximum Players">
+	                   <input type="digits" class="form-control" name="maxPlayers" autofocus parsley-required="true" parsley-minlength="1" parsley-maxlength="2" placeholder="Maximum Players">
 					</div>
 				</div>
 
