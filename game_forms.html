@@ -31,10 +31,10 @@
 
                 <?php 
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-                    echo "<input class=\"btn btn-info\" type=\"submit\" value=\"Lets Play!\"> ";
+                    echo "<input class=\"color green styled-button-1\" type=\"submit\" value=\"Lets Play!\"> ";
                 } else {
                     $_SESSION['newgame'] = true;
-                    echo "<a href=\"#newgame\"><button type=\"button\" class=\"btn btn-medium btn-info\" data-toggle=\"modal\" data-target=\"#loginModal\">Lets Play!</button></a>";
+                    echo "<a href=\"#newgame\"><button type=\"button\" class=\"color green styled-button-1\" data-toggle=\"modal\" data-target=\"#loginModal\">Lets Play!</button></a>";
 
                 }
                 ?>
@@ -61,7 +61,7 @@
                     </div>
                     <div class="login-footer">
                     <div class="row">
-                                    <input class="btn btn-info" type="submit" value="Search"> 
+                                    <input class="color green styled-button-1" type="submit" value="Search"> 
                                         <!-- <a href="search.php" class="btn btn-success" ><i class="icon-star icon-white "></i> Search</a> -->
                                     </div>                    
                     </div>
