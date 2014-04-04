@@ -21,7 +21,7 @@
             {
                 echo "<li>";
                 echo "<div  class=\"btn-group padded\">";
-                echo "<button class=\"btn btn-info dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\"> " . $_SESSION['username'] . " <span class=\"caret\"</span></button>";
+                echo "<button class=\"btn btn-success dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\"> " . $_SESSION['username'] . " <span class=\"caret\"</span></button>";
                 echo "<ul class=\"dropdown-menu\">";         
                 echo "<li><a href=\"userpage.php\"><i class=\"glyphicon glyphicon-cog\"></i> Account </a></li>";
                 echo "<li class=\"divider\">";
@@ -32,11 +32,11 @@
             } 
             else 
             {
-                echo "<li><a href=\"#login\"><button type=\"button\" class=\"btn btn-medium btn-info\" data-toggle=\"modal\" data-target=\"#loginModal\">Sign In</button></a></li>";
+                echo "<li><a href=\"#login\"><button type=\"button\" class=\"nav styled-button-1\" data-toggle=\"modal\" data-target=\"#loginModal\">Sign In</button></a></li>";
             }
             ?>
                       
-                <li><a href="about.php"><button type="button" class="btn btn-info">About</button></a></li>
+                <li><a href="about.php"><button type="button" class="nav styled-button-1">About</button></a></li>
             </ul>
         </div>
 
