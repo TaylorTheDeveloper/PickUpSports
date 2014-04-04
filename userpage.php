@@ -3,6 +3,8 @@
 
 <!-- Doc Header -->
 <?php include 'head.html' ?>
+
+
 <head>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet"> <!-- THIS IS A BUG FIX HACK - DONT CHANGE - TALK TO TAYLOR -->

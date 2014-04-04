@@ -1,44 +1,4 @@
-<script type="text/javascript">
-$(document).ready(function(){
-  //  $("#add_err").css('display', 'none', 'important');
-     $("#login").click(function(){  
-          username=$("#login-username").val();
-          password=$("#login-password").val();
-          $.ajax({
-           type: "POST",
-           url: "userMGMT/login.php",
-           dataType: 'html',
-           data: "name="+username+"&pwd="+password,
-           success: function(html){    
-            console.log(html) 
-            if(html.trim()=='1')    {
-               
-             window.location="userMGMT/uid.php";
-            }
-
-            else    {              
-            document.getElementById('login-alert').style.display = "block";
-            document.getElementById('login-alert').innerHTML = "Invalid Username or Password";
-            }
-           },
-           beforeSend:function()
-           {
-            //$("#add_err").css('display', 'inline', 'important');
-            //$("#add_err").html("Loading...")
-           }
-          });
-        return false;
-    });
-});
-
-function trim(str){
-var str=str.replace(/^\s+|\s+$/,'');
-return str;
-}
-
-</script>
-
-
+<script src="loginFunctionality.js"></script>
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">       
 <div class="modal-body center" style="margin-left: 20%; width: 60%; position: relative; top:-10%">                
 
@@ -112,16 +72,18 @@ return str;
                                 <p>Error:</p>
                                 <span></span>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group">                                
                                 <label for="username" class="col-md-3 control-label">Username</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="username" parsley-required="true" autofocus placeholder="Username"  parsley-minlength="5">
+                                    <input type="text" class="form-control" id="username" name="username" parsley-required="true" autofocus placeholder="Username"  parsley-minlength="5">
+                                <div id="error">
+                                </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="password" class="col-md-3 control-label">Password</label>
                                 <div class="col-md-9">
-                                    <input type="password" class="form-control" id="password" parsley-required="true" placeholder="Password" parsley-minlength="6" parsley-equalto="#password">
+                                    <input type="password" class="form-control" id="password" name="password" parsley-required="true" placeholder="Password" parsley-minlength="6" parsley-equalto="#password">
                                 </div>
                             </div>
                             <div class="form-group">

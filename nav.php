@@ -32,7 +32,7 @@
             } 
             else 
             {
-                echo "<li><a href=\"#\"><button type=\"button\" class=\"btn btn-medium btn-info\" data-toggle=\"modal\" data-target=\"#loginModal\">Sign In</button></a></li>";
+                echo "<li><a href=\"#login\"><button type=\"button\" class=\"btn btn-medium btn-info\" data-toggle=\"modal\" data-target=\"#loginModal\">Sign In</button></a></li>";
             }
             ?>
                       

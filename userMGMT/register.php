@@ -18,6 +18,7 @@ $first = $_POST['firstname'];
 $last = $_POST['lastname'];
 
 
+
 //$query = "INSERT INTO users (username,password,zip,first_name,last_name,email) VALUES ('$userName','$password', '$zip', '$fname', '$lname', '$email')";
 $query = "INSERT INTO users ( first_name, last_name, email, username, zip, favSport, password) VALUES ('$first','$last', '$email', '$username', 
 	'$zip', '$favSport' , '$password')";
@@ -39,7 +40,7 @@ if($data)
    	//header( 'Location: ../newgame.php');
    //}
     //else{
-   // header( 'Location: ../userpage.php');
+   //header( 'Location: ../userpage.php');
 	//}
 exit;
 }
@@ -47,4 +48,24 @@ else
 {
 echo "Unknown Error, Account could not be generated!";
 }
+
+
+
+$con=mysqli_connect("localhost:3306","root","","games");
+    // Check connection
+    if (mysqli_connect_errno())
+      {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+      }
+
+$uname = $_SESSION['username'];
+ $players = mysqli_query($con,"SELECT * FROM users WHERE username = '$uname'" );
+
+    while($row = mysqli_fetch_array($players))  {
+        $_SESSION['user_idnum'] = $row['user_idnum'] . "<br>";
+    }
+
+ mysqli_close($con);
+
+
 ?>
