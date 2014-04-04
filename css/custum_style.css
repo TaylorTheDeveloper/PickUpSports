@@ -52,6 +52,49 @@ footer {
     border-radius: 4px 0 0 4px;
 }
 
+.customH1 {
+    font-family: 'Arvo', Georgia, Times, serif;
+    font-size: 59px;
+    margin-bottom:45px;
+    line-height: 70px;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+
+}
+.customH4 {
+    font-family: 'Arvo', Georgia, Times, serif;
+    font-size: 40px;
+
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+
+}
+
+.customH1_first {
+    font-family: 'Arvo', Georgia, Times, serif;
+    font-size: 65px;
+    margin-top:50px;
+    margin-bottom:25px;
+    font-weight: bold;
+    line-height: 20px;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+}
+
+.customH1_color {
+    font-family: 'Arvo', Georgia, Times, serif;
+    font-size: 45px;
+    color: #FE9A2E;
+    line-height: 120px;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+}
+
+
 
 
 /* green1: 07ad79; 2:06a277;
