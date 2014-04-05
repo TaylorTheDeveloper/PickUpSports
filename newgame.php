@@ -32,12 +32,14 @@ else{
 
 <div class="container">
 	<div class="row clearfix" >
-		  <div class="panel-heading">
-                    <br><h1><center>Create a new game</center></h1><br>
+		  <div class="panel-heading" style="color:#fa7147;">
+                    <br><h1><center><span class="glyphicon glyphicon-play-circle" > </span> New game</center></h1><br>
                 </div>     
 		<div class="col-md-4 column">
-			<br><br><br>
-			<img src="img/search_icons/tennisball.png" />
+			<br><br>
+			<center>
+			<img src="img/search_icons/medal.png" />
+			</center>
 		</div>
 
 		<div class="col-md-4 column well">
@@ -246,7 +248,7 @@ else{
 
  				<div style="margin-top:10%" class="form-group">
 				  <div class="col-sm-12 controls">                                       
-                         <input class="btn btn-success" type="submit" value="Lets Play!"> 
+                         <input class="color green styled-button-1" type="submit" value="Lets Play!"> 
                   </div>
 				</div>
 			</div>
@@ -258,7 +260,9 @@ else{
 		</div>
 		<div class="col-md-4 column">
 			<br><br>
-			<img src="img/search_icons/racket.png" />
+			<center>
+			<img src="img/search_icons/medal.png" />
+			</center>
 		</div>
 
 	</div>

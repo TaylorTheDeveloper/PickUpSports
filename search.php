@@ -16,7 +16,7 @@
  <font color="FA7147">
 
    <h1> 
-Here are the results near <?php echo $_POST["zip_location"]; ?> <br> <hr>
+<?php echo "<span class=\"glyphicon glyphicon-search\" style=\"background-color: #ffffff; padding: 1%;\"></span><span> " . " " . "Games Near " . $_POST['zip_location'] ."</span>"; ?> <br> <hr>
     </h1>
 
 
@@ -24,13 +24,13 @@ Here are the results near <?php echo $_POST["zip_location"]; ?> <br> <hr>
    function handleImg($name){
               switch ($name) {
     case "Baseball":
-        return "img/search_icons/football.png";
+        return "img/search_icons/baseball.png";
         break;
     case "Basketball":
         return "img/search_icons/basketball.png";
         break;
     case "Soccer":
-        return "img/search_icons/football.png";
+        return "img/search_icons/soccer.png";
         break;
     case "Tennis":
         return "img/search_icons/tennis.png";
@@ -38,8 +38,14 @@ Here are the results near <?php echo $_POST["zip_location"]; ?> <br> <hr>
     case "Hockey":
         return "img/search_icons/hockey.png";
         break;
+    case "Ultimate_Frisbee":
+        return "img/search_icons/frisbee.png";
+        break;
+    case "Football":
+        return "img/search_icons/football.png";
+        break;
     default:
-        return "img/search_icons/fsu.png";
+        return "img/search_icons/medal.png";
         }
     }
 $_SESSION['sessionZip'] = $_POST["zip_location"];
@@ -73,7 +79,11 @@ while($row = mysqli_fetch_array($result))
      echo "<div class=\"col-md-12 column\">";
        echo "<div class=\"row clearfix media well\">";
          echo "<div class=\"col-md-2 column\">";
-           echo "<img class=\"img\"  src=\"" . handleImg( $matchType) . "\" />";
+           echo "<img class=\"img\" height=\"80%\" width=\"80%\" src=\"" . handleImg( $matchType) . "\" />";
+         echo "</div>";
+         echo "<div class=\"col-md-2 column\">";               
+         echo "<h3>Sport</h3>";
+         echo "<p>" . $row['match_type'] . "</p>";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
          echo "<h3>Where</h3>";
@@ -81,20 +91,16 @@ while($row = mysqli_fetch_array($result))
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
          echo "<h3>When</h3>";
-         echo "<p>" . $row['match_date'] . "</p>";
-         echo "<p>" . $row['match_time'] . "</p>";
+         echo "<p>Date:" . $row['match_date'] . "</p>";
+         echo "<p>Time:" . $row['match_time'] . "</p>";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
          echo "<h3>Players</h3>";
          echo "<p> Max " . $row['match_maxplayers'] . "</p>";
          echo "<p> Curr " . $row['match_currentplayers'] . "</p>";
          echo "</div>";
-         echo "<div class=\"col-md-2 column\">";               
-         echo "<h3>Details</h3>";
-         echo "<p>" . $row['match_type'] . "</p>";
-         echo "</div>";
          echo "<div class=\"col-md-2 column\">";
-        echo "<a id=\"modal-627836\" href=\"#modal-container-" . $num . "\" role=\"button\" class=\"btn\" data-toggle=\"modal\"><button type=\"button\" class=\"btn btn-medium btn-info\" data-toggle=\"regmodal\" data-target=\"#regModal\">Join Game</button></a>";
+        echo "<a id=\"modal-627836\" href=\"#modal-container-" . $num . "\" role=\"button\" class=\"btn\" data-toggle=\"modal\"><button type=\"button\" class=\"color green styled-button-1\" data-toggle=\"regmodal\" data-target=\"#regModal\">Join Game</button></a>";
          $mid =  $row['match_id'];
          //Start Modal
         echo "<div class=\"modal fade\" id=\"modal-container-" . $num . "\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">";
@@ -136,11 +142,11 @@ $alreadyJoinedGame=false;
         echo "<input type=\"hidden\" name=\"gameID\" value=\"" . $matchID . "\">";
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             if($alreadyJoinedGame==true){
-            echo "</form><input class=\"btn btn-info pull-right\" style=\"margin-right:1%;\" type=\"submit\" value=\"Already In this Game\"> ";
+            echo "</form><input class=\"color green styled-button-1\" style=\"margin-right:1%;\" type=\"submit\" value=\"You're already In this Game\"> ";
             $alreadyJoinedGame=false;
             }else {
             $_SESSION['searchMatchID'] = $mid;
-            echo "<input class=\"btn btn-info pull-right\" style=\"margin-right:1%;\" type=\"submit\" value=\"Join Game!\"> </form>";
+            echo "<input class=\"color green styled-button-1\" style=\"margin-right:1%;\" type=\"submit\" value=\"Join Game!\"> </form>";
             }
         } else {
             $_SESSION['searchMatchID'] = $mid;
