@@ -21,7 +21,12 @@ while($row = mysqli_fetch_array($result))
    echo "<tr><td>Name</td><td>" . $row['first_name'] ." ". $row['last_name'] .  "</td></tr>"; 
    echo "<tr><td>Email</td><td>" . $row['email'] . "</td></tr>"; 
    echo "<tr><td>Zip</td><td>" . $row['zip'] . "</td></tr>"; 
-   echo "<tr><td>Favorite Sport</td><td>" . $row['favSport'] . "</td></tr>"; 
+   echo "<tr><td>Favorite Sport</td><td>" . $row['favSport'] . "</td></tr>";    
+   echo "<tr><td>Delete Account</td>";
+     echo "<td>";
+ echo "<form accept-charset=\"UTF-8\" id=\"linkform\" class=\"form-horizontal\" role=\"form\" method=\"post\" action=\"confirm_delete_account.php\" parsley-validate >";           
+   echo "<input  class=\"color green styled-button-1\" style=\"padding: -1%;\" type=\"submit\" value=\"Delete Account :(\"></form>";
+   echo "</td></tr>"; 
   }
     mysqli_close($con);
 ?>

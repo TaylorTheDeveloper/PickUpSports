@@ -17,7 +17,7 @@
 	echo "<div style=\"padding: 2% 5%;\" class=\"input-group\">";
 	echo "<span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-envelope\"></i></span>";
 	echo "<input type=\"text\" class=\"form-control\" name=\"usernames\" parsley-required=\"true\" id=\"usernames\" placeholder=\"Ex. Jimmy, Joe, Dan, Smith\" />";
-	echo "<input class=\"btn btn-info\" style=\"margin-top: .5%;\" type=\"submit\" value=\"Send Invite\">";
+	echo "<input  class=\"color green styled-button-1\" style=\"margin-top: .5%;\" type=\"submit\" value=\"Send Invite\">";
 	echo "</div></tr></td>";
         } else {
 //Do nothing here, because
