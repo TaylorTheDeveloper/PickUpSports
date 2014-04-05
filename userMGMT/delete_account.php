@@ -6,27 +6,31 @@ $password=""; // Mysql password
 $db_name="games"; // Database name 
 $tbl_name="users"; // Table name 
 
-// Connect to server and select databse.
-mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
-mysql_select_db("$db_name")or die("cannot select DB");
-
-// username and password sent from form 
 session_start();
-$username = $_SESSION['username'];
+$username=$_SESSION['username'];
 
-$sql = "SELECT * FROM $tbl_name WHERE username='$username'";
-$result = mysql_query($sql);
+$uid=$_SESSION['user_idnum'];
 
-// Mysql_num_row is counting table row
-$count=mysql_num_rows($result);
-
-// Checks if there are any other records with that username
-if($count){
-	echo "Account Deleted Successfully";
-}
-else
+$con = mysql_connect("localhost","root","");
+if (!$con)
 {
-	echo '0';
-	//header( 'Location: ../404.php?info=The System Couldnt Log You On');
+die('Could not connect: ' . mysql_error());
 }
+
+mysql_select_db("games", $con);
+
+// sending query
+
+mysql_query("DELETE FROM matchplayers WHERE user_idnum='$uid'") or die(mysql_error());  
+mysql_query("DELETE FROM matches WHERE admin_user_id='$uid'") or die(mysql_error());  
+mysql_query("DELETE FROM gamehistory WHERE username='$username'") or die(mysql_error());  
+mysql_query("DELETE FROM users WHERE username='$username'") or die(mysql_error()); 
+session_destroy();
+
+ mysqli_close($con);
+
+ session_start();
+$_SESSION['deleteMessage'] = true;
+
+ header( 'Location: ../index.php');
 ?>

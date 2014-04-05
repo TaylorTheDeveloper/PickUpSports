@@ -19,6 +19,10 @@
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         //header('Location: userpage.php');
 } 
+if(isset($_SESSION['deleteMessage'])){    
+echo "<script> alert(\"Sorry to see you go!\") </script>";
+unset($_SESSION['deleteMessage']);
+}
 ?>
 
 <?php include 'game_forms.html' ?>
