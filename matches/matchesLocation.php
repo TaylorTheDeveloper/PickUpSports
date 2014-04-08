@@ -36,7 +36,7 @@ while($row = mysqli_fetch_array($players))
    echo "<tr><td><b>Game Type:</b></td></tr>"; 
    echo "<tr><td>" . $row['match_type'] . "</td></tr>";
    echo "<tr><td><b>When:</b></td></tr>"; 
-   echo "<tr><td>" . $monthName . " " . $dateInfo['day'] . ", " . $dateInfo['year'] . " at "  . $dateInfo['hour'] . ":"  . $dateInfo['minute'] .  "</td></tr>";
+   echo "<tr><td>" . $monthName . " " . $dateInfo['day'] . ", " . $dateInfo['year'] . " at "  . $dateInfo['hour'] . ":"  . $dateInfo['minute'] .  " PM</td></tr>";
    echo "<tr><td><b>Where:</b></td></tr>"; 
    echo "<tr><td>" . $row['match_location'] . ",   Zip: " . $row['match_zip'] .  "</td></tr>";                 
    echo "<tr><td><b>Privacy:</b></td></tr>"; 

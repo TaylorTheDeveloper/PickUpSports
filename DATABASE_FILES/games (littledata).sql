@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 08, 2014 at 06:56 PM
+-- Generation Time: Apr 08, 2014 at 05:26 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -78,24 +78,15 @@ CREATE TABLE IF NOT EXISTS `gamehistory` (
   `hockey` int(6) NOT NULL DEFAULT '0',
   PRIMARY KEY (`user_idnum`),
   UNIQUE KEY `user_idnum` (`user_idnum`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=73 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=64 ;
 
 --
 -- Dumping data for table `gamehistory`
 --
 
 INSERT INTO `gamehistory` (`gamesPlayed`, `user_idnum`, `username`, `baseball`, `soccer`, `football`, `tennis`, `frisbee`, `rugby`, `basketball`, `hockey`) VALUES
-(27, 62, 'taylor', 21, 8, 14, 3, 11, 0, 12, 8),
-(12, 63, 'roberto', 18, 14, 7, 0, 1, 3, 55, 27),
-(0, 64, 'billyjoel', 1, 2, 3, 4, 5, 7, 8, 6),
-(1, 65, 'queenfan1', 5, 7, 34, 23, 19, 6, 8, 4),
-(0, 66, 'tingting', 1, 0, 15, 2, 8, 0, 0, 0),
-(1, 67, 'nixxed', 100, 5, 31, 0, 0, 0, 12, 0),
-(0, 68, 'flintstonian', 0, 8, 50, 0, 0, 0, 0, 15),
-(0, 69, 'griffin', 8, 0, 4, 1, 0, 6, 4, 0),
-(0, 70, 'spamajammer', 0, 6, 0, 2, 0, 5, 33, 0),
-(0, 71, 'imreal_iswear', 0, 0, 24, 0, 0, 4, 2, 1),
-(0, 72, 'whodat', 22, 12, 1, 0, 44, 0, 0, 0);
+(25, 62, 'taylor', 1, 8, 1, 1, 11, 0, 3, 0),
+(12, 63, 'roberto', 0, 1, 7, 0, 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -115,16 +106,28 @@ CREATE TABLE IF NOT EXISTS `matches` (
   `match_currentplayers` int(5) NOT NULL,
   `matchp_pubpriv` tinyint(1) NOT NULL COMMENT 'zero for public, 1 for private',
   PRIMARY KEY (`match_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='matches_prototype' AUTO_INCREMENT=40 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='matches_prototype' AUTO_INCREMENT=37 ;
 
 --
 -- Dumping data for table `matches`
 --
 
 INSERT INTO `matches` (`match_id`, `admin_user_id`, `match_type`, `match_location`, `match_zip`, `match_date`, `match_time`, `match_maxplayers`, `match_currentplayers`, `matchp_pubpriv`) VALUES
-(37, 72, 'Football', 'By the Mercedes-Bienz Super dome', 70027, '2014-05-05', '05:00:00', 12, 1, 0),
-(38, 69, 'Tennis', 'FSU Tennis courts', 32304, '2014-05-06', '07:30:00', 4, 1, 0),
-(39, 67, 'Baseball', 'The IM Feilds', 32304, '2014-05-07', '06:00:00', 12, 1, 0);
+(21, 62, 'Baseball', 'SmallGame', 32303, '2014-03-26', '05:00:00', 4, 1, 1),
+(22, 21, '', '', 0, '1970-01-01', '00:00:00', 0, 1, 0),
+(23, 62, 'Soccer', 'SoccerFeilds', 32305, '2014-03-27', '08:45:00', 8, 1, 0),
+(24, 62, 'Basketball', 'koolwork', 32304, '2014-03-30', '08:15:00', 7, 1, 0),
+(25, 62, 'Basketball', 'lool', 32305, '2014-03-26', '05:15:00', 8, 1, 0),
+(26, 62, 'Tennis', 'fagball audit', 32304, '2014-03-01', '05:15:00', 2, 1, 0),
+(27, 62, 'Basketball', 'lolololokkkkk', 32306, '2014-03-24', '05:30:00', 8, 1, 0),
+(28, 62, 'Basketball', '55555', 55555, '2014-03-01', '05:15:00', 5, 1, 0),
+(29, 62, 'Tennis', 'gaybar', 989, '2014-03-26', '10:15:00', 7, 1, 0),
+(30, 62, 'Baseball', 'koolki', 88990, '2014-03-26', '06:15:00', 6, 1, 0),
+(31, 62, 'Football', 'City', 88888, '2014-03-20', '14:30:00', 5, 1, 0),
+(32, 62, 'Football', 'the Zoo', 32304, '2014-03-31', '14:30:00', 8, 1, 0),
+(34, 62, 'Baseball', 'place', 32304, '2014-04-04', '06:30:00', 8, 1, 0),
+(35, 62, 'Ultimate_Frisbee', 'Landis', 32304, '2014-04-04', '07:45:00', 8, 1, 0),
+(36, 62, 'Hockey', 'Wells Fargo', 32305, '2014-04-08', '07:00:00', 8, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -144,13 +147,17 @@ CREATE TABLE IF NOT EXISTS `matchplayers` (
 --
 
 INSERT INTO `matchplayers` (`match_id`, `user_idnum`) VALUES
-(37, 62),
-(38, 62),
-(38, 65),
-(37, 67),
-(39, 67),
-(38, 69),
-(37, 72);
+(21, 62),
+(23, 62),
+(24, 62),
+(30, 62),
+(31, 62),
+(32, 62),
+(34, 62),
+(35, 62),
+(36, 62),
+(31, 63),
+(32, 63);
 
 -- --------------------------------------------------------
 
@@ -168,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(32) NOT NULL COMMENT 'max length is 32',
   `favSport` varchar(20) NOT NULL,
   PRIMARY KEY (`user_idnum`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=73 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=64 ;
 
 --
 -- Dumping data for table `users`
@@ -176,16 +183,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`user_idnum`, `first_name`, `last_name`, `email`, `username`, `zip`, `password`, `favSport`) VALUES
 (62, 'Taylor', 'Brockhoeft', 'taylorbrockhoeft@gmail.com', 'taylor', 32304, 'cookie', 'Soccer'),
-(63, 'Rob', 'Shnayder', 'lolcats@car.co', 'roberto', 32304, 'cookie', 'Hockey'),
-(64, 'Billy', 'Joel', 'billyJoel@5th.co', 'billyjoel', 32307, 'pressure', 'Rugby'),
-(65, 'Freddie', 'Mercury', 'readyFreddie@gaga.biz', 'queenfan1', 32302, 'lovekills', 'Soccer'),
-(66, 'Karl', 'Marx', 'tingting@jo.co', 'tingting', 32313, 'tangtang', 'Hockey'),
-(67, 'Richard', 'Nixon', 'trickyDicky@whitehouse.gov', 'nixxed', 32324, 'watergate', 'Baseball'),
-(68, 'Fred', 'Flintstone', 'dino@saur.co', 'flintstonian', 33541, 'bedrock', 'Basketball'),
-(69, 'Stewie', 'Griffin', 'iHateLois@familyguy.com', 'griffin', 32305, 'stewies', 'Tennis'),
-(70, 'Bugs', 'Bunny', 'bb@duckseason.io', 'spamajammer', 32306, 'koolaide', 'Ultimate_Frisbee'),
-(71, 'DubenGaken', 'Smith', '12345@gmail.co.uk.lol', 'imreal_iswear', 55512, 'totreal', 'Football'),
-(72, 'Trae', 'Dixon', 'newOrleansSaints@go.bro', 'whodat', 70053, 'saintswin', 'Football');
+(63, 'Rob', 'Shnayder', 'lolcats@car.co', 'roberto', 32304, 'cookie', 'Hockey');
 
 --
 -- Constraints for dumped tables

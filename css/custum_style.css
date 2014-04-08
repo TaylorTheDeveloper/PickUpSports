@@ -1,6 +1,7 @@
 html, body {
 	height:100%;
 }
+
 .carousel {
 	height:50%;
 }
@@ -162,7 +163,7 @@ footer {
     color: #57a957;
 }
 .styled-button-1.nav:hover{
-    background: #57a957;
+    background: #07ad79;
     color: #fff;
 }
 
@@ -190,6 +191,11 @@ footer {
      top:10px; 
 }
 
+.searchHR{
+  margin: -1% 0% 5% 0%; 
+  height: 3px; 
+  background-color:#07ad79;
+}
 /* green1: 07ad79; 2:06a277;
 */
 /* Bar Graph*/

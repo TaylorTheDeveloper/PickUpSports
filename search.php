@@ -72,6 +72,10 @@ $num = 1;
 //Print Data by row
 while($row = mysqli_fetch_array($result))
   {
+    $dateInfo = date_parse($row['match_date'] . " " . $row['match_time']);
+    $monthNum = $dateInfo['month'];
+    $monthName = date("F", mktime(0, 0, 0, $monthNum, 10));
+
     $matchType = $row['match_type'];
     $matchID = $row['match_id'];
      echo "<div class=\"container\" >";
@@ -82,22 +86,31 @@ while($row = mysqli_fetch_array($result))
            echo "<img class=\"img\" height=\"80%\" width=\"80%\" src=\"" . handleImg( $matchType) . "\" />";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";               
-         echo "<h3>Sport</h3>";
+         echo "<h3 style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">Sport</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";
          echo "<p>" . $row['match_type'] . "</p>";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
-         echo "<h3>Where</h3>";
+         echo "<h3 style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">Where</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";
          echo "<p>" . $row['match_location'] . "</p>";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
-         echo "<h3>When</h3>";
-         echo "<p>Date:" . $row['match_date'] . "</p>";
-         echo "<p>Time:" . $row['match_time'] . "</p>";
+         echo "<h3 style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">When</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";
+         echo "<p>Date: "  . $monthName . " " . $dateInfo['day'] . ", " . $dateInfo['year'] . "</p>";
+         $min="00";
+         if($dateInfo['minute']==0){
+            $min="00";
+         }
+         else{
+            $min = $dateInfo['minute'];
+         }
+         echo "<p>Time: " . $dateInfo['hour'] . ":"  . $min .  " PM</p>";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
-         echo "<h3>Players</h3>";
-         echo "<p> Max " . $row['match_maxplayers'] . "</p>";
-         echo "<p> Curr " . $row['match_currentplayers'] . "</p>";
+         echo "<h3 style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">Players</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";
+         echo "<p> ". $row['match_currentplayers'] . " / ". $row['match_maxplayers'] . "</p>";
+         if($row['match_currentplayers'] == $row['match_maxplayers']){
+         echo "<p> This Game is Full </p>";
+         }
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
         echo "<a id=\"modal-627836\" href=\"#modal-container-" . $num . "\" role=\"button\" class=\"btn\" data-toggle=\"modal\"><button type=\"button\" class=\"color green styled-button-1\" data-toggle=\"regmodal\" data-target=\"#regModal\">Join Game</button></a>";
@@ -108,7 +121,7 @@ while($row = mysqli_fetch_array($result))
         echo "<div class=\"modal-content\">";
         echo "<div class=\"modal-header\">";
         echo "<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>";
-        echo "<h4 class=\"modal-title\" id=\"myModalLabel\"> Match Details </h4>";
+        echo "<h4 class=\"modal-title\" id=\"myModalLabel\"> Players </h4>";
         echo " </div>";
         echo "<div class=\"modal-body\">";
         echo "<div class=\"row clearfix\">";//start body row clearfix
@@ -118,25 +131,28 @@ while($row = mysqli_fetch_array($result))
  $this_match_id = $row['match_id'];
  $players = mysqli_query($con,"SELECT * FROM matchPlayers JOIN users ON users.user_idnum=matchplayers.user_idnum WHERE match_id = '$this_match_id'" );
 $alreadyJoinedGame=false;
+$ctr = 0;
+echo "<ol>";
     while($row = mysqli_fetch_array($players))  {
 
-        echo $row['username'] . "<br>";
+        echo "<font size=\"4\"><li>". $row['username'] . "</li></font>";
         if($row['username']==$_SESSION['username']){
             $alreadyJoinedGame=true;
         }
+        $ctr++;
     }
-
+echo "</ol>";
 
   //END PLAYERLISTING
 
 		echo "</div>";//End Column 1
 		echo "<div class=\"col-md-6 column\">";//Column 2 (details)
-		echo "<img alt=\"140x140\" src=\"http://lorempixel.com/140/140/\" class=\"img-circle  pull-right\" style=\"margin-right:10%;\" />";
+		echo "<img alt=\"140x140\" src=\"img/search_icons/medal.png\" class=\"img-responsive pull-right\" style=\"margin-right:10%;\" />";
 		echo "</div>";//End Column 2
 		echo "</div>";//End body row clearfix
         echo "</div>";
         echo "<div class=\"modal-footer row clearfix\">";
-        echo "<button type=\"button\" class=\"btn btn-default pull-right\" style=\"margin-right:1%;\" data-dismiss=\"modal\">Close</button>";
+        echo "<button type=\"button\" class=\"nav styled-button-1 pull-right\" style=\"margin-right:1%;\" data-dismiss=\"modal\">Close</button>";
         echo "<form accept-charset=\"UTF-8\" role=\"form\" method=\"post\" action=\"userMGMT/handleUser.php\">";
         echo "<input type=\"hidden\" name=\"gameType\" value=\"". $matchType . "\">";
         echo "<input type=\"hidden\" name=\"gameID\" value=\"" . $matchID . "\">";

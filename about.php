@@ -25,7 +25,7 @@
             <div class="col-lg-12 section">
                 <h1 class="section-heading">Good Games, Good times</h1>
                 <p class="lead section-lead">Users from all over the United States can make new friends, play sports, and have fun.</p>
-                <p class="section-paragraph">Elaborate more about the above heading. Ttis purus laoreet varius. Pellentesque malesuada malesuada mattis. Aliquam sed porta nisi, eget suscipit dolor. Nam ipsum sapien, rhoncus eu leo eu, ultricies pellentesque tellus. Ttis purus laoreet varius. Pellentesque malesuada malesuada mattis. Aliquam sed porta nisi, eget suscipit dolor. Nam ipsum sapien, rhoncus eu leo eu, ultricies pellentesque tellus.</p>
+                <p class="section-paragraph"> &nbsp &nbsp &nbsp &nbspPickUp makes it easy to organize a pick-up game with friends. Just pick the sport you'd like to play, and tell us where you are. PickUp finds existing games going on around you, and also let's you set up new games, invite your friends, and iron out the details. All you need is your friend's contact information and we'll send out invitations and round everyone up! It's just your everyday neighborhood Pick-up game. Reimagined.</p>
             </div>
         </div>
     </div>
@@ -42,7 +42,7 @@
                 <img class="img-circle img-responsive text-center" src="img/about_rob.jpg">
                 <center>
                 <h2>Rob</h2>
-                <p><h3>Favorite Sport: Hockey</h3> <h4> Developer </h4> Personal Summary </p>
+                <p><h3>Favorite Sport: Hockey</h3> <h4> Developer/Databases </h4> Personal Summary </p>
                 </center>
             </div>
             <div class="col-sm-3">
@@ -63,7 +63,7 @@
                 <img class="img-circle img-responsive" src="img/about_jordan.jpg">
                 <center>
                 <h2>Jordan</h2>
-                <p><h3>Favorite Sport: Tennis</h3> <h4> title </h4> Personal Summary </p>
+                <p><h3>Favorite Sport: Tennis</h3> <h4> Designer </h4> Personal Summary </p>
                 </center>
             </div>
             </div>
