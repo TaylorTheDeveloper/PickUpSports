@@ -47,7 +47,7 @@ while($row = mysqli_fetch_array($players))
       echo "<em>Public.</em> Anyone can join and play.<br>";
      if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { 
       if($alreadyJoinedGame==true){
-            echo "<input class=\"color green styled-button-1\" style=\"margin-right:1%;\" type=\"submit\" value=\"You're in this Game\"> ";
+            echo "<input class=\"color green styled-button-1\" style=\"padding: -1%; margin-top:1%;\" type=\"submit\" value=\"You're in this Game\"> ";
             $alreadyJoinedGame=false;
             }else {
             $_SESSION['searchMatchID'] = $row['match_id'];           
