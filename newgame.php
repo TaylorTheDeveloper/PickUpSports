@@ -103,7 +103,7 @@ else{
 				    <script>
 					 $(document).ready(function(){
 						    $(function(){
-						        $('#datePicker').datepicker();
+						        $('#datePicker').datepicker({minDate: 0});
 						    });
 						});
 					  </script>
