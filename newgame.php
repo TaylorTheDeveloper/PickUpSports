@@ -101,10 +101,12 @@ else{
 
 				<div class = "form-group">
 				    <script>
-						  $(function() {
-						    $( "#datepicker" ).datepicker();
-						  });
-					</script>
+					 $(document).ready(function(){
+						    $(function(){
+						        $('#datePicker').datepicker();
+						    });
+						});
+					  </script>
 
 					<label for="datepicker" class="col-md-3 control-label">
 						<font color="FA7147">
@@ -112,7 +114,7 @@ else{
 					 	</font>
 					</label>
 					 <div class="col-md-9">
-						<input type="text" class="form-control" id="datepicker" name="date" placeholder="Date" parsley-required="true" >
+						<input type="text" class="form-control" id="datePicker" name="date" placeholder="Date" parsley-required="true" >
 					  </div>
 
                 </div>
