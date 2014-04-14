@@ -15,7 +15,6 @@ Description:
 
 */
 //Connect
-	require_once "Mail.php";
 session_start();
 $uid = $_SESSION['username'];
 $usernames=$_POST['usernames'];
@@ -59,11 +58,11 @@ if($row = mysqli_fetch_array($result)){
 	$to = $row['email'];
 	 $subject = "PickUpSports";
 	 $body = $content;
-	 if (mail($to, $subject, $body)) {
-	   echo("<p>Email successfully sent!</p>");
-	  } else {
-	   echo("<p>Email delivery failed…</p>");
-	  }
+//	 if (mail($to, $subject, $body)) {
+//	   echo("<p>Email successfully sent!</p>");
+//	  } else {
+//	   echo("<p>Email delivery failed…</p>");
+//	  }
 	}
 }
 else{
@@ -71,6 +70,8 @@ else{
 }
     
 }
-
 mysqli_close($con);
+echo "<script>alert('Players Invited successfully');</script>";
+sleep(2);
+ header( 'Location: ../' . $link);
 ?>
