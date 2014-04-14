@@ -34,7 +34,7 @@ $result = mysqli_query($con,"SELECT * FROM gameHistory WHERE user_idnum = '$uid'
 if($result==false){
   echo "Master Wayne, I've failed you";
 }
-
+$count = 1;
 while($row = mysqli_fetch_array($result))
   {
     $baseball = $row['baseball'];
@@ -43,12 +43,16 @@ while($row = mysqli_fetch_array($result))
     $soccer = $row['soccer'];
     $hockey = $row['hockey'];
     $tennis = $row['tennis'];
-    $frisbee = $row['frisbee'];              
+    $frisbee = $row['frisbee'];   
+    $count++;           
   }
   $highVal = max($baseball, $basketball, $football, $soccer, $hockey, $tennis, $frisbee);
   if($highVal == 0){
     $highVal=1;
   }
+
+ 
+
   echo "<tr><td><b>Games Played:</b></td><td></td></tr>";
   handleSports($baseball, "Baseball", $highVal);
   handleSports($basketball,"Basketball", $highVal);
@@ -57,6 +61,9 @@ while($row = mysqli_fetch_array($result))
   handleSports($hockey,"Hockey", $highVal);
   handleSports($tennis,"Tennis", $highVal);
   handleSports($frisbee,"Frisbee", $highVal);
+
+
+
 
 
 

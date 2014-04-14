@@ -38,14 +38,17 @@ else{
             <h1><span class="glyphicon glyphicon-play-circle" > </span> New Match</center></div></h1>
             <hr>
         	</div>     
-		<div class="col-md-4 column">
+		<div class="col-md-1 column">
+			<br><br>		
+			<img src="img/search_icons/medal.png" />			
+		</div>
+
+		<div class="col-md-2 column">
 			<br><br>
-			<center>
-			<img src="img/search_icons/medal.png" />
 			</center>
 		</div>
 
-		<div class="col-md-4 column well">
+		<div class="col-md-6 column well">
 
 			<form role="form" class="form-horizontal" method="post" action="insert.php" parsley-validate >
 
@@ -277,7 +280,12 @@ else{
 				
 			</form>
 		</div>
-		<div class="col-md-4 column">
+
+		<div class="col-md-1 column">
+			<br><br>
+			</center>
+		</div>
+		<div class="col-md-2 column">
 			<br><br>
 			<center>
 			<img src="img/search_icons/medal.png" />
