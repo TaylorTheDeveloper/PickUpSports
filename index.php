@@ -27,7 +27,7 @@ unset($_SESSION['deleteMessage']);
 
 <?php include 'game_forms.html' ?>
 
-<?php include 'footer.html' ?>
+<?php //include 'footer.html' ?>
 
 </div><!-- /.container -->
 

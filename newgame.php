@@ -289,7 +289,7 @@ else{
 
 
 
-<?php include 'footer.html' ?>
+<?php //include 'footer.html' ?>
 </div><!-- /.container -->
 
  

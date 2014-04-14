@@ -20,7 +20,7 @@ DONT EDIT THIS, COPY IT!-->
 
 
 
-<?php include 'footer.html' ?>
+<?php//include 'footer.html' ?>
 </div><!-- /.container -->
 
 </body>
