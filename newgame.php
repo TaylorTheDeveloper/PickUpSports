@@ -35,7 +35,7 @@ else{
 		  <div class="panel-heading" style="color:#fa7147;">
                    
             <br><div class="newgameHeader"><center>
-            <span class="glyphicon glyphicon-play-circle" > </span> New Match</center></div><br>
+            <h1><span class="glyphicon glyphicon-play-circle" > </span> New Match</center></div></h1>
             <hr>
         	</div>     
 		<div class="col-md-4 column">

@@ -16,7 +16,7 @@
  <font color="FA7147">
 
    <h1> 
-<?php echo "<div class=\"searchHeader\"><span class=\"glyphicon glyphicon-search\" style=\"background-color: #ffffff; padding: 1%;\"></span><span> " . " " . "Games Near " . $_POST['zip_location'] ."</div></span>"; ?> <br> <hr>
+<?php echo "<div class=\"searchHeader\"><span class=\"glyphicon glyphicon-search\" style=\"background-color: #ffffff; padding: 1%; \"></span><span> " . " " . "Games Near " . $_POST['zip_location'] ."</div></span>"; ?> <br> <hr>
     </h1>
 
 
@@ -112,12 +112,19 @@ while($row = mysqli_fetch_array($result))
          echo "<h3 style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">Players</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";
          echo "<p> ". $row['match_currentplayers'] . " / ". $row['match_maxplayers'] . "</p>";
          $currentplayers = $row['match_currentplayers'];
+         $fullgame = false;
          if($row['match_currentplayers'] == $row['match_maxplayers']){
          echo "<p> This Game is Full </p>";
+         $fullgame=true;
          }
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
+         if($fullgame==true){
+         	  echo "<a id=\"newgame\" href=\"newgame.php\" role=\"button\" class=\"btn\" ><button type=\"button\" class=\"color green styled-button-1\" data-toggle=\"regmodal\" data-target=\"#regModal\">New<br>". $matchType . " Game</button></a>";
+         }
+         else{
         echo "<a id=\"modal-627836\" href=\"#modal-container-" . $num . "\" role=\"button\" class=\"btn\" data-toggle=\"modal\"><button type=\"button\" class=\"color green styled-button-1\" data-toggle=\"regmodal\" data-target=\"#regModal\">Join Game</button></a>";
+         }
          $mid =  $row['match_id'];
          //Start Modal
         echo "<div class=\"modal fade\" id=\"modal-container-" . $num . "\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">";
