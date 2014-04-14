@@ -111,6 +111,7 @@ while($row = mysqli_fetch_array($result))
          echo "<div class=\"col-md-2 column\">";
          echo "<h3 style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">Players</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";
          echo "<p> ". $row['match_currentplayers'] . " / ". $row['match_maxplayers'] . "</p>";
+         $currentplayers = $row['match_currentplayers'];
          if($row['match_currentplayers'] == $row['match_maxplayers']){
          echo "<p> This Game is Full </p>";
          }
@@ -165,7 +166,8 @@ echo "</ol>";
         echo "<button type=\"button\" class=\"nav styled-button-1 pull-right\" style=\"margin-right:1%;\" data-dismiss=\"modal\">Close</button>";
         echo "<form accept-charset=\"UTF-8\" role=\"form\" method=\"post\" action=\"userMGMT/handleUser.php\">";
         echo "<input type=\"hidden\" id=\"gameType\" name=\"gameType\" value=\"". $matchType . "\">";
-        echo "<input type=\"hidden\" id=\"gameID\" name=\"gameID\" value=\"" . $matchID . "\">";
+        echo "<input type=\"hidden\" id=\"gameID\" name=\"gameID\" value=\"" . $matchID . "\">";        
+        echo "<input type=\"hidden\" id=\"currplayers\" name=\"currplayers\" value=\"" . $currentplayers . "\">";
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             if($alreadyJoinedGame==true){
             echo "</form><input class=\"color green styled-button-1\" style=\"margin-right:1%;\" type=\"submit\" value=\"You're already In this Game\"> ";

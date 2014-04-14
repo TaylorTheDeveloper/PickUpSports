@@ -65,6 +65,7 @@ else {
     header( 'Location: ../login_page.php');
 }
 ?>
+
 <?php
 $con=mysqli_connect("localhost:3306","root","","games");
 // Check connection
@@ -72,15 +73,37 @@ if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
+  //updategame history
 $sql = "UPDATE gameHistory SET " . nameConvert($_POST['gameType']) . "=" . $gameToUpdate . ", gamesPlayed=" . $totalGames .  " WHERE username='$uname'";
 
 if (!mysqli_query($con,$sql))
     {
     die('Error: ' . mysqli_error($con));
     }
+
 mysqli_close($con);
 
 //header( 'Location: ../matches.php?id='. $id);//Goto match page
+?>
+<?php
+$con=mysqli_connect("localhost:3306","root","","games");
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+//update match current players
+$id = $_POST['gameID'];
+$currentplayer = $_POST['currplayers']+1;
+$sql = "UPDATE matches SET match_currentplayers='$currentplayer' WHERE match_id='$id'";
+
+if (!mysqli_query($con,$sql))
+    {
+    die('Error: ' . mysqli_error($con));
+    }
+
+mysqli_close($con);
+
 ?>
 <?php //Set Values in matchplayertable :)
 $uid = $_SESSION['user_idnum'];
@@ -97,7 +120,7 @@ $sql = "INSERT INTO matchplayers ( `match_id`, `user_idnum`) VALUES ('$id','$uid
     die('Error: ' . mysqli_error($con));
     }
   mysqli_close($con);
-  header( 'Location: ../matches.php?id=' . $id);
+  //header( 'Location: ../matches.php?id=' . $id);
 ?>
 
 
