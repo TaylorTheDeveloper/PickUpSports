@@ -179,7 +179,7 @@ echo "</ol>";
             if($alreadyJoinedGame==true){
             	$_SESSION['searchMatchID'] = $matchID;
             echo "</form><form accept-charset=\"UTF-8\" id=\"linkform\" class=\"form-horizontal\" role=\"form\" method=\"post\" action=\"userMGMT/leavegame.php\" parsley-validate >";           
-            echo "<input class=\"color red styled-button-1\" style=\"padding: -1%; margin-top:1%;\" type=\"submit\" value=\"Leave Game\"></form> ";
+            echo "<input class=\"color red styled-button-1\" style=\"padding: -1%; margin-right:1%;\" type=\"submit\" value=\"Leave Game\"></form> ";
             $alreadyJoinedGame=false;
             }else {
             $_SESSION['searchMatchID'] = $mid;
