@@ -72,6 +72,6 @@ else{
 }
 mysqli_close($con);
 echo "<script>alert('Players Invited successfully');</script>";
-sleep(2);
+
  header( 'Location: ../' . $link);
 ?>
