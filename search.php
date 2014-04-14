@@ -136,8 +136,11 @@ echo "<ol>";
     while($row = mysqli_fetch_array($players))  {
 
         echo "<font size=\"4\"><li>". $row['username'] . "</li></font>";
-        if($row['username']==$_SESSION['username']){
-            $alreadyJoinedGame=true;
+        if (isset($_SESSION['loggedin']))
+        {
+            if($row['username']==$_SESSION['username']){
+                $alreadyJoinedGame=true;
+            }
         }
         $ctr++;
     }
@@ -154,8 +157,8 @@ echo "</ol>";
         echo "<div class=\"modal-footer row clearfix\">";
         echo "<button type=\"button\" class=\"nav styled-button-1 pull-right\" style=\"margin-right:1%;\" data-dismiss=\"modal\">Close</button>";
         echo "<form accept-charset=\"UTF-8\" role=\"form\" method=\"post\" action=\"userMGMT/handleUser.php\">";
-        echo "<input type=\"hidden\" name=\"gameType\" value=\"". $matchType . "\">";
-        echo "<input type=\"hidden\" name=\"gameID\" value=\"" . $matchID . "\">";
+        echo "<input type=\"hidden\" id=\"gameType\" name=\"gameType\" value=\"". $matchType . "\">";
+        echo "<input type=\"hidden\" id=\"gameID\" name=\"gameID\" value=\"" . $matchID . "\">";
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             if($alreadyJoinedGame==true){
             echo "</form><input class=\"color green styled-button-1\" style=\"margin-right:1%;\" type=\"submit\" value=\"You're already In this Game\"> ";
@@ -166,7 +169,7 @@ echo "</ol>";
             }
         } else {
             $_SESSION['searchMatchID'] = $mid;
-            echo "<a href=\"#\" onClick=\"$('#modal-container-" . $num . "').hide(); $('#loginbox').show()\"><button type=\"button\" class=\"btn btn-medium btn-info\" style=\"margin-right: 1%;\" data-toggle=\"modal\" data-target=\"#loginModal\">Sign In</button></a>";
+            echo "<a href=\"#searchLogin\" onClick=\"$('#modal-container-" . $num . "').hide(); $('#loginbox').show()\"><button type=\"button\" class=\"color green styled-button-1\" style=\"margin-right: 1%;\" data-toggle=\"modal\" data-target=\"#loginModal\">Sign In</button></a>";
         }
        
       

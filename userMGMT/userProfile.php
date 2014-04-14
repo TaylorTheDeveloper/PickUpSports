@@ -25,7 +25,7 @@ while($row = mysqli_fetch_array($result))
    echo "<tr><td>Delete Account</td>";
      echo "<td>";
  echo "<form accept-charset=\"UTF-8\" id=\"linkform\" class=\"form-horizontal\" role=\"form\" method=\"post\" action=\"confirm_delete_account.php\" parsley-validate >";           
-   echo "<input  class=\"color green styled-button-1\" style=\"padding: -1%;\" type=\"submit\" value=\"Delete Account :(\"></form>";
+   echo "<input  class=\"color red styled-button-1\" style=\"padding: -1%;\" type=\"submit\" value=\"Delete Account :(\"></form>";
    echo "</td></tr>"; 
   }
     mysqli_close($con);
