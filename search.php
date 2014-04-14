@@ -16,7 +16,7 @@
  <font color="FA7147">
 
    <h1> 
-<?php echo "<span class=\"glyphicon glyphicon-search\" style=\"background-color: #ffffff; padding: 1%;\"></span><span> " . " " . "Games Near " . $_POST['zip_location'] ."</span>"; ?> <br> <hr>
+<?php echo "<div class=\"searchHeader\"><span class=\"glyphicon glyphicon-search\" style=\"background-color: #ffffff; padding: 1%;\"></span><span> " . " " . "Games Near " . $_POST['zip_location'] ."</div></span>"; ?> <br> <hr>
     </h1>
 
 
@@ -121,7 +121,7 @@ while($row = mysqli_fetch_array($result))
         echo "<div class=\"modal-content\">";
         echo "<div class=\"modal-header\">";
         echo "<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>";
-        echo "<h4 class=\"modal-title\" id=\"myModalLabel\"> Players </h4>";
+        echo "<h4 class=\"modalHeader\" id=\"myModalLabel\"> Players </h4>";
         echo " </div>";
         echo "<div class=\"modal-body\">";
         echo "<div class=\"row clearfix\">";//start body row clearfix

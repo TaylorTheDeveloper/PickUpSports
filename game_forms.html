@@ -6,7 +6,11 @@
             <center>
             <img class="img img-responsive text-center" src="img/newGame.png">
                 <br>
-                <h3 class="heading-desc pull-center" style="margin-top: -4%">Create A Game</h3>
+                <h3 class="heading-desc pull-center" style="margin-top: -4%">
+                    <div class="introtext">
+                    Create A Game
+                </div>
+                </h3>
                 <br>
                 <div class="main">          
                  <label for="Sports">Sport</label>
@@ -42,18 +46,25 @@
 
                     <!--<input class="btn btn-info" type="submit" value="Let's Play!"> -->
                        <!--  <a href="newgame.html" class="btn btn-success " ><i class="icon-star icon-white "></i> Lets Play!</a> -->
+
                     </div>
                 </div>
                 </center>
+
             </form>
-            </div>
+            </div>            
             <div class="col-md-3 column">
+                
             <!-- Existing Game -->
                 <form parsley-validate class="form-signin mg-btm" method="post" action="search.php">
                 <center>
                 <img class="img img-responsive text-center" src="img/searchGame.png">
                     <br>
-                    <h3 class="heading-desc pull-center" style="margin-top: -4%">Find A Match</h3>
+                    <h3 class="heading-desc pull-center" style="margin-top: -4%">
+                        <div class="introtext">
+                        Find A Match
+                    </div>
+                    </h3>
                     <br>
                     <div class="main">     
                     <label for="zip">Zip</label><input parsley-type="digits" class="form-control" id="zip_location" parsley-minlength="5" parsley-maxlength="5" name="zip_location" parsley-required="true" /><br>

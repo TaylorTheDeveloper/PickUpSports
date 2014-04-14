@@ -46,10 +46,10 @@ else{
 <!-- Doc Header -->
 <?php include 'head.html' ?>
 <head>
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS 
     <link href="css/bootstrap.css" rel="stylesheet"> <!-- THIS IS A BUG FIX HACK - DONT CHANGE - TALK TO TAYLOR -->
-
-	<link href="css/matchespage.css" rel="stylesheet">
+-->
+	<link href="css/userpage.css" rel="stylesheet">
 </head>
 
     <script type="text/javascript">
@@ -78,7 +78,7 @@ else{
 <div class="container well">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-<h1><?php echo "<span class=\"entypo-bookmark\" style=\"background-color: #fa8d67; padding: 1%;\">" . $matchLocation . ": " . $matchType . " Game</span>"; ?></h1>
+<h1 class="matchesHeader"><?php echo "<span class=\"entypo-bookmark\" style=\"background-color: #fa8d67; padding: 1%;\">" . $matchLocation . ": " . $matchType . " Game</span>"; ?></h1>
 		</div>
 	</div>
 	<div class="row clearfix">
@@ -107,7 +107,7 @@ else{
   <article class='europa'>
      <div class='pais grecia'>
 		<table>
-		   <caption><label class="entypo-users"><b>Match Players</b></label></caption>
+		    <caption><div class="userHeader"><b>Match Players</b></div></caption>
 		 <tbody>
 		    <?php include 'matches/matchesPlayers.php' ?>
 		   </tbody> 
@@ -116,7 +116,7 @@ else{
 
     <div class='pais espana'>
 		<table>
-		   <caption> <label class="entypo-info"><b>Match Info</b></label></caption>
+		   <caption><div class="userHeader"><b>Match Info</b></div></caption>
 		   <tbody>
 		    <?php include 'matches/matchesLocation.php' ?>
 		   </tbody>
@@ -125,7 +125,7 @@ else{
     
     <div class='pais italia'>
 <table>
-   <caption><label class="entypo-share"><b>Invite Friends</b></label></caption>
+    <caption><div class="userHeader"><b>Invite Friends</b></div></caption>
 
        <?php include 'matches/matchesShare.php' ?>
 

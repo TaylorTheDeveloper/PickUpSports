@@ -44,9 +44,14 @@ label {
   display: inline-block;
   cursor: pointer;
   padding: 0 1rem;
-  line-height: 2rem;
+  line-height: 25px;
+  font-size: 18px;
+  margin-bottom: 15px;
 }
-label:hover {background: #e57866;}
+label:hover {
+  background: #DC9E42;
+  color: #fff;
+}
 .continente {
   position: absolute;
   top: 0;
@@ -74,7 +79,7 @@ section {
   height: 100%;
   overflow: hidden;
   border-radius: 2px;
-  border:5px solid #95d8ec;
+  border:5px;
   box-shadow: 0 0 4px rgba(0,0,0,.4);
 }
 section > div {
@@ -108,14 +113,14 @@ article > div {
 }
 table {
   table-layout: fixed;
-  font-size: 1rem;
+  font-size: 19px;
   width: 100%;
   color: #98A2BA;
 }
 /*graph caption*/
 caption {
-  background: #e9b647;
-  color: #eee;
+  background: #fff;
+  color: #A0A0A0;
   font-weight: 400;
   padding: .75rem 0;
 }
@@ -223,8 +228,8 @@ caption:before {
 #china:checked ~ * [for='china'],
 #malasia:checked ~ * [for='malasia'] {
   /*Menu Checked Color*/
-  background: #f97041;
-  border-left-color: #e3a316;
+  background: #FFB546;
+  border-left-color: #FFB546;
   border-left-width: thick;
   color: #fff;
 }

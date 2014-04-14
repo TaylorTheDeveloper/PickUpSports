@@ -33,8 +33,11 @@ else{
 <div class="container">
 	<div class="row clearfix" >
 		  <div class="panel-heading" style="color:#fa7147;">
-                    <br><h1><center><span class="glyphicon glyphicon-play-circle" > </span> New game</center></h1><br>
-                </div>     
+                   
+            <br><div class="newgameHeader"><center>
+            <span class="glyphicon glyphicon-play-circle" > </span> New Match</center></div><br>
+            <hr>
+        	</div>     
 		<div class="col-md-4 column">
 			<br><br>
 			<center>
@@ -49,7 +52,9 @@ else{
 				<div class="form-group" >
 					 <label for="sportInput" class="col-md-3 control-label">
 					 	<font color="FA7147">
+					 		<div class="newgametext">
 					 		Sport
+					 	</div>
 					 	</font>
 					 </label>
 					  <div class="col-md-9">
@@ -69,7 +74,9 @@ else{
 				<div class="form-group">
 				    <label for="zipInput" class="col-md-3 control-label">
 						<font color="FA7147">
+							<div class="newgameheight">
 					 		Max Players
+					 	</div>
 					 	</font>
 				    </label>  
 				 	<div class="col-md-9">
@@ -80,7 +87,9 @@ else{
 				<div class="form-group">
 					 <label for="locationInput" class="col-md-3 control-label">
 					 	<font color="FA7147">
+					 		<div class="newgametext">
 					 		Location
+					 	</div>
 					 	</font>
 					 	</label>
 					  <div class="col-md-9">
@@ -91,7 +100,9 @@ else{
 				<div class="form-group">
 				    <label for="zipInput" class="col-md-3 control-label">
 						<font color="FA7147">
+							<div class="newgametext">
 					 		Zip
+					 	</div>
 					 	</font>
 				    </label>  
 				 	<div class="col-md-9">
@@ -110,7 +121,9 @@ else{
 
 					<label for="datepicker" class="col-md-3 control-label">
 						<font color="FA7147">
+							<div class="newgametext">
 					 		Date
+					 	</div>
 					 	</font>
 					</label>
 					 <div class="col-md-9">
@@ -124,7 +137,9 @@ else{
  				<div class="form-group">
 					<label for="zipInput" class="col-md-3 control-label">
 						<font color="FA7147">
+							<div class="newgametext">
 					 		Time
+					 	</div>
 					 	</font>
 					</label>              
 				  <div class="col-md-9">    
@@ -231,7 +246,9 @@ else{
 			<div class="form-group">
 				<label for="locationInput" >
 						<font color="FA7147">
+							<div class="newgametextpub">
 					 		Who Can Join In On The Fun?
+					 	</div>
 					 	</font>
 				</label>
 				<div >

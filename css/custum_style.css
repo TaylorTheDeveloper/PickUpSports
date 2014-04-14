@@ -72,7 +72,103 @@ footer {
              0px 18px 23px rgba(0,0,0,0.1);
 
 }
+.customH4_head {
+    font-family: 'Arvo', Georgia, Times, serif;
+    font-size: 55px;
+    margin-bottom:30px;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+}
+.newgameHeader {
+    font-family: 'Lato', sans-serif;
+    font-size: 40px;  
+    margin-top: 25px;
 
+}
+
+.newgametext {
+    font-family: 'Lato', sans-serif;
+    font-size: 21px;
+    margin-bottom:25px;
+    line-height: 15px;
+    text-align:left
+}
+.newgameheight {
+    font-family: 'Lato', sans-serif;
+    font-size: 21px;
+    margin-bottom:10px;
+    line-height: 28px;
+    margin-top:-5px;
+    text-align:left
+}
+.introtext {
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    margin-bottom:25px;
+    line-height: 15px;
+    margin-top:10px;
+    text-align:center;
+}
+
+.aboutHeader {
+    font-family: 'Lato', sans-serif;
+    font-size: 50px;
+    margin-bottom:75px;
+    line-height: 15px;
+    margin-top:10px;
+    text-align:left;
+}
+.matchesHeader {
+    font-family: 'Lato', sans-serif;
+    font-size: 45px;
+    margin-bottom:75px;
+    line-height: 15px;
+    margin-top:55px;
+    text-align:left;
+}
+.searchHeader {
+    font-family: 'Lato', sans-serif;
+    font-size: 45px;
+    line-height: 15px;
+    margin-top:40px;
+    text-align:left;
+
+}
+.userHeader {
+    font-family: 'Lato', sans-serif;
+    font-size: 35px;    
+    text-align:center;
+}
+.usernameHeader {
+    font-family: 'Lato', sans-serif;
+    font-size: 45px; 
+    margin-bottom:20px;
+}
+
+.modalHeader {
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    
+    text-align:left;
+}
+.deleteHeader {
+    font-family: 'Lato', sans-serif;
+    font-size: 45px;
+    line-height: 60px;
+    margin-top:40px;
+    text-align:center;
+    
+}
+
+
+.newgametextpub {
+    font-family: 'Lato', sans-serif;
+    font-size: 21px;
+    margin-bottom:25px;
+    line-height: 15px;
+    text-align:center;
+}
 .customH1_first {
     font-family: 'Arvo', Georgia, Times, serif;
     font-size: 65px;
@@ -83,6 +179,14 @@ footer {
     text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
              0px 8px 13px rgba(0,0,0,0.1),
              0px 18px 23px rgba(0,0,0,0.1);
+}
+.vr
+{
+  display:inline;
+  height:100%;
+  width:1px;
+  border:1px inset;
+  margin:5px
 }
 
 .customH1_color {
@@ -126,7 +230,7 @@ footer {
   box-shadow: 0 1px 0 rgba(0, 0, 0, .3),
               0 2px 2px -1px rgba(0, 0, 0, .5),
               0 1px 0 rgba(255, 255, 255, .3) inset;
-  text-shadow: 0 1px 0 rgba(255,255,255, .9);  
+  text-shadow: 0 .4px 0 rgba(255,255,255, .9);  
 }
 
 .styled-button-1:hover{
@@ -165,6 +269,19 @@ footer {
 .styled-button-1.nav:hover{
     background: #07ad79;
     color: #fff;
+}
+
+.styled-button-1.red{
+  background-color: #E83E3E;
+  border-color: #E83E3E;
+}
+
+.styled-button-1.red:hover{
+  background-color: #CA3838;
+}
+
+.styled-button-1.red:active{
+  background: #E83E3E;
 }
 
 

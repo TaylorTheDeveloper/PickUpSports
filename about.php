@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 section">
-                <h1 class="section-heading">Good Games, Good times</h1>
+                <h1 class="aboutHeader">Good Games, Good times</h1>
                 <p class="lead section-lead">Users from all over the United States can make new friends, play sports, and have fun.</p>
                 <p class="section-paragraph"> &nbsp &nbsp &nbsp &nbspPickUp makes it easy to organize a pick-up game with friends. Just pick the sport you'd like to play, and tell us where you are. PickUp finds existing games going on around you, and also let's you set up new games, invite your friends, and iron out the details. All you need is your friend's contact information and we'll send out invitations and round everyone up! It's just your everyday neighborhood Pick-up game. Reimagined.</p>
             </div>
@@ -37,7 +37,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 section">
-                <h1 class="section-heading">Meet the PickUp team</h1>
+                <h1 class="aboutHeader">Meet the PickUp team</h1>
                <div class="col-sm-3">
                 <img class="img-circle img-responsive text-center" src="img/about_rob.jpg">
                 <center>
