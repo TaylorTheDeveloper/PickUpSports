@@ -72,6 +72,9 @@ $num = 1;
 //Print Data by row
 while($row = mysqli_fetch_array($result))
   {
+
+   
+
     $dateInfo = date_parse($row['match_date'] . " " . $row['match_time']);
     $monthNum = $dateInfo['month'];
     $monthName = date("F", mktime(0, 0, 0, $monthNum, 10));
@@ -79,7 +82,7 @@ while($row = mysqli_fetch_array($result))
     $matchType = $row['match_type'];
     $matchID = $row['match_id'];
      echo "<div class=\"container\" >";
-  echo "<div class=\"row clearfix\">";
+  echo "<div class=\"row clearfix\">";  
      echo "<div class=\"col-md-12 column\">";
        echo "<div class=\"row clearfix media well\">";
          echo "<div class=\"col-md-2 column\">";
@@ -128,6 +131,10 @@ while($row = mysqli_fetch_array($result))
 		echo "<div class=\"col-md-6 column\">";//Column 1 (players)
 
 /*PLAYERLIST*/
+
+
+
+
  $this_match_id = $row['match_id'];
  $players = mysqli_query($con,"SELECT * FROM matchPlayers JOIN users ON users.user_idnum=matchplayers.user_idnum WHERE match_id = '$this_match_id'" );
 $alreadyJoinedGame=false;
@@ -177,6 +184,27 @@ echo "</ol>";
         //END MODAL
         echo "</div></div></div></div></div>";
         $num++;
+  }
+
+
+  if($num ==1)
+  {
+     echo "<div class=\"container\" >";
+       echo "<div class=\"row clearfix media well\">";
+        echo "<div class=\"introtext\">";
+        echo "There doesn't seem to be any games in your area.";
+        echo "<br><br><br>";
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                    echo "<a href=\"newgame.php\"><button type=\"button\" style=\"padding: 1.5% 2%;\" class=\"color green styled-button-1\">Create A Match!</button></a>";
+                } else {
+                    $_SESSION['newgame'] = true;
+                    echo "<a href=\"#newgame\"><button type=\"button\" class=\"color green styled-button-1\"  style=\"padding: 1.5% 2%;\" data-toggle=\"modal\" data-target=\"#loginModal\">Create A Match!</button></a>";
+                }
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+
+
   }
 
 mysqli_close($con);
