@@ -177,7 +177,9 @@ echo "</ol>";
         echo "<input type=\"hidden\" id=\"currplayers\" name=\"currplayers\" value=\"" . $currentplayers . "\">";
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             if($alreadyJoinedGame==true){
-            echo "</form><input class=\"color green styled-button-1\" style=\"margin-right:1%;\" type=\"submit\" value=\"You're already In this Game\"> ";
+            	$_SESSION['searchMatchID'] = $matchID;
+            echo "</form><form accept-charset=\"UTF-8\" id=\"linkform\" class=\"form-horizontal\" role=\"form\" method=\"post\" action=\"userMGMT/leavegame.php\" parsley-validate >";           
+            echo "<input class=\"color red styled-button-1\" style=\"padding: -1%; margin-top:1%;\" type=\"submit\" value=\"Leave Game\"></form> ";
             $alreadyJoinedGame=false;
             }else {
             $_SESSION['searchMatchID'] = $mid;

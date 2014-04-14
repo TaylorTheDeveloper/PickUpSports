@@ -25,10 +25,6 @@ $alreadyJoinedGame=false;
         }
     }
 
-
-
-
-
 $players = mysqli_query($con,"SELECT * FROM matches WHERE match_id = '$this_match_id'" );
 
 
@@ -54,25 +50,28 @@ while($row = mysqli_fetch_array($players))
     echo "<tr><td><b>";
     echo "<center>";
          if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { 
+         	
       if($alreadyJoinedGame==true){
-        echo "<br>";
-        echo "<font class=\"matchJoinGame\" color=\"FA7147\">";
-        echo "You are in this game!";
-        echo "</font>";
-        echo "<br><br><br>";
-            //echo "<input class=\"color green styled-button-1\" style=\"padding: -1%; margin-top:1%;\" type=\"submit\" value=\"You're in this Game\"> ";
-            $alreadyJoinedGame=false;
-            }else {
-            $_SESSION['searchMatchID'] = $row['match_id'];           
+       // echo "<br>";
+        //echo "<font class=\"matchJoinGame\" color=\"FA7147\">";
+        //echo "You are in this game!";
+        //echo "</font>";
+       // echo "<br><br><br>";
 
+       	$_SESSION['searchMatchID'] = $row['match_id']; 
+      	echo "<form accept-charset=\"UTF-8\" id=\"linkform\" class=\"form-horizontal\" role=\"form\" method=\"post\" action=\"userMGMT/leavegame.php\" parsley-validate >";           
+            echo "<input class=\"color red styled-button-1\" style=\"padding: -1%; margin-top:1%;\" type=\"submit\" value=\"Leave Game\"></form> ";
+            $alreadyJoinedGame=false;
+       }
+       else {         
+       	$_SESSION['searchMatchID'] = $row['match_id']; 
       echo "<form accept-charset=\"UTF-8\" id=\"linkform\" class=\"form-horizontal\" role=\"form\" method=\"post\" action=\"userMGMT/handleUser.php\" parsley-validate >";           
       echo "<input type=\"hidden\" name=\"gameType\" value=\"". $row['match_type']. "\">";
       echo "<input type=\"hidden\" name=\"gameID\" value=\"" . $row['match_id'] . "\">";
       echo "<font class=\"matchJoinGame\" color=\"FA7147\">";
       echo "Wanna Play?";
       echo "</font>";
-      echo "<br>";
-      echo "<input  class=\"color green styled-button-1\" style=\"padding: -1%; margin-top:1%;\" type=\"submit\" value=\"Join Game!\"></form>";
+      echo "<input  class=\"color green styled-button-1\" style=\"padding: -1%; margin-top:1%; margin-left:3%;\" type=\"submit\" value=\"Join Game!\"></form>";
       echo "</center> </div><br>";
     }    
     }     

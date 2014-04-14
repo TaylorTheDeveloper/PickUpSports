@@ -1,4 +1,5 @@
 <?php 
+//handle user joining a game
  function nameConvert($val) {
     switch ($val) {
   case 'Soccer': return "soccer";
@@ -24,7 +25,6 @@ session_start();
 $uname=$_SESSION['username'];    
 $uid = $_SESSION['user_idnum'];
 $id = $_POST['gameID'];
-$currentplayer = $_POST['currplayers']+1;
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     //Connect
@@ -66,8 +66,7 @@ if (!mysqli_query($con,$sql))
     die('Error: ' . mysqli_error($con));
     }
 //update match current players
-$sql = "UPDATE matches SET match_currentplayers='$currentplayer' WHERE match_id='$id'";
-
+$sql = "UPDATE matches SET match_currentplayers=match_currentplayers+1 WHERE match_id='$id'";
 if (!mysqli_query($con,$sql))
     {
     die('Error: ' . mysqli_error($con));
