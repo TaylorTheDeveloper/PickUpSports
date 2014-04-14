@@ -72,9 +72,6 @@ $num = 1;
 //Print Data by row
 while($row = mysqli_fetch_array($result))
   {
-
-   
-
     $dateInfo = date_parse($row['match_date'] . " " . $row['match_time']);
     $monthNum = $dateInfo['month'];
     $monthName = date("F", mktime(0, 0, 0, $monthNum, 10));
@@ -187,7 +184,8 @@ echo "</ol>";
             }
         } else {
             $_SESSION['searchMatchID'] = $mid;
-            echo "<a href=\"#searchLogin\" onClick=\"$('#modal-container-" . $num . "').hide(); $('#loginbox').show()\"><button type=\"button\" class=\"color green styled-button-1\" style=\"margin-right: 1%;\" data-toggle=\"modal\" data-target=\"#loginModal\">Sign In</button></a>";
+            echo "<input class=\"color red styled-button-1\" style=\"padding: -1%; margin-right:1%;\" type=\"submit\" value=\"Please Sign In\"></form> ";
+            //echo "<a href=\"#searchLogin\" onClick=\"$('#modal-container-" . $num . "').hide(); $('#loginbox').show()\"><button type=\"button\" class=\"color green styled-button-1\" style=\"margin-right: 1%;\" data-toggle=\"modal\" data-target=\"#loginModal\">Sign In</button></a>";
         }
        
       

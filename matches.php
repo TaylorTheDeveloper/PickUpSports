@@ -78,7 +78,7 @@ else{
 <div class="container well">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-<h1 class="matchesHeader"><?php echo "<span class=\"entypo-bookmark\" style=\"background-color: #fa8d67; padding: 1%;\">" . $matchLocation . ": " . $matchType . " Game</span>"; ?></h1>
+<h1 class="matchesHeader"><?php echo "<span class=\"entypo-bookmark\" style=\"background-color: #fa8d67; padding: 1%;\">" . $matchType . " Game: " . $currPlayers ."/" . $maxPlayers. " players</span>"; ?></h1>
 		</div>
 	</div>
 	<div class="row clearfix">
