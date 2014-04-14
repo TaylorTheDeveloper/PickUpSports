@@ -18,10 +18,13 @@
   default: return "frisbee";
     break;
   }
-     }
+}
 
 session_start();
-$uname=$_SESSION['username'];
+$uname=$_SESSION['username'];    
+$uid = $_SESSION['user_idnum'];
+$id = $_POST['gameID'];
+$currentplayer = $_POST['currplayers']+1;
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     //Connect
@@ -52,67 +55,23 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
           $totalGames = $row['gamesPlayed'];  
 
       }
-
       ++$gameToUpdate;//Update Game
-      ++$totalGames;//Ipdate tota
+      ++$totalGames;//Ipdate total
 
-    mysqli_close($con);
-      
-//echo $_SESSION['searchMatchID'];
-    //header( 'Location: ../matches.php?=' . $_SESION['searchMatchID']);
-} 
-else {
-    header( 'Location: ../login_page.php');
-}
-?>
 
-<?php
-$con=mysqli_connect("localhost:3306","root","","games");
-// Check connection
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-  //updategame history
+//updategame history
 $sql = "UPDATE gameHistory SET " . nameConvert($_POST['gameType']) . "=" . $gameToUpdate . ", gamesPlayed=" . $totalGames .  " WHERE username='$uname'";
-
 if (!mysqli_query($con,$sql))
     {
     die('Error: ' . mysqli_error($con));
     }
-
-mysqli_close($con);
-
-//header( 'Location: ../matches.php?id='. $id);//Goto match page
-?>
-<?php
-$con=mysqli_connect("localhost:3306","root","","games");
-// Check connection
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
 //update match current players
-$id = $_POST['gameID'];
-$currentplayer = $_POST['currplayers']+1;
 $sql = "UPDATE matches SET match_currentplayers='$currentplayer' WHERE match_id='$id'";
 
 if (!mysqli_query($con,$sql))
     {
     die('Error: ' . mysqli_error($con));
     }
-
-mysqli_close($con);
-
-?>
-<?php //Set Values in matchplayertable :)
-$uid = $_SESSION['user_idnum'];
-$con=mysqli_connect("localhost:3306","root","","games");
-    // Check connection
-    if (mysqli_connect_errno())
-      {
-      echo "Failed to connect to MySQL: " . mysqli_connect_error();
-      }
 //Insert Admin player onto match playerlist
 $sql = "INSERT INTO matchplayers ( `match_id`, `user_idnum`) VALUES ('$id','$uid')";
   if (!mysqli_query($con,$sql))
@@ -120,7 +79,14 @@ $sql = "INSERT INTO matchplayers ( `match_id`, `user_idnum`) VALUES ('$id','$uid
     die('Error: ' . mysqli_error($con));
     }
   mysqli_close($con);
-  //header( 'Location: ../matches.php?id=' . $id);
+  header( 'Location: ../matches.php?id=' . $id);
+
+    mysqli_close($con);
+} 
+else {
+    header( 'Location: ../login_page.php');
+}
+
 ?>
 
 
