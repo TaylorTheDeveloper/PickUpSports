@@ -115,8 +115,9 @@ else{
 
 				<div class = "form-group">
 				    <script>
-					 $(document).ready(function(){
-						    $(function(){
+				    $.noConflict();
+					 $(document).ready(function($){
+						    $(function($){
 						        $('#datePicker').datepicker({minDate: 0});
 						    });
 						});
