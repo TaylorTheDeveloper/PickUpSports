@@ -69,6 +69,6 @@ $sql = "INSERT INTO matchplayers ( `match_id`, `user_idnum`) VALUES ('$matchID',
 	  die('Error: ' . mysqli_error($con));
 	  }
 	mysqli_close($con);
-	header( 'Location: matches.php?id=' . $matchID);
+	header( 'Location: ../matches.php?id=' . $matchID);
 ?>
 				

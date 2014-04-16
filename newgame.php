@@ -50,7 +50,7 @@ else{
 
 		<div class="col-md-6 column well">
 
-			<form role="form" class="form-horizontal" method="post" action="insert.php" parsley-validate >
+			<form role="form" class="form-horizontal" method="post" action="matches/insert_newMatch.php" parsley-validate >
 
 				<div class="form-group" >
 					 <label for="sportInput" class="col-md-3 control-label">
