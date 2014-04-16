@@ -216,9 +216,10 @@ echo "</ol>";
 
 
   }
+  else{
 
 
- echo "<div class=\"container\" >";
+        echo "<div class=\"container\" >";
        echo "<div class=\"row clearfix media\">";
         echo "<div class=\"introtext\">";
         echo "Not seeing any games you like?";
@@ -239,7 +240,7 @@ echo "</ol>";
         echo "</div>";
         echo "</div>";
 
-
+}
 
 
 mysqli_close($con);
