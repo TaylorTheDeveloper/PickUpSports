@@ -15,9 +15,19 @@
 
  <font color="FA7147">
 
-   <h1> 
-<?php echo "<div class=\"searchHeader\"><span class=\"glyphicon glyphicon-search\" style=\"background-color: #ffffff; padding: 1%; \"></span><span> " . " " . "Games Near " . $_POST['zip_location'] ."</div></span>"; ?> <br> <hr>
-    </h1>
+<h1> 
+<?php
+if(isset($_POST['zip_location'])){
+ echo "<div class=\"searchHeader\"><span class=\"glyphicon glyphicon-search\" style=\"background-color: #ffffff; padding: 1%; \"></span><span> " . " " . "Games Near " . $_POST['zip_location'] ."</div></span>"; 
+}
+else{
+    echo "<div class=\"searchHeader\"><span class=\"glyphicon glyphicon-search\" style=\"background-color: #ffffff; padding: 1%; \"></span>Please Make a New Query<span></div></span>"; 
+
+}
+ ?> 
+<br> 
+<hr> 
+</h1>
 
 
 <?php
@@ -49,7 +59,12 @@
         return "img/search_icons/medal.png";
         }
     }
+    if(isset($_POST['zip_location'])){
 $_SESSION['sessionZip'] = $_POST["zip_location"];
+}
+else{
+    $_SESSION['sessionZip'] = -50;//Default to unusable value
+}
 $range = 50; //Range to search zip
 $zip_top = intval($_SESSION['sessionZip']) + $range;
 $zip_bottom = intval($_SESSION['sessionZip']) - $range;
