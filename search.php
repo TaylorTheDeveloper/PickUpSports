@@ -20,7 +20,8 @@
     </h1>
 
 
-<?php //Query Database
+<?php
+ //Query Database
    function handleImg($name){
               switch ($name) {
     case "Baseball":
@@ -215,6 +216,29 @@ echo "</ol>";
 
 
   }
+
+
+ echo "<div class=\"container\" >";
+       echo "<div class=\"row clearfix media\">";
+        echo "<div class=\"introtext\">";
+        echo "Not seeing any games you like?";
+        echo "<br><br><br>";
+        //echo "</div>"
+
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) 
+                {
+                    echo "<a href=\"newgame.php\"><button type=\"button\" style=\"padding: 1% 1%;\" class=\"color green styled-button-1\">Create A Match!</button></a>";
+                } 
+                else 
+                {
+                    $_SESSION['newgame'] = true;
+                    echo "<a href=\"#newgame\"><button type=\"button\" class=\"color green styled-button-1\"  style=\"padding: 1.5% 2%;\" data-toggle=\"modal\" data-target=\"#loginModal\">Create A Match!</button></a>";
+                }
+
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+
 
 
 
