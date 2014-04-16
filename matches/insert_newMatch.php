@@ -41,6 +41,26 @@ $uid = $_SESSION['user_idnum'];
 ?>
 
 <?php //get matchID
+ function nameConvert($val) {
+    switch ($val) {
+  case 'Soccer': return "soccer";
+    break;
+  case 'Football': return "football";
+    break;
+  case 'Baseball': return "baseball";
+    break;
+  case 'Basketball': return "basketball";
+    break;
+  case 'Hockey': return "hockey";
+    break;
+    case 'Tennis': return "tennis";
+    break;
+  case 'Frisbee': return "frisbee";
+    break;
+  default: return "frisbee";
+    break;
+  }
+}
 $con=mysqli_connect("localhost:3306","root","","games");
 	// Check connection
 	if (mysqli_connect_errno())
@@ -68,7 +88,16 @@ $sql = "INSERT INTO matchplayers ( `match_id`, `user_idnum`) VALUES ('$matchID',
 	  {
 	  die('Error: ' . mysqli_error($con));
 	  }
+//updategame history
+$sql = "UPDATE gameHistory SET " . nameConvert($_POST['sports']) . "=" . (nameConvert($_POST['sports'])) . "+1 WHERE user_idnum='$uid'";
+if (!mysqli_query($con,$sql))
+    {
+    die('Error: ' . mysqli_error($con));
+    }
 	mysqli_close($con);
 	header( 'Location: ../matches.php?id=' . $matchID);
+	// echo "_" . nameConvert($_POST['sports']) . "_";
+	// echo "_" . $sql . "_";
+	// echo "matches.php?id=" . $matchID;
 ?>
 				

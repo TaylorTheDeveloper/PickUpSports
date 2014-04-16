@@ -80,7 +80,6 @@ $sql = "INSERT INTO matchplayers ( `match_id`, `user_idnum`) VALUES ('$id','$uid
   mysqli_close($con);
   header( 'Location: ../matches.php?id=' . $id);
 
-    mysqli_close($con);
 } 
 
 ?>
