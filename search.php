@@ -78,6 +78,7 @@ while($row = mysqli_fetch_array($result))
 
     $matchType = $row['match_type'];
     $matchID = $row['match_id'];
+
      echo "<div class=\"container\" >";
   echo "<div class=\"row clearfix\">";  
      echo "<div class=\"col-md-12 column\">";
@@ -87,15 +88,15 @@ while($row = mysqli_fetch_array($result))
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";               
          echo "<h3 style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">Sport</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";
-         echo "<p>" . $row['match_type'] . "</p>";
+         echo "<div class=\"searchtext\"><p>" . $row['match_type'] . "</p></div>";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
          echo "<h3 style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">Where</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";
-         echo "<p>" . $row['match_location'] . "</p>";
+         echo "<div class=\"searchtext\"><p>" . $row['match_location'] . "</p></div>";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
          echo "<h3 style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">When</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";
-         echo "<p>Date: "  . $monthName . " " . $dateInfo['day'] . ", " . $dateInfo['year'] . "</p>";
+         echo "<div class=\"searchtext\"><p>Date: "  . $monthName . " " . $dateInfo['day'] . ", " . $dateInfo['year'] . "</p></div>";
          $min="00";
          if($dateInfo['minute']==0){
             $min="00";
@@ -103,11 +104,11 @@ while($row = mysqli_fetch_array($result))
          else{
             $min = $dateInfo['minute'];
          }
-         echo "<p>Time: " . $dateInfo['hour'] . ":"  . $min .  " PM</p>";
+         echo "<div class=\"searchtext\"><p>Time: " . $dateInfo['hour'] . ":"  . $min .  " PM</p></div>";
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
          echo "<h3 style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">Players</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";
-         echo "<p> ". $row['match_currentplayers'] . " / ". $row['match_maxplayers'] . "</p>";
+         echo "<div class=\"searchtext\"><p> ". $row['match_currentplayers'] . " / ". $row['match_maxplayers'] . "</p></div>";
          $currentplayers = $row['match_currentplayers'];
          $fullgame = false;
          if($row['match_currentplayers'] == $row['match_maxplayers']){
@@ -183,9 +184,8 @@ echo "</ol>";
             echo "<input class=\"color green styled-button-1\" style=\"margin-right:1%;\" type=\"submit\" value=\"Join Game!\"> </form>";
             }
         } else {
-            $_SESSION['searchMatchID'] = $mid;
-            echo "<input class=\"color red styled-button-1\" style=\"padding: -1%; margin-right:1%;\" type=\"submit\" value=\"Please Sign In\"></form> ";
-            //echo "<a href=\"#searchLogin\" onClick=\"$('#modal-container-" . $num . "').hide(); $('#loginbox').show()\"><button type=\"button\" class=\"color green styled-button-1\" style=\"margin-right: 1%;\" data-toggle=\"modal\" data-target=\"#loginModal\">Sign In</button></a>";
+            //echo "<input class=\"color green styled-button-1\" style=\"padding: -1%; margin-right:1%;\" type=\"submit\" value=\"Please Sign In\"></form> ";
+            echo "<a href=\"#searchLogin\" onClick=\"$('#modal-container-" . $num . "').hide(); $('#loginbox').show()\"><button type=\"button\" class=\"color green styled-button-1\" style=\"margin-right: 1%;\" data-toggle=\"modal\" data-target=\"#loginModal\">Please Sign In</button></a>";
         }
        
       
@@ -216,9 +216,13 @@ echo "</ol>";
 
   }
 
+
+
 mysqli_close($con);
 ?>
 <!-- end PHP -->
+
+
 </font>
 <?php //include 'footer.html' ?>
 

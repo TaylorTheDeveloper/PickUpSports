@@ -48,7 +48,7 @@ else{
 <head>
     <!-- Bootstrap core CSS 
     <link href="css/bootstrap.css" rel="stylesheet"> <!-- THIS IS A BUG FIX HACK - DONT CHANGE - TALK TO TAYLOR -->
--->
+
 	<link href="css/userpage.css" rel="stylesheet">
 </head>
 

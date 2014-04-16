@@ -133,6 +133,17 @@ footer {
     line-height: 15px;
     margin-top:40px;
     text-align:left;
+}
+.orHeader {
+   font-family: 'Arvo', Georgia, Times, serif;
+    font-size: 40px;
+    line-height: 15px;
+    margin-top:80%;
+    margin-left:38%;
+    margin-right:60%;
+    text-align:center;
+    color:#fa7147;
+    font-weight: bold;
 
 }
 .userHeader {
@@ -169,6 +180,15 @@ footer {
     text-align:center;
 }
 
+.searchtext{
+   font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    margin-bottom:25px;
+    line-height: 25px;
+    text-align:left
+
+}
+
 .matchJoinGame {
     font-family: 'Lato', sans-serif;
     font-size: 25px;
@@ -176,6 +196,13 @@ footer {
     margin-bottom:25px;
     line-height: 15px;
     text-align:center;
+}
+
+.selectText{
+    font-size: 15px;
+    text-align:center;
+
+
 }
 .customH1_first {
     font-family: 'Arvo', Georgia, Times, serif;
@@ -196,6 +223,18 @@ footer {
   border:1px inset;
   margin:5px
 }
+
+.divShadow {
+  display:inline-block;
+  border: 0px solid #ccc;
+  padding: 10px;
+  }
+
+.divShadow:hover {
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  }
 
 .customH1_color {
     font-family: 'Arvo', Georgia, Times, serif;

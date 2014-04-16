@@ -12,10 +12,10 @@ $this_match_id = $matchID;
               
              // echo "<tr><td><b>General:</b></td><td></td></tr>";
 
-                 echo "<tr><td><b>Username</b></td><td><b>Favorite Sport</b></td></tr>"; 
+                 echo "<tr align=\"middle\"><td style=\"width:50%\"><b>Username</b></td style=\"width:33%\"><td><b>Name</b></td><td align=\"middle\" style=\"width:50%; right:2% \"><b>Favorite Sport</b></td></tr>"; 
               while($row = mysqli_fetch_array($players))
                 {
-                 echo "<tr><td>" . $row['username'] . "</td><td>" . $row['favSport'] . "</td></tr>"; 
+                 echo "<tr align=\"middle\"><td>" . $row['username'] . "</td><td >" . $row['first_name'] . "</td><td style=\"right:5%\">" . $row['favSport'] . "</td></tr>"; 
                 }
     mysqli_close($con);
 ?>
