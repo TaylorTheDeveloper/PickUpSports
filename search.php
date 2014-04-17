@@ -78,7 +78,7 @@ if (mysqli_connect_errno())
 
 //Select Data
 $result = mysqli_query($con,"SELECT * FROM matches WHERE match_zip >  '$zip_bottom' AND match_zip < '$zip_top' AND matchp_pubpriv = 0 AND  match_date >= CURDATE() ORDER BY match_date ASC");
-//Only get public matches
+//Only get public matches that are current
 //Check that it returns true
 if($result==false){
   echo "Master Wayne, I've failed you";
@@ -134,7 +134,11 @@ while($row = mysqli_fetch_array($result))
          echo "</div>";
          echo "<div class=\"col-md-2 column\">";
          if($fullgame==true){
-         	  echo "<a id=\"newgame\" href=\"newgame.php\" role=\"button\" class=\"btn\" ><button type=\"button\" class=\"color green styled-button-1\" data-toggle=\"regmodal\" data-target=\"#regModal\">New<br>". $matchType . " Game</button></a>";
+         echo "<form accept-charset=\"UTF-8\" role=\"form\" method=\"post\" action=\"newgame.php\">";
+         echo "<input type=\"hidden\" id=\"sportsValue\" name=\"sportsValue\" value=\"". $matchType . "\">";
+         echo "<input class=\"color green styled-button-1\" style=\"margin-right:1%;\" type=\"submit\" value=\"New ". $matchType . " Game\"> </form>";
+            
+         $fullgame=false;
          }
          else{
         echo "<a id=\"modal-627836\" href=\"#modal-container-" . $num . "\" role=\"button\" class=\"btn\" data-toggle=\"modal\"><button type=\"button\" class=\"color green styled-button-1\" data-toggle=\"regmodal\" data-target=\"#regModal\">Join Game</button></a>";

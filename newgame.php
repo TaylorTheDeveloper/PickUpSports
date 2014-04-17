@@ -15,8 +15,6 @@ else{
 <html lang="en">
 
 
-
-
 <!-- Doc Header -->
 <?php include 'head.html' ?>
 
