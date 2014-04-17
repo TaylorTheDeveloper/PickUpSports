@@ -89,9 +89,10 @@ footer {
 }
 .newgameHeader {
     font-family: 'Lato', sans-serif;
-    font-size: 40px;  
-    margin-top: 25px;
-
+    font-size: 42px;  
+    margin-bottom: 1%;
+    margin-top: -1%;
+    text-align:center;
 }
 
 .newgametext {
@@ -152,9 +153,9 @@ footer {
 .searchHeader {
     font-family: 'Lato', sans-serif;
     font-size: 42px;
-    line-height: 15px;
-    margin-top:40px;
-    text-align:left;
+    line-height: 0px;
+    margin-bottom: -3%;
+    text-align:center;
 }
 .orHeader {
    font-family: 'Lato', sans-serif;

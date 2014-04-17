@@ -23,9 +23,6 @@ $_SESSION['newgame'] = false;
 
 <br><br><br><!-- swap for margin later -->
 
-
-
-
 <div class="container">
 	<div class="row clearfix" >
 		  <div class="panel-heading" style="color:#fa7147;">
@@ -265,7 +262,7 @@ $_SESSION['newgame'] = false;
 				  </label>
 
 
- 				<div style="margin-top:10%" class="form-group">
+ 				<div style="margin: 2% 0%" class="form-group">
 				  <div class="col-sm-12 controls">                                       
                          <input class="color green styled-button-1" type="submit" value="Lets Play!"> 
                   </div>
