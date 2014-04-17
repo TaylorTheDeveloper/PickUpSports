@@ -1,5 +1,9 @@
 <?php 
 
+$path = $_SERVER['DOCUMENT_ROOT'];
+$path .= "/PickUpSports/functions.php";
+include_once($path); 
+
 session_start();
 $uid = $_SESSION['user_idnum'];
 
@@ -41,26 +45,7 @@ $uid = $_SESSION['user_idnum'];
 ?>
 
 <?php //get matchID
- function nameConvert($val) {
-    switch ($val) {
-  case 'Soccer': return "soccer";
-    break;
-  case 'Football': return "football";
-    break;
-  case 'Baseball': return "baseball";
-    break;
-  case 'Basketball': return "basketball";
-    break;
-  case 'Hockey': return "hockey";
-    break;
-    case 'Tennis': return "tennis";
-    break;
-  case 'Frisbee': return "frisbee";
-    break;
-  default: return "frisbee";
-    break;
-  }
-}
+
 $con=mysqli_connect("localhost:3306","root","","games");
 	// Check connection
 	if (mysqli_connect_errno())

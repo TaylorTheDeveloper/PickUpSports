@@ -45,10 +45,17 @@ footer {
 .brandMargin{
 	margin-bottom: 10px;
 }
+.balls{ /* Proud of this one ;)*/
+  transform:rotate(0deg);
+-ms-transform:rotate(0deg); /* IE 9 */
+-webkit-transform:rotate(0deg); /* Opera, Chrome, and Safari */
+}
 .padded{
     margin:15px;
 }
-
+.searchFullGameMsg{
+  color: red;
+}
 .btn.dropdown-toggle.beforetoggle {
     border-radius: 4px 0 0 4px;
 }
@@ -102,12 +109,27 @@ footer {
     margin-top:-5px;
     text-align:left
 }
+.plusSign{
+  padding: 1.5%;
+  margin-right: 2%;
+}
 .introtext {
     font-family: 'Lato', sans-serif;
     font-size: 25px;
     margin-bottom:25px;
     line-height: 15px;
     margin-top:10px;
+    text-align:center;
+}
+.searchFoot {
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    margin-bottom:15%;
+    line-height: 15px;
+    margin-top:5%;
+    margin-right: 25%;
+    margin-left: 25%;
+    padding: 2%;
     text-align:center;
 }
 

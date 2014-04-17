@@ -35,11 +35,6 @@ $uid = $_SESSION['user_idnum'];
       
     header( 'Location: ../userpage.php');
 
- //    if($_SESSION['newgame'] == true){
- //   	header( 'Location: ../newgame.php');
- //   }
- //    else{
- //   header( 'Location: ../userpage.php');
-	// }
+
  mysqli_close($con);
 ?>

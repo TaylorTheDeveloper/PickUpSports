@@ -1,15 +1,8 @@
   <?php //Query Database
 //Handle Sports Value
-function handleSports($val,$name,$max){
-$percent = ($val/$max) * 100;
-if($val > 0){
-  echo "<tr> <td>" . $name . "</td>";
-  echo "<td><div style=\"margin: 1%; width: 99%; border: 1px solid #07ad79;\">
-  <div style=\"color: #ffffff; padding: 5px; width:" . $percent . "%; background: #" . random_color() . ";\">" . $name . ":" . $val . "%</div>
-  </div></td>";
-   echo "<td>" . $val . "</td></tr>";
-  }
-}
+$path = $_SERVER['DOCUMENT_ROOT'];
+$path .= "/PickUpSports/functions.php";
+include_once($path); 
 
 $uid = $_SESSION['user_idnum'];
 //Connect

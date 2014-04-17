@@ -1,15 +1,13 @@
-
 <?php
 //Handles $name1 value from game_forms.html -T
-if($_POST){
-	$name1 = $_POST['sportsValue'];
+if($_GET){
+	$name1 = $_GET['sportsValue'];
 }
 else{
 	$name1 = "Baseball";
 }
-
-    $_SESSION['newgame'] = false;
- ?>
+$_SESSION['newgame'] = false;
+?>
 
 <!DOCTYPE html>
 <html lang="en">

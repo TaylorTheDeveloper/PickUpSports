@@ -16,13 +16,6 @@ $uname = $_SESSION['username'];
     }
 
  mysqli_close($con);
-    //header( 'Location: ../userpage.php');
- //     if($_SESSION['newgame'] == true){
- //        $_SESSION['newgame'] = false;//reset
- //   	header( 'Location: ../newgame.php');
- //    }
- //    else{
- //    header( 'Location: ../userpage.php');
-	// }
+
 ?>
 
