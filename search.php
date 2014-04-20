@@ -107,7 +107,7 @@ echo "<h3 class=\"searchtextHead\" style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 
 echo "<div class=\"searchtext\"><p> ". $row['match_currentplayers'] . " / ". $row['match_maxplayers'] . "</p></div>";
 $currentplayers = $row['match_currentplayers'];
 $fullgame = false;
-if($row['match_currentplayers'] == $row['match_maxplayers']){
+if(($row['match_currentplayers'] == $row['match_maxplayers']) || ($row['match_currentplayers'] > $row['match_maxplayers'])) {
 //echo "<p> This Game is Full </p>";
 $fullgame=true;
 }
@@ -205,10 +205,10 @@ echo "<div class=\"introtext\">";
 echo "There doesn't seem to be any games in your area.";
 echo "<br><br><br>";
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-            echo "<a href=\"newgame.php\"><button type=\"button\" style=\"padding: 1% 1%;\" class=\"color green styled-button-1\"><span class=\"glyphicon glyphicon-plus-sign plusSign\" ></span> Create A Match!</button></a>";
+            echo "<a href=\"newgame.php\"><button type=\"button\" style=\"padding: 2% 2%;\" class=\"color green styled-button-1\">Create A Match!</button></a>";
         } else {
             $_SESSION['newgame'] = true;
-            echo "<a href=\"#newgame\"><button type=\"button\" class=\"color green styled-button-1\"  style=\"padding: 1.5% 2%;\" data-toggle=\"modal\" data-target=\"#loginModal\"><span class=\"glyphicon glyphicon-plus-sign plusSign\" ></span> Create A Match!</button></a>";
+            echo "<a href=\"#newgame\"><button type=\"button\" class=\"color green styled-button-1\"  style=\"padding: 2% 2%;\" data-toggle=\"modal\" data-target=\"#loginModal\"><span class=\"glyphicon glyphicon-plus-sign plusSign\" ></span> Create A Match!</button></a>";
         }
 echo "</div>";
 echo "</div>";

@@ -8,7 +8,7 @@
 	echo "<tr><td>";
 	echo "<div style=\"padding: 2% 5%;\" class=\"input-group\">";
 	echo "<span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-link\"></i></span>";
-	echo "<input type=\"url\"  readonly=\"readonly\" name=\"matchlink\" id=\"matchlink\" parsley-required=\"false\"  autofocus type=\"text\" class=\"form-control\" name=\"matchlink\" value=\"". $link ."\" placeholder=\"". $link ."\">";
+	echo "<input type=\"url\" style=\"cursor: text;\" readonly=\"readonly\" name=\"matchlink\" id=\"matchlink\" parsley-required=\"false\"  autofocus type=\"text\" class=\"form-control\" name=\"matchlink\" value=\"". $link ."\" placeholder=\"". $link ."\">";
 	echo "</div></tr></td>";
 
 	if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
