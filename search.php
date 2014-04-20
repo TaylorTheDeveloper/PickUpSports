@@ -71,20 +71,20 @@ $angle = randAngle(); //Cool little random gen angles
 echo "<div class=\"container\" >";
 echo "<div class=\"row clearfix\">";  
 echo "<div class=\"col-md-12 column\">";
-echo "<div class=\"row clearfix media well\">";
+echo "<div class=\"row clearfix media\" style=\"margin-bottom:5%;\">";
 echo "<div class=\"col-md-2 column\">";
 echo "<img class=\"img-responsive\" style=\"transform:rotate(".$angle."deg);-ms-transform:rotate(".$angle."deg);-webkit-transform:rotate(".$angle."deg);\" height=\"80%\" width=\"80%\" src=\"" . handleImg( $matchType) . "\" />";
 echo "</div>";
 echo "<div class=\"col-md-2 column\">";               
-echo "<h3 style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">Sport</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";
+echo "<h3  class=\"searchtextHead\" style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">Sport</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";
 echo "<div class=\"searchtext\"><p>" . $row['match_type'] . "</p></div>";
 echo "</div>";
 echo "<div class=\"col-md-2 column\">";
-echo "<h3 style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">Where</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";
+echo "<h3 class=\"searchtextHead\" style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">Where</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";
 echo "<div class=\"searchtext\"><p>" . $row['match_location'] . "</p></div>";
 echo "</div>";
 echo "<div class=\"col-md-2 column\">";
-echo "<h3 style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">When</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";
+echo "<h3 class=\"searchtextHead\" style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">When</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";
 echo "<div class=\"searchtext\"><p>Date: "  . $monthName . " " . $dateInfo['day'] . ", " . $dateInfo['year'] . "</p></div>";
 $min="00";
 if($dateInfo['minute']==0){
@@ -96,12 +96,12 @@ $min = $dateInfo['minute'];
 echo "<div class=\"searchtext\"><p>Time: " . $dateInfo['hour'] . ":"  . $min .  " PM</p></div>";
 echo "</div>";
 echo "<div class=\"col-md-2 column\">";
-echo "<h3 style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">Players</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";
+echo "<h3 class=\"searchtextHead\" style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">Players</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";
 echo "<div class=\"searchtext\"><p> ". $row['match_currentplayers'] . " / ". $row['match_maxplayers'] . "</p></div>";
 $currentplayers = $row['match_currentplayers'];
 $fullgame = false;
 if($row['match_currentplayers'] == $row['match_maxplayers']){
-echo "<p> This Game is Full </p>";
+//echo "<p> This Game is Full </p>";
 $fullgame=true;
 }
 echo "</div>";
@@ -109,13 +109,13 @@ echo "<div class=\"col-md-2 column\">";
 if($fullgame==true){
 echo "<form accept-charset=\"UTF-8\" role=\"form\" method=\"get\" action=\"newgame.php\">";
 echo "<input type=\"hidden\" id=\"sportsValue\" name=\"sportsValue\" value=\"". $matchType . "\">";
-echo "<p class=\"searchFullGameMsg\"><span class=\"glyphicon glyphicon-remove-circle\" ></span>&nbsp Oh No! This Game is full. But that's ok! </p>";
+echo "<p class=\"searchFullGameMsg\">This Game is full. But that's ok! </p>";
 echo "<input class=\"color green styled-button-1\" style=\"margin-right:1%;\" type=\"submit\" value=\"New ". $matchType . " Game\"> </form>";
 
 $fullgame=false;
 }
 else{
-echo "<a id=\"modal-627836\" href=\"#modal-container-" . $num . "\" role=\"button\" class=\"btn\" data-toggle=\"modal\"><button type=\"button\" class=\"color green styled-button-1\" data-toggle=\"regmodal\" data-target=\"#regModal\"><span class=\"glyphicon glyphicon-plus-sign plusSign\" ></span>Join Game</button></a>";
+echo "<a id=\"modal-627836\" href=\"#modal-container-" . $num . "\" role=\"button\" class=\"btn\" data-toggle=\"modal\"><button type=\"button\" class=\"color green styled-button-1\" data-toggle=\"regmodal\" data-target=\"#regModal\"><span class=\"glyphicon glyphicon-plus-sign plusSign\" style=\"margin-right:7%;\" ></span>Join Game</button></a>";
 }
 $mid =  $row['match_id'];
 //Start Modal

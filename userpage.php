@@ -22,7 +22,7 @@
 
 <br><br><br><!-- change out for margin -->
 
-<div class="container well">
+<div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column" style="margin-top:10px;">
 <h1 class="usernameHeader"><?php echo "<span class=\"entypo-bookmark\" style=\"background-color: #fa8d67; padding: 1%;\">" . $_SESSION['username'] ."  </span>"; ?></h1>

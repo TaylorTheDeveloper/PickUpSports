@@ -4,17 +4,21 @@ body {
 }
 
 .full-width-image-1 {
-	background: url(http://lorempixel.com/1920/450/sports/8) no-repeat center center;
+	background: url(http://imgur.com/Lh4M1Gq.jpg) no-repeat center center;
 	background-size: cover;
 	text-align: center;
 	padding: 100px 0;
+
+
 }
 
 .full-width-image-2 {
-	background: url(http://lorempixel.com/1920/450/sports/1) no-repeat center center;
+	background: url(http://imgur.com/PMBrOYx.jpg) no-repeat center top;
 	background-size: cover;
 	text-align: center;
 	height: 450px;
+	 -webkit-filter: blur(1px);
+
 }
 
 .full-width-image-3 {
@@ -22,6 +26,7 @@ body {
 	background-size: cover;
 	text-align: center;
 	height: 450px;
+	 -webkit-filter: blur(1px);
 }
 
 .logo-wrapper {

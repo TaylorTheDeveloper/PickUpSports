@@ -75,7 +75,7 @@ else{
 
 <br><br><br><!-- change out for margin -->
 
-<div class="container well">
+<div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
 <h1 class="matchesHeader"><?php echo "<span class=\"entypo-bookmark\" style=\"background-color: #fa8d67; padding: 1%;\">" . $matchType . " Game: " . $currPlayers ."/" . $maxPlayers. " players</span>"; ?></h1>

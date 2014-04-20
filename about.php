@@ -12,20 +12,25 @@
 <!-- Doc Header -->
 <?php include 'nav.php' ?>
 
-<div class="full-width-image-1">
-        <div class="logo-wrapper">
-            <img class="img-responsive" src="http://placehold.it/200x100/f97041/ffffff&text=PickUp." />
+<div>
+    <div class="full-width-image-1">
+        <div class="logo-wrapper" >
+            <img class="img-responsive" src="http://placehold.it/200x100/f97041/ffffff&text=PickUp." style=" text-shadow: 0px 4px 3px rgba(0,0,0,0.4),0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);" />           
         </div>
-
     </div>
     <!-- /full-width-image-1 -->
 
     <div class="container">
         <div class="row">
             <div class="col-lg-12 section">
-                <h1 class="aboutHeader">Good Games, Good times</h1>
-                <p class="lead section-lead">Users from all over the United States can make new friends, play sports, and have fun.</p>
-                <p class="section-paragraph"> &nbsp &nbsp &nbsp &nbspPickUp makes it easy to organize a pick-up game with friends. Just pick the sport you'd like to play, and tell us where you are. PickUp finds existing games going on around you, and also let's you set up new games, invite your friends, and iron out the details. All you need is your friend's contact information and we'll send out invitations and round everyone up! It's just your everyday neighborhood Pick-up game. Reimagined.</p>
+                <h1 class="aboutHeader">Good Games, Good Times</h1>
+                <div class="aboutPics">
+                    <img class="img-responsive" style="margin-left:19%; margin-top:10%;" src="img/aboutDiagram.png">
+                </div>
+
+
+               <!-- <p class="section-paragraph"> &nbsp &nbsp &nbsp &nbspPickUp makes it easy to organize a pick-up game with friends. Just pick the sport you'd like to play, and tell us where you are. PickUp finds existing games going on around you, and also let's you set up new games, invite your friends, and iron out the details. All you need is your friend's contact information and we'll send out invitations and round everyone up! It's just your everyday neighborhood Pick-up game. Reimagined.</p>
+            -->
             </div>
         </div>
     </div>
@@ -37,7 +42,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 section">
-                <h1 class="aboutHeader">Meet the PickUp team</h1>
+                <h1 class="aboutHeader" style="margin-bottom:80px">Meet the PickUp team</h1>
                <div class="col-sm-3">
                 <img class="img-circle img-responsive text-center" src="img/about_rob.jpg">
                 <center>

@@ -54,7 +54,10 @@ footer {
     margin:15px;
 }
 .searchFullGameMsg{
+  font-family: 'Lato', sans-serif;
   color: red;
+  font-size: 15px;
+
 }
 .btn.dropdown-toggle.beforetoggle {
     border-radius: 4px 0 0 4px;
@@ -136,11 +139,31 @@ footer {
 
 .aboutHeader {
     font-family: 'Lato', sans-serif;
-    font-size: 50px;
-    margin-bottom:75px;
+    font-size: 55px;
+    margin-bottom:40px;
     line-height: 15px;
     margin-top:10px;
-    text-align:left;
+    font-weight: bolder;
+    text-align:center;
+}
+.aboutsubHeader {
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+    line-height: 35px;
+    margin-top:50px;
+    font-weight: bolder;
+    margin-bottom:80px;
+    color: #554F3F;
+}
+
+.aboutPics{
+  margin-bottom:5%;
+
+}
+
+.caroPic{
+  filter: blur(5px);
+
 }
 .matchesHeader {
     font-family: 'Lato', sans-serif;
@@ -156,6 +179,7 @@ footer {
     line-height: 0px;
     margin-bottom: -3%;
     text-align:center;
+    font-weight: bold;
 }
 .orHeader {
    font-family: 'Lato', sans-serif;
@@ -205,12 +229,22 @@ footer {
 }
 
 .searchtext{
-   font-family: 'Lato', sans-serif;
-    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
     margin-bottom:25px;
     line-height: 25px;
-    text-align:left
+    text-align:center;      
+    color: #554F3F;
 
+}
+.searchtextHead{
+   font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    margin-bottom:5px;
+    line-height: 25px;
+    text-align:center;  
+    font-weight: bold;  
+    color: #FA7147;
 }
 
 .matchJoinGame {
@@ -247,6 +281,8 @@ footer {
   border:1px inset;
   margin:5px
 }
+
+
 
 .divShadow {
   display:inline-block;
