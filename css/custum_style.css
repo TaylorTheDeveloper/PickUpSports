@@ -1,3 +1,10 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+  padding-right: .5rem;
+}
+
 html, body {
 	height:100%;
 }
@@ -33,6 +40,8 @@ html, body {
 footer {
 	margin: 50px 0;
 }
+
+
 .orange{
 	color: #fa7147;
 }
@@ -127,13 +136,14 @@ footer {
 }
 .searchFoot {
     font-family: 'Lato', sans-serif;
-    font-size: 25px;
+    font-size: 22px;
     margin-bottom:15%;
     line-height: 15px;
     margin-top:5%;
     margin-right: 25%;
     margin-left: 25%;
     padding: 2%;
+    font-weight: bold;
     text-align:center;
 }
 
@@ -157,7 +167,7 @@ footer {
 }
 
 .aboutPics{
-  margin-bottom:5%;
+  margin-bottom:0%;
 
 }
 
@@ -172,12 +182,14 @@ footer {
     line-height: 15px;
     margin-top:55px;
     text-align:left;
+    font-weight: bold;
 }
 .searchHeader {
     font-family: 'Lato', sans-serif;
     font-size: 42px;
     line-height: 0px;
-    margin-bottom: -3%;
+    margin-top: 7%;
+    margin-bottom: 1%;
     text-align:center;
     font-weight: bold;
 }

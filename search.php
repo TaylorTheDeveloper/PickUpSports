@@ -18,7 +18,7 @@
 <h1> 
 <?php
 if(isset($_GET['zip_location'])){
- echo "<div class=\"searchHeader\"><span class=\"glyphicon glyphicon-search\" style=\"background-color: #ffffff; padding: 1%; \"></span><span> " . " " . "Games Near " . $_GET['zip_location'] ."</div></span>"; 
+ echo "<div class=\"searchHeader\"><span class=\"entypo-location\" style=\"background-color: #ffffff; padding: 1%; \"></span><span> " . " " . "Games Near " . $_GET['zip_location'] ."</div></span>"; 
 }
 else{
     echo "<div class=\"searchHeader\"><span class=\"glyphicon glyphicon-search\" style=\"background-color: #ffffff; padding: 1%; \"></span>Please Make a New Query<span></div></span>"; 
@@ -215,12 +215,12 @@ echo "Not seeing any games you like?";
 echo "<br><br><br>";
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) 
         {
-            echo "<a href=\"newgame.php\"><button type=\"button\" style=\"padding: 1% 1%;\" class=\"color green styled-button-1\"><span class=\"glyphicon glyphicon-plus-sign plusSign\" ></span>Create A Match!</button></a>";
+            echo "<a href=\"newgame.php\"><button type=\"button\" style=\"padding: 2% 2%;\" class=\"color green styled-button-1\">Create A Match!</button></a>";
         } 
         else 
         {
             $_SESSION['newgame'] = true;
-            echo "<a href=\"#newgame\"><button type=\"button\" class=\"color green styled-button-1\"  style=\"padding: 1.5% 2%;\" data-toggle=\"modal\" data-target=\"#loginModal\"><span class=\"glyphicon glyphicon-plus-sign plusSign\" ></span> Create A Match!</button></a>";
+            echo "<a href=\"#newgame\"><button type=\"button\" class=\"color green styled-button-1\"  style=\"padding: 2% 2%;\" data-toggle=\"modal\" data-target=\"#loginModal\"> Create A Match!</button></a>";
         }
 echo "</div>";
 echo "</div>";

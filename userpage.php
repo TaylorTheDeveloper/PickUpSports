@@ -20,12 +20,12 @@
 <!-- Doc Header -->
 <?php include 'nav.php' ?>
 
-<br><br><br><!-- change out for margin -->
 
-<div class="container">
+
+<div class="container" style="margin-top:4%;">
 	<div class="row clearfix">
 		<div class="col-md-12 column" style="margin-top:10px;">
-<h1 class="usernameHeader"><?php echo "<span class=\"entypo-bookmark\" style=\"background-color: #fa8d67; padding: 1%;\">" . $_SESSION['username'] ."  </span>"; ?></h1>
+			<h1 class="usernameHeader"><?php echo "<span class=\"entypo-user\" style=\"background-color: #fa8d67; padding: 1%; margin-right:7%;\">" . $_SESSION['username'] ."  </span>"; ?></h1>
 		</div>
 	</div>
 	<div class="row clearfix">

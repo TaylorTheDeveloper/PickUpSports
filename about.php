@@ -46,7 +46,7 @@
                <div class="col-sm-3">
                 <img class="img-circle img-responsive text-center" src="img/about_rob.jpg">
                 <center>
-                <Rob>h2</h2>
+                <h2>Rob</h2>
                 <p><h3>Favorite Sport: Hockey</h3> <h4> Developer/Databases </h4> "You miss 100% of the shots you don't take. -Wayne Gretzky" -Michael Scott </p>
                 </center>
             </div>

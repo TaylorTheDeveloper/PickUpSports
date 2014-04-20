@@ -12,9 +12,13 @@ $uid = $_SESSION['user_idnum'];
 	$mysqldate = date( 'Y-m-d H:i:s', $phpdate );
 	$p_date = substr($mysqldate,0,10);
 
-	$p_pubPriv = 0;
-	if($_POST["pubPriv"]=="public"){
-		$p_pubPriv =1;
+	//$p_pubPriv = 1;
+	if($_POST["pubPriv"]=="false"){
+		$p_pubPriv = 0 ;
+	}
+	else
+	{
+		$p_pubPriv = 1 ;
 	}
 
 	//Connect
