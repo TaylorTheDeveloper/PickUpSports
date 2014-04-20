@@ -18,7 +18,7 @@
 <h1> 
 <?php
 if(isset($_GET['zip_location'])){
- echo "<div class=\"searchHeader\"><span class=\"entypo-location\" style=\"background-color: #ffffff; padding: 1%; \"></span><span> " . " " . "Games Near " . $_GET['zip_location'] ."</div></span>"; 
+ echo "<div class=\"searchHeader\"><span class=\"glyphicon glyphicon-map-marker\" style=\"background-color: #ffffff; padding: 1%; \"></span><span> " . " " . "Games Near " . $_GET['zip_location'] ."</div></span>"; 
 }
 else{
     echo "<div class=\"searchHeader\"><span class=\"glyphicon glyphicon-search\" style=\"background-color: #ffffff; padding: 1%; \"></span>Please Make a New Query<span></div></span>"; 
@@ -73,7 +73,14 @@ echo "<div class=\"row clearfix\">";
 echo "<div class=\"col-md-12 column\">";
 echo "<div class=\"row clearfix media\" style=\"margin-bottom:5%;\">";
 echo "<div class=\"col-md-2 column\">";
-echo "<img class=\"img-responsive\" style=\"transform:rotate(".$angle."deg);-ms-transform:rotate(".$angle."deg);-webkit-transform:rotate(".$angle."deg);\" height=\"80%\" width=\"80%\" src=\"" . handleImg( $matchType) . "\" />";
+if($matchType != "Hockey")
+{
+    echo "<img class=\"img-responsive\" style=\"transform:rotate(".$angle."deg);-ms-transform:rotate(".$angle."deg);-webkit-transform:rotate(".$angle."deg);\" height=\"80%\" width=\"80%\" src=\"" . handleImg( $matchType) . "\" />";
+}
+else
+{
+    echo "<img class=\"img-responsive\" style=\"height=\"80%\" width=\"80%\" src=\"" . handleImg( $matchType) . "\" />";
+}
 echo "</div>";
 echo "<div class=\"col-md-2 column\">";               
 echo "<h3  class=\"searchtextHead\" style=\"margin: -1% 0% 1% 0%; padding: 0% 0% 2% 0%;\">Sport</h3><hr style=\"margin: -1% 0% 5% 0%; height: 2px; background-color:#ffb100;\">";

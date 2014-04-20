@@ -27,8 +27,8 @@ $_SESSION['newgame'] = false;
 	<div class="row clearfix" >
 		  <div class="panel-heading" style="color:#fa7147;">
                    
-            <br><div class="newgameHeader"><center>
-            <h1><span class="glyphicon glyphicon-play-circle" > </span> New Match</center></div></h1>
+            <br><div><center>
+            <h1 class="newgameHeader"><span class="entypo-trophy" > </span> New Match</center></div></h1>
             <hr>
         	</div>     
 		<div class="col-md-1 column">

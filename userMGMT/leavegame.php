@@ -22,8 +22,12 @@ mysql_select_db("games", $con);
 
 // sending query
 
-mysql_query("DELETE FROM matchplayers WHERE user_idnum='$uid' AND match_id='$mid'") or die(mysql_error());  
-mysql_query("UPDATE matches SET match_currentplayers=match_currentplayers-1 WHERE match_id='$mid'") or die(mysql_error());  
+mysql_query("DELETE FROM matchplayers WHERE user_idnum='$uid' AND match_id='$mid'") or die(mysql_error());
+mysql_query("UPDATE matches 
+	SET match_currentplayers = CASE WHEN match_currentplayers = 0 THEN 0
+                        WHEN match_currentplayers > 0 THEN match_currentplayers-1
+                        END
+	WHERE match_id='$mid'") or die(mysql_error());  
 
 
 mysql_close($con);
