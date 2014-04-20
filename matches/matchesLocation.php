@@ -30,6 +30,7 @@ $players = mysqli_query($con,"SELECT * FROM matches WHERE match_id = '$this_matc
 
 while($row = mysqli_fetch_array($players))
   {
+    
     $dateInfo = date_parse($row['match_date'] . " " . $row['match_time']);
     $monthNum = $dateInfo['month'];
     $monthName = date("F", mktime(0, 0, 0, $monthNum, 10));
@@ -49,8 +50,12 @@ while($row = mysqli_fetch_array($players))
     echo "</td></tr>";
     echo "<tr><td><b>";
     echo "<center>";
-         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { 
-         	
+      if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { 
+      $currentDate = date("Y-m-d");
+      $compareDate = $row['match_date'];
+      
+      if($compareDate >= $currentDate)
+      {
       if($alreadyJoinedGame==true){
        // echo "<br>";
         //echo "<font class=\"matchJoinGame\" color=\"FA7147\">";
@@ -75,6 +80,7 @@ while($row = mysqli_fetch_array($players))
       echo "</center> </div><br>";
     }    
     }     
+  }
     echo "</td></tr>";
   }
     mysqli_close($con);
