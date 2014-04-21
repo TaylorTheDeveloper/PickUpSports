@@ -30,7 +30,7 @@ $players = mysqli_query($con,"SELECT * FROM matches WHERE match_id = '$this_matc
 
 while($row = mysqli_fetch_array($players))
   {
-    
+    $adminID = $row['admin_user_id'];
     $dateInfo = date_parse($row['match_date'] . " " . $row['match_time']);
     $monthNum = $dateInfo['month'];
     $monthName = date("F", mktime(0, 0, 0, $monthNum, 10));
@@ -53,6 +53,17 @@ while($row = mysqli_fetch_array($players))
       if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { 
       $currentDate = date("Y-m-d");
       $compareDate = $row['match_date'];
+      $adminID = $adminID;
+
+      if($_SESSION['user_idnum']!=$adminID){
+        $_SESSION['editMatchID'] = $row['match_id']; 
+        echo  "_" . $_SESSION['user_idnum'] . "_";
+        echo "<br>" . $adminID;
+        echo "<form accept-charset=\"UTF-8\" id=\"linkform\" class=\"form-horizontal\" role=\"form\" method=\"post\" action=\"edit_matches.php\" parsley-validate >";           
+        echo "<input type=\"hidden\" name=\"gameType\" value=\"". $row['match_type']. "\">";
+        echo "<input class=\"color red styled-button-1\" style=\"padding: -1%; margin-top:1%;\" type=\"submit\" value=\"Edit Game\"></form> ";
+   
+      }
       
       if($compareDate >= $currentDate)
       {
@@ -61,9 +72,7 @@ while($row = mysqli_fetch_array($players))
         //echo "<font class=\"matchJoinGame\" color=\"FA7147\">";
         //echo "You are in this game!";
         //echo "</font>";
-       // echo "<br><br><br>";
-
-       	$_SESSION['searchMatchID'] = $row['match_id']; 
+       // echo "<br><br><br>";        
       	echo "<form accept-charset=\"UTF-8\" id=\"linkform\" class=\"form-horizontal\" role=\"form\" method=\"post\" action=\"userMGMT/leavegame.php\" parsley-validate >";           
             echo "<input class=\"color red styled-button-1\" style=\"padding: -1%; margin-top:1%;\" type=\"submit\" value=\"Leave Game\"></form> ";
             $alreadyJoinedGame=false;

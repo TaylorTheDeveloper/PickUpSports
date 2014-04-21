@@ -85,8 +85,5 @@ if (!mysqli_query($con,$sql))
     }
 	mysqli_close($con);
 	header( 'Location: ../matches.php?id=' . $matchID);
-	// echo "_" . nameConvert($_POST['sports']) . "_";
-	// echo "_" . $sql . "_";
-	// echo "matches.php?id=" . $matchID;
 ?>
 				
