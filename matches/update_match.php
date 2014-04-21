@@ -42,5 +42,5 @@ die('Error: ' . mysqli_error($con));
 
  mysqli_close($con);
 
-  header( 'Location: ../userpage.php' );
+	header( 'Location: ../matches.php?id=' . $mid);
 ?>

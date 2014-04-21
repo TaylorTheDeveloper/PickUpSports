@@ -53,14 +53,20 @@ while($row = mysqli_fetch_array($players))
       if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { 
       $currentDate = date("Y-m-d");
       $compareDate = $row['match_date'];
-      $adminID = $adminID;
+      $adminID = $adminID ;
+      $length = strlen($_SESSION['user_idnum']);
+      //$maid = substr($_SESSION['user_idnum'],0,6); //<-! This will not work for userID > 99
+      $maid =  trim($_SESSION['user_idnum'], "<br>");
 
-      if($_SESSION['user_idnum']!=$adminID){
+      if($maid==$adminID){
         $_SESSION['editMatchID'] = $row['match_id']; 
-        echo  "_" . $_SESSION['user_idnum'] . "_";
-        echo "<br>" . $adminID;
         echo "<form accept-charset=\"UTF-8\" id=\"linkform\" class=\"form-horizontal\" role=\"form\" method=\"post\" action=\"edit_matches.php\" parsley-validate >";           
         echo "<input type=\"hidden\" name=\"gameType\" value=\"". $row['match_type']. "\">";
+        echo "<input type=\"hidden\" name=\"maxPlayers\" value=\"". $row['match_maxplayers']. "\">";
+        echo "<input type=\"hidden\" name=\"zip\" value=\"". $row['match_zip']. "\">";
+        echo "<input type=\"hidden\" name=\"location\" value=\"". $row['match_location']. "\">";
+        echo "<input type=\"hidden\" name=\"date\" value=\"". $row['match_date']. "\">";
+        echo "<input type=\"hidden\" name=\"time\" value=\"". $row['match_time']. "\">";
         echo "<input class=\"color red styled-button-1\" style=\"padding: -1%; margin-top:1%;\" type=\"submit\" value=\"Edit Game\"></form> ";
    
       }
