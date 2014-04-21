@@ -21,12 +21,29 @@ while($row = mysqli_fetch_array($result))
    echo "<tr><td>Name</td><td>" . $row['first_name'] ." ". $row['last_name'] .  "</td></tr>"; 
    echo "<tr><td>Email</td><td>" . $row['email'] . "</td></tr>"; 
    echo "<tr><td>Zip</td><td>" . $row['zip'] . "</td></tr>"; 
-   echo "<tr><td>Favorite Sport</td><td>" . $row['favSport'] . "</td></tr>";    
+   echo "<tr><td>Favorite Sport</td><td>" . $row['favSport'] . "</td></tr>";
+
+echo "<tr><td>Edit Account</td>";
+     echo "<td>";
+ echo "<form accept-charset=\"UTF-8\" id=\"linkform\" class=\"form-horizontal\" role=\"form\" method=\"post\" action=\"edit_account.php\" parsley-validate >";           
+       echo "<input type=\"hidden\" id=\"userID\" name=\"userID\" value=\"" . $uid . "\">";  
+       echo "<input type=\"hidden\" id=\"username\" name=\"username\" value=\"" . $row['username'] . "\">";  
+       echo "<input type=\"hidden\" id=\"fname\" name=\"fname\" value=\"" . $row['first_name'] . "\">";  
+       echo "<input type=\"hidden\" id=\"lname\" name=\"lname\" value=\"" . $row['last_name'] . "\">";  
+       echo "<input type=\"hidden\" id=\"email\" name=\"email\" value=\"" . $row['email'] . "\">";  
+       echo "<input type=\"hidden\" id=\"zip\" name=\"zip\" value=\"" . $row['zip'] . "\">";  
+       echo "<input type=\"hidden\" id=\"fsport\" name=\"fsport\" value=\"" . $row['favSport'] . "\">"; 
+       echo "<input type=\"hidden\" id=\"pass\" name=\"pass\" value=\"" . $row['password'] . "\">";  
+
+   echo "<input  class=\"color green styled-button-1\" style=\"padding: -1%;\" type=\"submit\" value=\"Edit Account \"></form>";
+   echo "</td></tr>";
+
    echo "<tr><td>Delete Account</td>";
      echo "<td>";
  echo "<form accept-charset=\"UTF-8\" id=\"linkform\" class=\"form-horizontal\" role=\"form\" method=\"post\" action=\"confirm_delete_account.php\" parsley-validate >";           
    echo "<input  class=\"color red styled-button-1\" style=\"padding: -1%;\" type=\"submit\" value=\"Delete Account :(\"></form>";
-   echo "</td></tr>"; 
+   echo "</td></tr>";
+
   }
     mysqli_close($con);
 ?>

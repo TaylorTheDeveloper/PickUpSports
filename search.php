@@ -116,7 +116,7 @@ echo "<div class=\"col-md-2 column\">";
 if($fullgame==true){
 echo "<form accept-charset=\"UTF-8\" role=\"form\" method=\"get\" action=\"newgame.php\">";
 echo "<input type=\"hidden\" id=\"sportsValue\" name=\"sportsValue\" value=\"". $matchType . "\">";
-echo "<p class=\"searchFullGameMsg\">This Game is full. But that's ok! </p>";
+echo "<p class=\"searchFullGameMsg\"><span class=\"glyphicon glyphicon-remove-circle\" ></span>&nbsp Oh No! This Game is full. But that's ok! </p>";
 echo "<input class=\"color green styled-button-1\" style=\"margin-right:1%;\" type=\"submit\" value=\"New ". $matchType . " Game\"> </form>";
 
 $fullgame=false;
